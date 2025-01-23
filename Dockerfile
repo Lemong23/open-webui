@@ -1,6 +1,7 @@
 # syntax=docker/dockerfile:1
 # Initialize device type args
 # use build args in the docker build command with --build-arg="BUILDARG=true"
+ARG ENV
 ARG USE_CUDA=false
 ARG USE_OLLAMA=false
 # Tested with cu117 for CUDA 11 and cu121 for CUDA 12 (default)
@@ -23,6 +24,8 @@ ARG GID=0
 ######## WebUI frontend ########
 FROM --platform=$BUILDPLATFORM node:22-alpine3.20 AS build
 ARG BUILD_HASH
+
+ENV NODE_OPTIONS="--max_old_space_size=4096"
 
 WORKDIR /app
 
@@ -60,11 +63,11 @@ ENV OLLAMA_BASE_URL="/ollama" \
     OPENAI_API_BASE_URL=""
 
 ## API Key and Security Config ##
-ENV OPENAI_API_KEY="" \
-    WEBUI_SECRET_KEY="" \
-    SCARF_NO_ANALYTICS=true \
-    DO_NOT_TRACK=true \
-    ANONYMIZED_TELEMETRY=false
+ENV OPENAI_API_KEY=${OPENAI_API_KEY} \
+    WEBUI_SECRET_KEY=${WEBUI_SECRET_KEY} \
+    SCARF_NO_ANALYTICS=${SCARF_NO_ANALYTICS} \
+    DO_NOT_TRACK=${DO_NOT_TRACK} \
+    ANONYMIZED_TELEMETRY=${ANONYMIZED_TELEMETRY}
 
 #### Other models #########################################################
 ## whisper TTS model settings ##
@@ -82,7 +85,6 @@ ENV TIKTOKEN_ENCODING_NAME="cl100k_base" \
 
 ## Hugging Face download cache ##
 ENV HF_HOME="/app/backend/data/cache/embedding/models"
-
 ## Torch Extensions ##
 # ENV TORCH_EXTENSIONS_DIR="/.cache/torch_extensions"
 
