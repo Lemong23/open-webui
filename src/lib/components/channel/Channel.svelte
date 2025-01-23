@@ -195,7 +195,7 @@
 </script>
 
 <svelte:head>
-	<title>#{channel?.name ?? 'Channel'} | Open WebUI</title>
+	<title>#{channel?.name ?? 'Channel'} | 배움몽</title>
 </svelte:head>
 
 <div
