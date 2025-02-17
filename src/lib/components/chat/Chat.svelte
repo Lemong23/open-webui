@@ -1871,7 +1871,7 @@
 			/>
 
 			<div
-				class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-white to-white/85 dark:from-gray-900 dark:to-[#171717]/90 z-0"
+				class="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-white to-white/85 z-0"
 			/>
 		{/if}
 
@@ -1898,7 +1898,7 @@
 			<Pane defaultSize={50} class="h-full flex w-full relative">
 				{#if $banners.length > 0 && !history.currentId && !$chatId && selectedModels.length <= 1}
 					<div class="absolute top-12 left-0 right-0 w-full z-30">
-						<div class=" flex flex-col gap-1 w-full">
+						<div class="flex flex-col gap-1 w-full">
 							{#each $banners.filter( (b) => (b.dismissible ? !JSON.parse(localStorage.getItem('dismissedBannerIds') ?? '[]').includes(b.id) : true) ) as banner}
 								<Banner
 									{banner}
@@ -1924,7 +1924,7 @@
 				<div class="flex flex-col flex-auto z-10 w-full">
 					{#if $settings?.landingPageMode === 'chat' || createMessagesList(history.currentId).length > 0}
 						<div
-							class=" pb-2.5 flex flex-col justify-between w-full flex-auto overflow-auto h-0 max-w-full z-10 scrollbar-hidden"
+							class="pb-2.5 flex flex-col justify-between w-full flex-auto overflow-auto h-0 max-w-full z-10 scrollbar-hidden"
 							id="messages-container"
 							bind:this={messagesContainerElement}
 							on:scroll={(e) => {
@@ -1933,7 +1933,7 @@
 									messagesContainerElement.clientHeight + 5;
 							}}
 						>
-							<div class=" h-full w-full flex flex-col">
+							<div class="h-full w-full flex flex-col">
 								<Messages
 									chatId={$chatId}
 									bind:history
@@ -1953,7 +1953,7 @@
 							</div>
 						</div>
 
-						<div class=" pb-[1rem]">
+						<div class="pb-[1rem]">
 							<MessageInput
 								{history}
 								{selectedModels}

@@ -49,9 +49,9 @@
 				/>
 			</div>
 
-			<div class=" pt-1">
+			<div class="pt-1">
 				<button
-					class=" group-hover:text-gray-500 dark:text-gray-900 dark:hover:text-gray-300 transition"
+					class="group-hover:text-gray-500 transition"
 					on:click={() => {
 						messages = messages.filter((message, messageIdx) => messageIdx !== idx);
 					}}

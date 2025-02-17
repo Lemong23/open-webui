@@ -78,7 +78,7 @@
 
 	<div slot="content">
 		<DropdownMenu.Content
-			class="w-full max-w-[220px] rounded-xl px-1 py-1  border-gray-300/30 dark:border-gray-700/50 z-50 bg-white dark:bg-gray-850 dark:text-white shadow"
+			class="w-full max-w-[220px] rounded-xl px-1 py-1  border-gray-300/30 z-50 bg-white shadow"
 			sideOffset={15}
 			alignOffset={-8}
 			side="top"
@@ -86,7 +86,7 @@
 			transition={flyAndScale}
 		>
 			{#if Object.keys(tools).length > 0}
-				<div class="  max-h-28 overflow-y-auto scrollbar-hidden">
+				<div class="max-h-28 overflow-y-auto scrollbar-hidden">
 					{#each Object.keys(tools) as toolId}
 						<button
 							class="flex w-full justify-between gap-2 items-center px-3 py-2 text-sm font-medium cursor-pointer rounded-xl"
@@ -104,11 +104,11 @@
 										<WrenchSolid />
 									</div>
 
-									<div class=" truncate">{tools[toolId].name}</div>
+									<div class="truncate">{tools[toolId].name}</div>
 								</Tooltip>
 							</div>
 
-							<div class=" flex-shrink-0">
+							<div class="flex-shrink-0">
 								<Switch
 									state={tools[toolId].enabled}
 									on:change={async (e) => {
@@ -126,7 +126,7 @@
 					{/each}
 				</div>
 
-				<hr class="border-black/5 dark:border-white/5 my-1" />
+				<hr class="border-black/5 my-1" />
 			{/if}
 
 			{#if showImageGeneration}
@@ -138,7 +138,7 @@
 				>
 					<div class="flex-1 flex items-center gap-2">
 						<PhotoSolid />
-						<div class=" line-clamp-1">{$i18n.t('Image')}</div>
+						<div class="line-clamp-1">{$i18n.t('Image')}</div>
 					</div>
 
 					<Switch state={imageGenerationEnabled} />
@@ -154,7 +154,7 @@
 				>
 					<div class="flex-1 flex items-center gap-2">
 						<GlobeAltSolid />
-						<div class=" line-clamp-1">{$i18n.t('Web Search')}</div>
+						<div class="line-clamp-1">{$i18n.t('Web Search')}</div>
 					</div>
 
 					<Switch state={webSearchEnabled} />
@@ -162,23 +162,23 @@
 			{/if}
 
 			{#if showImageGeneration || showWebSearch}
-				<hr class="border-black/5 dark:border-white/5 my-1" />
+				<hr class="border-black/5 my-1" />
 			{/if}
 
 			{#if !$mobile}
 				<DropdownMenu.Item
-					class="flex gap-2 items-center px-3 py-2 text-sm  font-medium cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800  rounded-xl"
+					class="flex gap-2 items-center px-3 py-2 text-sm  font-medium cursor-pointer hover:bg-gray-50  rounded-xl"
 					on:click={() => {
 						screenCaptureHandler();
 					}}
 				>
 					<CameraSolid />
-					<div class=" line-clamp-1">{$i18n.t('Capture')}</div>
+					<div class="line-clamp-1">{$i18n.t('Capture')}</div>
 				</DropdownMenu.Item>
 			{/if}
 
 			<DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-2 text-sm font-medium cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl"
+				class="flex gap-2 items-center px-3 py-2 text-sm font-medium cursor-pointer hover:bg-gray-50 rounded-xl"
 				on:click={() => {
 					uploadFilesHandler();
 				}}
@@ -189,7 +189,7 @@
 
 			{#if $config?.features?.enable_google_drive_integration}
 				<DropdownMenu.Item
-					class="flex gap-2 items-center px-3 py-2 text-sm font-medium cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl"
+					class="flex gap-2 items-center px-3 py-2 text-sm font-medium cursor-pointer hover:bg-gray-50 rounded-xl"
 					on:click={() => {
 						uploadGoogleDriveHandler();
 					}}

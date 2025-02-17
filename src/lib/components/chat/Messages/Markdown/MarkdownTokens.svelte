@@ -71,7 +71,7 @@
 <!-- {JSON.stringify(tokens)} -->
 {#each tokens as token, tokenIdx (tokenIdx)}
 	{#if token.type === 'hr'}
-		<hr class=" border-gray-50 dark:border-gray-850" />
+		<hr class="border-gray-50" />
 	{:else if token.type === 'heading'}
 		<svelte:element this={headerComponent(token.depth)}>
 			<MarkdownInlineTokens id={`${id}-${tokenIdx}-h`} tokens={token.tokens} {onSourceClick} />
@@ -102,16 +102,16 @@
 		<div class="relative w-full group">
 			<div class="scrollbar-hidden relative overflow-x-auto max-w-full rounded-lg">
 				<table
-					class=" w-full text-sm text-left text-gray-500 dark:text-gray-400 max-w-full rounded-xl"
+					class="w-full text-sm text-left text-gray-500 max-w-full rounded-xl"
 				>
 					<thead
-						class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-850 dark:text-gray-400 border-none"
+						class="text-xs text-gray-700 uppercase bg-gray-50 border-none"
 					>
 						<tr class="">
 							{#each token.header as header, headerIdx}
 								<th
 									scope="col"
-									class="!px-3 !py-1.5 cursor-pointer border border-gray-50 dark:border-gray-850"
+									class="!px-3 !py-1.5 cursor-pointer border border-gray-50"
 									style={token.align[headerIdx] ? '' : `text-align: ${token.align[headerIdx]}`}
 								>
 									<div class="flex flex-col gap-1.5 text-left">
@@ -129,10 +129,10 @@
 					</thead>
 					<tbody>
 						{#each token.rows as row, rowIdx}
-							<tr class="bg-white dark:bg-gray-900 dark:border-gray-850 text-xs">
+							<tr class="bg-white text-xs">
 								{#each row ?? [] as cell, cellIdx}
 									<td
-										class="!px-3 !py-1.5 text-gray-900 dark:text-white w-max border border-gray-50 dark:border-gray-850"
+										class="!px-3 !py-1.5 text-gray-900 w-max border border-gray-50"
 										style={token.align[cellIdx] ? '' : `text-align: ${token.align[cellIdx]}`}
 									>
 										<div class="flex flex-col break-normal">
@@ -150,7 +150,7 @@
 				</table>
 			</div>
 
-			<div class=" absolute top-1 right-1.5 z-20 invisible group-hover:visible">
+			<div class="absolute top-1 right-1.5 z-20 invisible group-hover:visible">
 				<Tooltip content={$i18n.t('Export to CSV')}>
 					<button
 						class="p-1 rounded-lg bg-transparent transition"
@@ -196,7 +196,7 @@
 		{/if}
 	{:else if token.type === 'details'}
 		<Collapsible title={token.summary} attributes={token?.attributes} className="w-fit space-y-1">
-			<div class=" mb-1.5" slot="content">
+			<div class="mb-1.5" slot="content">
 				<svelte:self id={`${id}-${tokenIdx}-d`} tokens={marked.lexer(token.text)} />
 			</div>
 		</Collapsible>

@@ -11,7 +11,7 @@
 	const dispatch = createEventDispatcher();
 
 	export let className = 'w-60';
-	export let colorClassName = 'bg-white dark:bg-gray-850 border border-gray-50 dark:border-white/5';
+	export let colorClassName = 'bg-white border border-gray-50';
 	export let url: string | null = null;
 
 	export let dismissible = false;
@@ -56,13 +56,13 @@
 	}}
 >
 	{#if !small}
-		<div class="p-3 bg-black/20 dark:bg-white/10 text-white rounded-xl">
+		<div class="p-3 bg-black/20/10 text-white rounded-xl">
 			{#if !loading}
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
 					fill="currentColor"
-					class=" size-5"
+					class="size-5"
 				>
 					<path
 						fill-rule="evenodd"
@@ -81,11 +81,11 @@
 
 	{#if !small}
 		<div class="flex flex-col justify-center -space-y-0.5 px-2.5 w-full">
-			<div class=" dark:text-gray-100 text-sm font-medium line-clamp-1 mb-1">
+			<div class="text-sm font-medium line-clamp-1 mb-1">
 				{name}
 			</div>
 
-			<div class=" flex justify-between text-gray-500 text-xs line-clamp-1">
+			<div class="flex justify-between text-gray-500 text-xs line-clamp-1">
 				{#if type === 'file'}
 					{$i18n.t('File')}
 				{:else if type === 'doc'}
@@ -93,7 +93,7 @@
 				{:else if type === 'collection'}
 					{$i18n.t('Collection')}
 				{:else}
-					<span class=" capitalize line-clamp-1">{type}</span>
+					<span class="capitalize line-clamp-1">{type}</span>
 				{/if}
 				{#if size}
 					<span class="capitalize">{formatFileSize(size)}</span>
@@ -103,9 +103,9 @@
 	{:else}
 		<Tooltip content={name} className="flex flex-col w-full" placement="top-start">
 			<div class="flex flex-col justify-center -space-y-0.5 px-2.5 w-full">
-				<div class=" dark:text-gray-100 text-sm flex justify-between items-center">
+				<div class="text-sm flex justify-between items-center">
 					{#if loading}
-						<div class=" shrink-0 mr-2">
+						<div class="shrink-0 mr-2">
 							<Spinner className="size-4" />
 						</div>
 					{/if}
@@ -117,9 +117,9 @@
 	{/if}
 
 	{#if dismissible}
-		<div class=" absolute -top-1 -right-1">
+		<div class="absolute -top-1 -right-1">
 			<button
-				class=" bg-gray-400 text-white border border-white rounded-full group-hover:visible invisible transition"
+				class="bg-gray-400 text-white border border-white rounded-full group-hover:visible invisible transition"
 				type="button"
 				on:click|stopPropagation={() => {
 					dispatch('dismiss');
@@ -138,7 +138,7 @@
 			</button>
 
 			<!-- <button
-				class=" p-1 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-full group-hover:visible invisible transition"
+				class="p-1 hover:bg-black/5 rounded-full group-hover:visible invisible transition"
 				type="button"
 				on:click={() => {
 				}}

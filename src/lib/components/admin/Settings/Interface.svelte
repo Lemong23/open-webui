@@ -66,10 +66,10 @@
 			dispatch('save');
 		}}
 	>
-		<div class="  overflow-y-scroll scrollbar-hidden h-full pr-1.5">
+		<div class="overflow-y-scroll scrollbar-hidden h-full pr-1.5">
 			<div>
-				<div class=" mb-2.5 text-sm font-medium flex items-center">
-					<div class=" mr-1">{$i18n.t('Set Task Model')}</div>
+				<div class="mb-2.5 text-sm font-medium flex items-center">
+					<div class="mr-1">{$i18n.t('Set Task Model')}</div>
 					<Tooltip
 						content={$i18n.t(
 							'A task model is used when performing tasks such as generating titles for chats and web search queries'
@@ -93,15 +93,15 @@
 				</div>
 				<div class="flex w-full gap-2">
 					<div class="flex-1">
-						<div class=" text-xs mb-1">{$i18n.t('Local Models')}</div>
+						<div class="text-xs mb-1">{$i18n.t('Local Models')}</div>
 						<select
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 							bind:value={taskConfig.TASK_MODEL}
 							placeholder={$i18n.t('Select a model')}
 						>
 							<option value="" selected>{$i18n.t('Current Model')}</option>
 							{#each $models.filter((m) => m.owned_by === 'ollama') as model}
-								<option value={model.id} class="bg-gray-100 dark:bg-gray-700">
+								<option value={model.id} class="bg-gray-100">
 									{model.name}
 								</option>
 							{/each}
@@ -109,15 +109,15 @@
 					</div>
 
 					<div class="flex-1">
-						<div class=" text-xs mb-1">{$i18n.t('External Models')}</div>
+						<div class="text-xs mb-1">{$i18n.t('External Models')}</div>
 						<select
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 							bind:value={taskConfig.TASK_MODEL_EXTERNAL}
 							placeholder={$i18n.t('Select a model')}
 						>
 							<option value="" selected>{$i18n.t('Current Model')}</option>
 							{#each $models as model}
-								<option value={model.id} class="bg-gray-100 dark:bg-gray-700">
+								<option value={model.id} class="bg-gray-100">
 									{model.name}
 								</option>
 							{/each}
@@ -126,7 +126,7 @@
 				</div>
 
 				<div class="mt-3">
-					<div class=" mb-2.5 text-xs font-medium">{$i18n.t('Title Generation Prompt')}</div>
+					<div class="mb-2.5 text-xs font-medium">{$i18n.t('Title Generation Prompt')}</div>
 
 					<Tooltip
 						content={$i18n.t('Leave empty to use the default prompt, or enter a custom prompt')}
@@ -142,7 +142,7 @@
 				</div>
 
 				<div class="mt-3">
-					<div class=" mb-2.5 text-xs font-medium">{$i18n.t('Image Prompt Generation Prompt')}</div>
+					<div class="mb-2.5 text-xs font-medium">{$i18n.t('Image Prompt Generation Prompt')}</div>
 
 					<Tooltip
 						content={$i18n.t('Leave empty to use the default prompt, or enter a custom prompt')}
@@ -157,10 +157,10 @@
 					</Tooltip>
 				</div>
 
-				<hr class=" border-gray-50 dark:border-gray-850 my-3" />
+				<hr class="border-gray-50 my-3" />
 
 				<div class="my-3 flex w-full items-center justify-between">
-					<div class=" self-center text-xs font-medium">
+					<div class="self-center text-xs font-medium">
 						{$i18n.t('Autocomplete Generation')}
 					</div>
 
@@ -171,7 +171,7 @@
 
 				{#if taskConfig.ENABLE_AUTOCOMPLETE_GENERATION}
 					<div class="mt-3">
-						<div class=" mb-2.5 text-xs font-medium">
+						<div class="mb-2.5 text-xs font-medium">
 							{$i18n.t('Autocomplete Generation Input Max Length')}
 						</div>
 
@@ -188,10 +188,10 @@
 					</div>
 				{/if}
 
-				<hr class=" border-gray-50 dark:border-gray-850 my-3" />
+				<hr class="border-gray-50 my-3" />
 
 				<div class="my-3 flex w-full items-center justify-between">
-					<div class=" self-center text-xs font-medium">
+					<div class="self-center text-xs font-medium">
 						{$i18n.t('Tags Generation')}
 					</div>
 
@@ -200,7 +200,7 @@
 
 				{#if taskConfig.ENABLE_TAGS_GENERATION}
 					<div class="mt-3">
-						<div class=" mb-2.5 text-xs font-medium">{$i18n.t('Tags Generation Prompt')}</div>
+						<div class="mb-2.5 text-xs font-medium">{$i18n.t('Tags Generation Prompt')}</div>
 
 						<Tooltip
 							content={$i18n.t('Leave empty to use the default prompt, or enter a custom prompt')}
@@ -216,10 +216,10 @@
 					</div>
 				{/if}
 
-				<hr class=" border-gray-50 dark:border-gray-850 my-3" />
+				<hr class="border-gray-50 my-3" />
 
 				<div class="my-3 flex w-full items-center justify-between">
-					<div class=" self-center text-xs font-medium">
+					<div class="self-center text-xs font-medium">
 						{$i18n.t('Retrieval Query Generation')}
 					</div>
 
@@ -227,7 +227,7 @@
 				</div>
 
 				<div class="my-3 flex w-full items-center justify-between">
-					<div class=" self-center text-xs font-medium">
+					<div class="self-center text-xs font-medium">
 						{$i18n.t('Web Search Query Generation')}
 					</div>
 
@@ -235,7 +235,7 @@
 				</div>
 
 				<div class="">
-					<div class=" mb-2.5 text-xs font-medium">{$i18n.t('Query Generation Prompt')}</div>
+					<div class="mb-2.5 text-xs font-medium">{$i18n.t('Query Generation Prompt')}</div>
 
 					<Tooltip
 						content={$i18n.t('Leave empty to use the default prompt, or enter a custom prompt')}
@@ -251,11 +251,11 @@
 				</div>
 			</div>
 
-			<hr class=" border-gray-50 dark:border-gray-850 my-3" />
+			<hr class="border-gray-50 my-3" />
 
-			<div class=" space-y-3 {banners.length > 0 ? ' mb-3' : ''}">
+			<div class="space-y-3 {banners.length > 0 ? ' mb-3' : ''}">
 				<div class="flex w-full justify-between">
-					<div class=" self-center text-sm font-semibold">
+					<div class="self-center text-sm font-semibold">
 						{$i18n.t('Banners')}
 					</div>
 
@@ -292,8 +292,8 @@
 				</div>
 				<div class="flex flex-col space-y-1">
 					{#each banners as banner, bannerIdx}
-						<div class=" flex justify-between">
-							<div class="flex flex-row flex-1 border rounded-xl dark:border-gray-800">
+						<div class="flex justify-between">
+							<div class="flex flex-row flex-1 border rounded-xl">
 								<select
 									class="w-fit capitalize rounded-xl py-2 px-4 text-xs bg-transparent outline-none"
 									bind:value={banner.type}
@@ -348,9 +348,9 @@
 			</div>
 
 			{#if $user.role === 'admin'}
-				<div class=" space-y-3">
+				<div class="space-y-3">
 					<div class="flex w-full justify-between mb-2">
-						<div class=" self-center text-sm font-semibold">
+						<div class="self-center text-sm font-semibold">
 							{$i18n.t('Default Prompt Suggestions')}
 						</div>
 
@@ -378,25 +378,25 @@
 					<div class="grid lg:grid-cols-2 flex-col gap-1.5">
 						{#each promptSuggestions as prompt, promptIdx}
 							<div
-								class=" flex border border-gray-100 dark:border-none dark:bg-gray-850 rounded-xl py-1.5"
+								class="flex border border-gray-100 rounded-xl py-1.5"
 							>
 								<div class="flex flex-col flex-1 pl-1">
-									<div class="flex border-b border-gray-100 dark:border-gray-800 w-full">
+									<div class="flex border-b border-gray-100 w-full">
 										<input
-											class="px-3 py-1.5 text-xs w-full bg-transparent outline-none border-r border-gray-100 dark:border-gray-800"
+											class="px-3 py-1.5 text-xs w-full bg-transparent outline-none border-r border-gray-100"
 											placeholder={$i18n.t('Title (e.g. Tell me a fun fact)')}
 											bind:value={prompt.title[0]}
 										/>
 
 										<input
-											class="px-3 py-1.5 text-xs w-full bg-transparent outline-none border-r border-gray-100 dark:border-gray-800"
+											class="px-3 py-1.5 text-xs w-full bg-transparent outline-none border-r border-gray-100"
 											placeholder={$i18n.t('Subtitle (e.g. about the Roman Empire)')}
 											bind:value={prompt.title[1]}
 										/>
 									</div>
 
 									<textarea
-										class="px-3 py-1.5 text-xs w-full bg-transparent outline-none border-r border-gray-100 dark:border-gray-800 resize-none"
+										class="px-3 py-1.5 text-xs w-full bg-transparent outline-none border-r border-gray-100 resize-none"
 										placeholder={$i18n.t('Prompt (e.g. Tell me a fun fact about the Roman Empire)')}
 										rows="3"
 										bind:value={prompt.content}
@@ -437,7 +437,7 @@
 
 		<div class="flex justify-end text-sm font-medium">
 			<button
-				class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+				class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 				type="submit"
 			>
 				{$i18n.t('Save')}

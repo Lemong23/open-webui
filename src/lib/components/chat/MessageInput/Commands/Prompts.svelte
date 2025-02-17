@@ -139,15 +139,15 @@
 		id="commands-container"
 		class="px-2 mb-2 text-left w-full absolute bottom-0 left-0 right-0 z-10"
 	>
-		<div class="flex w-full rounded-xl border border-gray-50 dark:border-gray-850">
+		<div class="flex w-full rounded-xl border border-gray-50">
 			<div
-				class="max-h-60 flex flex-col w-full rounded-xl bg-white dark:bg-gray-900 dark:text-gray-100"
+				class="max-h-60 flex flex-col w-full rounded-xl bg-white"
 			>
 				<div class="m-1 overflow-y-auto p-1 space-y-0.5 scrollbar-hidden">
 					{#each filteredPrompts as prompt, promptIdx}
 						<button
-							class=" px-3 py-1.5 rounded-xl w-full text-left {promptIdx === selectedPromptIdx
-								? '  bg-gray-50 dark:bg-gray-850 selected-command-option-button'
+							class="px-3 py-1.5 rounded-xl w-full text-left {promptIdx === selectedPromptIdx
+								? '  bg-gray-50 selected-command-option-button'
 								: ''}"
 							type="button"
 							on:click={() => {
@@ -158,11 +158,11 @@
 							}}
 							on:focus={() => {}}
 						>
-							<div class=" font-medium text-black dark:text-gray-100">
+							<div class="font-medium text-black">
 								{prompt.command}
 							</div>
 
-							<div class=" text-xs text-gray-600 dark:text-gray-100">
+							<div class="text-xs text-gray-600">
 								{prompt.title}
 							</div>
 						</button>
@@ -170,7 +170,7 @@
 				</div>
 
 				<div
-					class=" px-2 pt-0.5 pb-1 text-xs text-gray-600 dark:text-gray-100 bg-white dark:bg-gray-900 rounded-b-xl flex items-center space-x-1"
+					class="px-2 pt-0.5 pb-1 text-xs text-gray-600 bg-white rounded-b-xl flex items-center space-x-1"
 				>
 					<div>
 						<svg

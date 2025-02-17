@@ -70,15 +70,15 @@
 		id="commands-container"
 		class="px-2 mb-2 text-left w-full absolute bottom-0 left-0 right-0 z-10"
 	>
-		<div class="flex w-full rounded-xl border border-gray-50 dark:border-gray-850">
+		<div class="flex w-full rounded-xl border border-gray-50">
 			<div
-				class="max-h-60 flex flex-col w-full rounded-xl bg-white dark:bg-gray-900 dark:text-gray-100"
+				class="max-h-60 flex flex-col w-full rounded-xl bg-white"
 			>
 				<div class="m-1 overflow-y-auto p-1 rounded-r-lg space-y-0.5 scrollbar-hidden">
 					{#each filteredItems as model, modelIdx}
 						<button
 							class="px-3 py-1.5 rounded-xl w-full text-left {modelIdx === selectedIdx
-								? 'bg-gray-50 dark:bg-gray-850 selected-command-option-button'
+								? 'bg-gray-50 selected-command-option-button'
 								: ''}"
 							type="button"
 							on:click={() => {
@@ -89,7 +89,7 @@
 							}}
 							on:focus={() => {}}
 						>
-							<div class="flex font-medium text-black dark:text-gray-100 line-clamp-1">
+							<div class="flex font-medium text-black line-clamp-1">
 								<img
 									src={model?.info?.meta?.profile_image_url ?? '/static/favicon.png'}
 									alt={model?.name ?? model.id}

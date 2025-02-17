@@ -16,11 +16,11 @@
 	<div class="w-full h-screen max-h-[100dvh] text-white relative">
 		<div class="fixed m-10 z-50">
 			<div class="flex space-x-2">
-				<div class=" self-center">
+				<div class="self-center">
 					<img
 						crossorigin="anonymous"
 						src="{WEBUI_BASE_URL}/static/favicon.png"
-						class=" w-6 rounded-full"
+						class="w-6 rounded-full"
 						alt="logo"
 					/>
 				</div>

@@ -51,22 +51,22 @@
 
 {#if loaded}
 	<div
-		class=" relative flex flex-col w-full h-screen max-h-[100dvh] transition-width duration-200 ease-in-out {$showSidebar
+		class="relative flex flex-col w-full h-screen max-h-[100dvh] transition-width duration-200 ease-in-out {$showSidebar
 			? 'md:max-w-[calc(100%-260px)]'
 			: ''} max-w-full"
 	>
-		<nav class="   px-2.5 pt-1 backdrop-blur-xl drag-region">
-			<div class=" flex items-center gap-1">
+		<nav class="px-2.5 pt-1 backdrop-blur-xl drag-region">
+			<div class="flex items-center gap-1">
 				<div class="{$showSidebar ? 'md:hidden' : ''} self-center flex flex-none items-center">
 					<button
 						id="sidebar-toggle-button"
-						class="cursor-pointer p-1.5 flex rounded-xl hover:bg-gray-100 dark:hover:bg-gray-850 transition"
+						class="cursor-pointer p-1.5 flex rounded-xl hover:bg-gray-100 transition"
 						on:click={() => {
 							showSidebar.set(!$showSidebar);
 						}}
 						aria-label="Toggle Sidebar"
 					>
-						<div class=" m-auto self-center">
+						<div class="m-auto self-center">
 							<MenuLines />
 						</div>
 					</button>
@@ -82,7 +82,7 @@
 									'/workspace/models'
 								)
 									? ''
-									: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'} transition"
+									: 'text-gray-300 hover:text-gray-700'} transition"
 								href="/workspace/models">{$i18n.t('Models')}</a
 							>
 						{/if}
@@ -93,7 +93,7 @@
 									'/workspace/knowledge'
 								)
 									? ''
-									: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'} transition"
+									: 'text-gray-300 hover:text-gray-700'} transition"
 								href="/workspace/knowledge"
 							>
 								{$i18n.t('Knowledge')}
@@ -106,7 +106,7 @@
 									'/workspace/prompts'
 								)
 									? ''
-									: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'} transition"
+									: 'text-gray-300 hover:text-gray-700'} transition"
 								href="/workspace/prompts">{$i18n.t('Prompts')}</a
 							>
 						{/if}
@@ -115,7 +115,7 @@
 							<a
 								class="min-w-fit rounded-full p-1.5 {$page.url.pathname.includes('/workspace/tools')
 									? ''
-									: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'} transition"
+									: 'text-gray-300 hover:text-gray-700'} transition"
 								href="/workspace/tools"
 							>
 								{$i18n.t('Tools')}
@@ -128,7 +128,7 @@
 			</div>
 		</nav>
 
-		<div class="  pb-1 px-[18px] flex-1 max-h-full overflow-y-auto" id="workspace-container">
+		<div class="pb-1 px-[18px] flex-1 max-h-full overflow-y-auto" id="workspace-container">
 			<slot />
 		</div>
 	</div>

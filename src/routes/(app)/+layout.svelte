@@ -220,7 +220,7 @@
 <ChangelogModal bind:show={$showChangelog} />
 
 {#if version && compareVersion(version.latest, version.current) && ($settings?.showUpdateToast ?? true)}
-	<div class=" absolute bottom-8 right-8 z-50" in:fade={{ duration: 100 }}>
+	<div class="absolute bottom-8 right-8 z-50" in:fade={{ duration: 100 }}>
 		<UpdateInfoToast
 			{version}
 			on:close={() => {
@@ -233,7 +233,7 @@
 
 <div class="app relative">
 	<div
-		class=" text-gray-700 dark:text-gray-100 bg-white dark:bg-gray-900 h-screen max-h-[100dvh] overflow-auto flex flex-row justify-end"
+		class="text-gray-700 bg-white h-screen max-h-[100dvh] overflow-auto flex flex-row justify-end"
 	>
 		{#if loaded}
 			{#if !['user', 'admin'].includes($user.role)}
@@ -241,28 +241,28 @@
 			{:else if localDBChats.length > 0}
 				<div class="fixed w-full h-full flex z-50">
 					<div
-						class="absolute w-full h-full backdrop-blur-md bg-white/20 dark:bg-gray-900/50 flex justify-center"
+						class="absolute w-full h-full backdrop-blur-md bg-white/20/50 flex justify-center"
 					>
 						<div class="m-auto pb-44 flex flex-col justify-center">
 							<div class="max-w-md">
-								<div class="text-center dark:text-white text-2xl font-medium z-50">
+								<div class="text-center text-2xl font-medium z-50">
 									Important Update<br /> Action Required for Chat Log Storage
 								</div>
 
-								<div class=" mt-4 text-center text-sm dark:text-gray-200 w-full">
+								<div class="mt-4 text-center text-sm w-full">
 									{$i18n.t(
 										"Saving chat logs directly to your browser's storage is no longer supported. Please take a moment to download and delete your chat logs by clicking the button below. Don't worry, you can easily re-import your chat logs to the backend through"
 									)}
-									<span class="font-semibold dark:text-white"
+									<span class="font-semibold"
 										>{$i18n.t('Settings')} > {$i18n.t('Chats')} > {$i18n.t('Import Chats')}</span
 									>. {$i18n.t(
 										'This ensures that your valuable conversations are securely saved to your backend database. Thank you!'
 									)}
 								</div>
 
-								<div class=" mt-6 mx-auto relative group w-fit">
+								<div class="mt-6 mx-auto relative group w-fit">
 									<button
-										class="relative z-20 flex px-5 py-2 rounded-full bg-white border border-gray-100 dark:border-none hover:bg-gray-100 transition font-medium text-sm"
+										class="relative z-20 flex px-5 py-2 rounded-full bg-white border border-gray-100 hover:bg-gray-100 transition font-medium text-sm"
 										on:click={async () => {
 											let blob = new Blob([JSON.stringify(localDBChats)], {
 												type: 'application/json'

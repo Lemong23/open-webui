@@ -383,7 +383,7 @@
 						>
 							<div class="w-full flex justify-center py-1 text-xs animate-pulse items-center gap-2">
 								<Spinner className=" size-4" />
-								<div class=" ">Loading...</div>
+								<div class="">Loading...</div>
 							</div>
 						</Loader>
 					{/if}
@@ -415,7 +415,7 @@
 				</div>
 				<div class="pb-12" />
 				{#if bottomPadding}
-					<div class="  pb-6" />
+					<div class="pb-6" />
 				{/if}
 			{/key}
 		</div>

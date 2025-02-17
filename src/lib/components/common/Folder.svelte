@@ -112,7 +112,7 @@
 <div bind:this={folderElement} class="relative {className}">
 	{#if draggedOver}
 		<div
-			class="absolute top-0 left-0 w-full h-full rounded-sm bg-gray-100/50 dark:bg-gray-700/20 bg-opacity-50 dark:bg-opacity-10 z-50 pointer-events-none touch-none"
+			class="absolute top-0 left-0 w-full h-full rounded-sm bg-gray-100/50/20 bg-opacity-50 z-50 pointer-events-none touch-none"
 		></div>
 	{/if}
 
@@ -127,10 +127,10 @@
 		>
 			<!-- svelte-ignore a11y-no-static-element-interactions -->
 			<div
-				class="w-full group rounded-md relative flex items-center justify-between hover:bg-gray-100 dark:hover:bg-gray-900 text-gray-500 dark:text-gray-500 transition"
+				class="w-full group rounded-md relative flex items-center justify-between hover:bg-gray-100 text-gray-500 transition"
 			>
 				<button class="w-full py-1.5 pl-2 flex items-center gap-1.5 text-xs font-medium">
-					<div class="text-gray-300 dark:text-gray-600">
+					<div class="text-gray-300">
 						{#if open}
 							<ChevronDown className=" size-3" strokeWidth="2.5" />
 						{:else}
@@ -145,7 +145,7 @@
 
 				{#if onAdd}
 					<button
-						class="absolute z-10 right-2 invisible group-hover:visible self-center flex items-center dark:text-gray-300"
+						class="absolute z-10 right-2 invisible group-hover:visible self-center flex items-center"
 						on:pointerup={(e) => {
 							e.stopPropagation();
 						}}
@@ -156,7 +156,7 @@
 					>
 						<Tooltip content={onAddLabel}>
 							<button
-								class="p-0.5 dark:hover:bg-gray-850 rounded-lg touch-auto"
+								class="p-0.5 rounded-lg touch-auto"
 								on:click={(e) => {}}
 							>
 								<Plus className=" size-3" strokeWidth="2.5" />

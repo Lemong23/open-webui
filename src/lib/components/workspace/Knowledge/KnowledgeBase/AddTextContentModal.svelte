@@ -20,10 +20,10 @@
 	let voiceInput = false;
 </script>
 
-<Modal size="full" containerClassName="" className="h-full bg-white dark:bg-gray-900" bind:show>
+<Modal size="full" containerClassName="" className="h-full bg-white" bind:show>
 	<div class="absolute top-0 right-0 p-5">
 		<button
-			class="self-center dark:text-white"
+			class="self-center"
 			type="button"
 			on:click={() => {
 				show = false;
@@ -32,7 +32,7 @@
 			<XMark className="size-3.5" />
 		</button>
 	</div>
-	<div class="flex flex-col md:flex-row w-full h-full md:space-x-4 dark:text-gray-200">
+	<div class="flex flex-col md:flex-row w-full h-full md:space-x-4">
 		<form
 			class="flex flex-col w-full h-full"
 			on:submit|preventDefault={() => {
@@ -52,8 +52,8 @@
 				content = '';
 			}}
 		>
-			<div class=" flex-1 w-full h-full flex justify-center overflow-auto px-5 py-4">
-				<div class=" max-w-3xl py-2 md:py-10 w-full flex flex-col gap-2">
+			<div class="flex-1 w-full h-full flex justify-center overflow-auto px-5 py-4">
+				<div class="max-w-3xl py-2 md:py-10 w-full flex flex-col gap-2">
 					<div class="flex-shrink-0 w-full flex justify-between items-center">
 						<div class="w-full">
 							<input
@@ -66,7 +66,7 @@
 						</div>
 					</div>
 
-					<div class=" flex-1 w-full h-full">
+					<div class="flex-1 w-full h-full">
 						<RichTextInput
 							bind:value={content}
 							placeholder={$i18n.t('Write something...')}
@@ -81,7 +81,7 @@
 			>
 				<div class="">
 					{#if voiceInput}
-						<div class=" max-w-full w-full">
+						<div class="max-w-full w-full">
 							<VoiceRecording
 								bind:recording={voiceInput}
 								className="p-1"
@@ -99,7 +99,7 @@
 					{:else}
 						<Tooltip content={$i18n.t('Voice Input')}>
 							<button
-								class=" p-2 bg-gray-50 text-gray-700 dark:bg-gray-700 dark:text-white transition rounded-full"
+								class="p-2 bg-gray-50 text-gray-700 transition rounded-full"
 								type="button"
 								on:click={async () => {
 									try {
@@ -131,10 +131,10 @@
 					{/if}
 				</div>
 
-				<div class=" flex-shrink-0">
+				<div class="flex-shrink-0">
 					<Tooltip content={$i18n.t('Save')}>
 						<button
-							class=" px-3.5 py-2 bg-black text-white dark:bg-white dark:text-black transition rounded-full"
+							class="px-3.5 py-2 bg-black text-white transition rounded-full"
 							type="submit"
 						>
 							{$i18n.t('Save')}

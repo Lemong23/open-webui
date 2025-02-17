@@ -188,12 +188,12 @@
 						groupedMessageIds[modelIdx].messageIds[groupedMessageIdsIdx[modelIdx]]}
 
 					<div
-						class=" snap-center w-full max-w-full m-1 border {history.messages[messageId]
+						class="snap-center w-full max-w-full m-1 border {history.messages[messageId]
 							?.modelIdx == modelIdx
-							? `border-gray-100 dark:border-gray-800 border-[1.5px] ${
+							? `border-gray-100 border-[1.5px] ${
 									$mobile ? 'min-w-full' : 'min-w-80'
 								}`
-							: `border-gray-50 dark:border-gray-850 border-dashed ${
+							: `border-gray-50 border-dashed ${
 									$mobile ? 'min-w-full' : 'min-w-80'
 								}`} transition-all p-5 rounded-2xl"
 						on:click={async () => {
@@ -262,7 +262,7 @@
 
 									{#if message.timestamp}
 										<span
-											class=" self-center invisible group-hover:visible text-gray-400 text-xs font-medium uppercase ml-0.5 -mt-0.5"
+											class="self-center invisible group-hover:visible text-gray-400 text-xs font-medium uppercase ml-0.5 -mt-0.5"
 										>
 											{dayjs(message.timestamp * 1000).format($i18n.t('h:mm a'))}
 										</span>
@@ -281,14 +281,14 @@
 					</div>
 
 					{#if isLastMessage}
-						<div class=" flex-shrink-0 text-gray-600 dark:text-gray-500 mt-1">
+						<div class="flex-shrink-0 text-gray-600 mt-1">
 							<Tooltip content={$i18n.t('Merge Responses')} placement="bottom">
 								<button
 									type="button"
 									id="merge-response-button"
 									class="{true
 										? 'visible'
-										: 'invisible group-hover:visible'} p-1 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg dark:hover:text-white hover:text-black transition regenerate-response-button"
+										: 'invisible group-hover:visible'} p-1 hover:bg-black/5 rounded-lg hover:text-black transition regenerate-response-button"
 									on:click={() => {
 										mergeResponsesHandler();
 									}}

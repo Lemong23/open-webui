@@ -682,7 +682,7 @@
 			>
 				{#if emoji}
 					<div
-						class="  transition-all rounded-full"
+						class="transition-all rounded-full"
 						style="font-size:{rmsLevel * 100 > 4
 							? '4.5'
 							: rmsLevel * 100 > 2
@@ -695,7 +695,7 @@
 					</div>
 				{:else if loading || assistantSpeaking}
 					<svg
-						class="size-12 text-gray-900 dark:text-gray-400"
+						class="size-12 text-gray-900"
 						viewBox="0 0 24 24"
 						fill="currentColor"
 						xmlns="http://www.w3.org/2000/svg"
@@ -732,7 +732,7 @@
 					>
 				{:else}
 					<div
-						class=" {rmsLevel * 100 > 4
+						class="{rmsLevel * 100 > 4
 							? ' size-[4.5rem]'
 							: rmsLevel * 100 > 2
 								? ' size-16'
@@ -741,7 +741,7 @@
 									: 'size-12'}  transition-all rounded-full {(model?.info?.meta
 							?.profile_image_url ?? '/static/favicon.png') !== '/static/favicon.png'
 							? ' bg-cover bg-center bg-no-repeat'
-							: 'bg-black dark:bg-white'}  bg-black dark:bg-white"
+							: 'bg-black'}  bg-black"
 						style={(model?.info?.meta?.profile_image_url ?? '/static/favicon.png') !==
 						'/static/favicon.png'
 							? `background-image: url('${model?.info?.meta?.profile_image_url}');`
@@ -764,7 +764,7 @@
 				>
 					{#if emoji}
 						<div
-							class="  transition-all rounded-full"
+							class="transition-all rounded-full"
 							style="font-size:{rmsLevel * 100 > 4
 								? '13'
 								: rmsLevel * 100 > 2
@@ -777,7 +777,7 @@
 						</div>
 					{:else if loading || assistantSpeaking}
 						<svg
-							class="size-44 text-gray-900 dark:text-gray-400"
+							class="size-44 text-gray-900"
 							viewBox="0 0 24 24"
 							fill="currentColor"
 							xmlns="http://www.w3.org/2000/svg"
@@ -814,7 +814,7 @@
 						>
 					{:else}
 						<div
-							class=" {rmsLevel * 100 > 4
+							class="{rmsLevel * 100 > 4
 								? ' size-52'
 								: rmsLevel * 100 > 2
 									? 'size-48'
@@ -823,7 +823,7 @@
 										: 'size-40'}  transition-all rounded-full {(model?.info?.meta
 								?.profile_image_url ?? '/static/favicon.png') !== '/static/favicon.png'
 								? ' bg-cover bg-center bg-no-repeat'
-								: 'bg-black dark:bg-white'} "
+								: 'bg-black'} "
 							style={(model?.info?.meta?.profile_image_url ?? '/static/favicon.png') !==
 							'/static/favicon.png'
 								? `background-image: url('${model?.info?.meta?.profile_image_url}');`
@@ -842,7 +842,7 @@
 
 					<canvas id="camera-canvas" style="display:none;" />
 
-					<div class=" absolute top-4 md:top-8 left-4">
+					<div class="absolute top-4 md:top-8 left-4">
 						<button
 							type="button"
 							class="p-1.5 text-white cursor-pointer backdrop-blur-xl bg-black/10 rounded-full"
@@ -878,7 +878,7 @@
 							await startVideoStream();
 						}}
 					>
-						<button class=" p-3 rounded-full bg-gray-50 dark:bg-gray-900" type="button">
+						<button class="p-3 rounded-full bg-gray-50" type="button">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 20 20"
@@ -896,7 +896,7 @@
 				{:else}
 					<Tooltip content={$i18n.t('Camera')}>
 						<button
-							class=" p-3 rounded-full bg-gray-50 dark:bg-gray-900"
+							class="p-3 rounded-full bg-gray-50"
 							type="button"
 							on:click={async () => {
 								await navigator.mediaDevices.getUserMedia({ video: true });
@@ -936,7 +936,7 @@
 						}
 					}}
 				>
-					<div class=" line-clamp-1 text-sm font-medium">
+					<div class="line-clamp-1 text-sm font-medium">
 						{#if loading}
 							{$i18n.t('Thinking...')}
 						{:else if assistantSpeaking}
@@ -950,7 +950,7 @@
 
 			<div>
 				<button
-					class=" p-3 rounded-full bg-gray-50 dark:bg-gray-900"
+					class="p-3 rounded-full bg-gray-50"
 					on:click={async () => {
 						await stopAudioStream();
 						await stopVideoStream();

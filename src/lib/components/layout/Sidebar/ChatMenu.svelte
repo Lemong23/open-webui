@@ -134,14 +134,14 @@
 
 	<div slot="content">
 		<DropdownMenu.Content
-			class="w-full max-w-[200px] rounded-xl px-1 py-1.5 z-50 bg-white dark:bg-gray-850 dark:text-white shadow-lg"
+			class="w-full max-w-[200px] rounded-xl px-1 py-1.5 z-50 bg-white shadow-lg"
 			sideOffset={-2}
 			side="bottom"
 			align="start"
 			transition={flyAndScale}
 		>
 			<DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				on:click={() => {
 					pinHandler();
 				}}
@@ -156,7 +156,7 @@
 			</DropdownMenu.Item>
 
 			<DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				on:click={() => {
 					renameHandler();
 				}}
@@ -166,7 +166,7 @@
 			</DropdownMenu.Item>
 
 			<DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				on:click={() => {
 					cloneChatHandler();
 				}}
@@ -176,7 +176,7 @@
 			</DropdownMenu.Item>
 
 			<DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				on:click={() => {
 					archiveChatHandler();
 				}}
@@ -186,7 +186,7 @@
 			</DropdownMenu.Item>
 
 			<DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800  rounded-md"
+				class="flex gap-2 items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50  rounded-md"
 				on:click={() => {
 					shareHandler();
 				}}
@@ -197,19 +197,19 @@
 
 			<DropdownMenu.Sub>
 				<DropdownMenu.SubTrigger
-					class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+					class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				>
 					<Download strokeWidth="2" />
 
 					<div class="flex items-center">{$i18n.t('Download')}</div>
 				</DropdownMenu.SubTrigger>
 				<DropdownMenu.SubContent
-					class="w-full rounded-xl px-1 py-1.5 z-50 bg-white dark:bg-gray-850 dark:text-white shadow-lg"
+					class="w-full rounded-xl px-1 py-1.5 z-50 bg-white shadow-lg"
 					transition={flyAndScale}
 					sideOffset={8}
 				>
 					<DropdownMenu.Item
-						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 						on:click={() => {
 							downloadJSONExport();
 						}}
@@ -217,7 +217,7 @@
 						<div class="flex items-center line-clamp-1">{$i18n.t('Export chat (.json)')}</div>
 					</DropdownMenu.Item>
 					<DropdownMenu.Item
-						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 						on:click={() => {
 							downloadTxt();
 						}}
@@ -226,7 +226,7 @@
 					</DropdownMenu.Item>
 
 					<DropdownMenu.Item
-						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 						on:click={() => {
 							downloadPdf();
 						}}
@@ -236,7 +236,7 @@
 				</DropdownMenu.SubContent>
 			</DropdownMenu.Sub>
 			<DropdownMenu.Item
-				class="flex  gap-2  items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex  gap-2  items-center px-3 py-1.5 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				on:click={() => {
 					deleteHandler();
 				}}
@@ -245,7 +245,7 @@
 				<div class="flex items-center">{$i18n.t('Delete')}</div>
 			</DropdownMenu.Item>
 
-			<hr class="border-gray-50 dark:border-gray-850 my-0.5" />
+			<hr class="border-gray-50 my-0.5" />
 
 			<div class="flex p-1">
 				<Tags

@@ -190,18 +190,18 @@
 	<div class="flex justify-between items-center">
 		<div class="flex md:self-center text-xl items-center font-medium px-0.5">
 			{$i18n.t('Functions')}
-			<div class="flex self-center w-[1px] h-6 mx-2.5 bg-gray-50 dark:bg-gray-850" />
-			<span class="text-base font-lg text-gray-500 dark:text-gray-300">{filteredItems.length}</span>
+			<div class="flex self-center w-[1px] h-6 mx-2.5 bg-gray-50" />
+			<span class="text-base font-lg text-gray-500">{filteredItems.length}</span>
 		</div>
 	</div>
 
-	<div class=" flex w-full space-x-2">
+	<div class="flex w-full space-x-2">
 		<div class="flex flex-1">
-			<div class=" self-center ml-1 mr-3">
+			<div class="self-center ml-1 mr-3">
 				<Search className="size-3.5" />
 			</div>
 			<input
-				class=" w-full text-sm pr-4 py-1 rounded-r-xl outline-none bg-transparent"
+				class="w-full text-sm pr-4 py-1 rounded-r-xl outline-none bg-transparent"
 				bind:value={query}
 				placeholder={$i18n.t('Search Functions')}
 			/>
@@ -209,7 +209,7 @@
 
 		<div>
 			<a
-				class=" px-2 py-2 rounded-xl hover:bg-gray-700/10 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition font-medium text-sm flex items-center space-x-1"
+				class="px-2 py-2 rounded-xl hover:bg-gray-700/10 transition font-medium text-sm flex items-center space-x-1"
 				href="/admin/functions/create"
 			>
 				<Plus className="size-3.5" />
@@ -221,38 +221,38 @@
 <div class="mb-5">
 	{#each filteredItems as func (func.id)}
 		<div
-			class=" flex space-x-4 cursor-pointer w-full px-3 py-2 dark:hover:bg-white/5 hover:bg-black/5 rounded-xl"
+			class="flex space-x-4 cursor-pointer w-full px-3 py-2 hover:bg-black/5 rounded-xl"
 		>
 			<a
-				class=" flex flex-1 space-x-3.5 cursor-pointer w-full"
+				class="flex flex-1 space-x-3.5 cursor-pointer w-full"
 				href={`/admin/functions/edit?id=${encodeURIComponent(func.id)}`}
 			>
 				<div class="flex items-center text-left">
-					<div class=" flex-1 self-center pl-1">
-						<div class=" font-semibold flex items-center gap-1.5">
+					<div class="flex-1 self-center pl-1">
+						<div class="font-semibold flex items-center gap-1.5">
 							<div
-								class=" text-xs font-bold px-1 rounded uppercase line-clamp-1 bg-gray-500/20 text-gray-700 dark:text-gray-200"
+								class="text-xs font-bold px-1 rounded uppercase line-clamp-1 bg-gray-500/20 text-gray-700"
 							>
 								{func.type}
 							</div>
 
 							{#if func?.meta?.manifest?.version}
 								<div
-									class="text-xs font-bold px-1 rounded line-clamp-1 bg-gray-500/20 text-gray-700 dark:text-gray-200"
+									class="text-xs font-bold px-1 rounded line-clamp-1 bg-gray-500/20 text-gray-700"
 								>
 									v{func?.meta?.manifest?.version ?? ''}
 								</div>
 							{/if}
 
-							<div class=" line-clamp-1">
+							<div class="line-clamp-1">
 								{func.name}
 							</div>
 						</div>
 
 						<div class="flex gap-1.5 px-1">
-							<div class=" text-gray-500 text-xs font-medium flex-shrink-0">{func.id}</div>
+							<div class="text-gray-500 text-xs font-medium flex-shrink-0">{func.id}</div>
 
-							<div class=" text-xs overflow-hidden text-ellipsis line-clamp-1">
+							<div class="text-xs overflow-hidden text-ellipsis line-clamp-1">
 								{func.meta.description}
 							</div>
 						</div>
@@ -263,7 +263,7 @@
 				{#if shiftKey}
 					<Tooltip content={$i18n.t('Delete')}>
 						<button
-							class="self-center w-fit text-sm px-2 py-2 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+							class="self-center w-fit text-sm px-2 py-2 hover:bg-black/5 rounded-xl"
 							type="button"
 							on:click={() => {
 								deleteHandler(func);
@@ -276,7 +276,7 @@
 					{#if func?.meta?.manifest?.funding_url ?? false}
 						<Tooltip content={$i18n.t('Support')}>
 							<button
-								class="self-center w-fit text-sm px-2 py-2 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+								class="self-center w-fit text-sm px-2 py-2 hover:bg-black/5 rounded-xl"
 								type="button"
 								on:click={() => {
 									selectedFunction = func;
@@ -290,7 +290,7 @@
 
 					<Tooltip content={$i18n.t('Valves')}>
 						<button
-							class="self-center w-fit text-sm px-2 py-2 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+							class="self-center w-fit text-sm px-2 py-2 hover:bg-black/5 rounded-xl"
 							type="button"
 							on:click={() => {
 								selectedFunction = func;
@@ -345,7 +345,7 @@
 						onClose={() => {}}
 					>
 						<button
-							class="self-center w-fit text-sm p-1.5 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+							class="self-center w-fit text-sm p-1.5 hover:bg-black/5 rounded-xl"
 							type="button"
 						>
 							<EllipsisHorizontal className="size-5" />
@@ -353,7 +353,7 @@
 					</FunctionMenu>
 				{/if}
 
-				<div class=" self-center mx-1">
+				<div class="self-center mx-1">
 					<Tooltip content={func.is_active ? $i18n.t('Enabled') : $i18n.t('Disabled')}>
 						<Switch
 							bind:state={func.is_active}
@@ -369,13 +369,13 @@
 	{/each}
 </div>
 
-<!-- <div class=" text-gray-500 text-xs mt-1 mb-2">
+<!-- <div class="text-gray-500 text-xs mt-1 mb-2">
 	ⓘ {$i18n.t(
 		'Admins have access to all tools at all times; users need tools assigned per model in the workspace.'
 	)}
 </div> -->
 
-<div class=" flex justify-end w-full mb-2">
+<div class="flex justify-end w-full mb-2">
 	<div class="flex space-x-2">
 		<input
 			id="documents-import-input"
@@ -391,14 +391,14 @@
 		/>
 
 		<button
-			class="flex text-xs items-center space-x-1 px-3 py-1.5 rounded-xl bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 transition"
+			class="flex text-xs items-center space-x-1 px-3 py-1.5 rounded-xl bg-gray-50 hover:bg-gray-100 transition"
 			on:click={() => {
 				functionsImportInputElement.click();
 			}}
 		>
-			<div class=" self-center mr-2 font-medium line-clamp-1">{$i18n.t('Import Functions')}</div>
+			<div class="self-center mr-2 font-medium line-clamp-1">{$i18n.t('Import Functions')}</div>
 
-			<div class=" self-center">
+			<div class="self-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 16 16"
@@ -415,7 +415,7 @@
 		</button>
 
 		<button
-			class="flex text-xs items-center space-x-1 px-3 py-1.5 rounded-xl bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-gray-200 transition"
+			class="flex text-xs items-center space-x-1 px-3 py-1.5 rounded-xl bg-gray-50 hover:bg-gray-100 transition"
 			on:click={async () => {
 				const _functions = await exportFunctions(localStorage.token).catch((error) => {
 					toast.error(`${error}`);
@@ -430,9 +430,9 @@
 				}
 			}}
 		>
-			<div class=" self-center mr-2 font-medium line-clamp-1">{$i18n.t('Export Functions')}</div>
+			<div class="self-center mr-2 font-medium line-clamp-1">{$i18n.t('Export Functions')}</div>
 
-			<div class=" self-center">
+			<div class="self-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 16 16"
@@ -451,19 +451,19 @@
 </div>
 
 {#if $config?.features.enable_community_sharing}
-	<div class=" my-16">
-		<div class=" text-xl font-medium mb-1 line-clamp-1">
+	<div class="my-16">
+		<div class="text-xl font-medium mb-1 line-clamp-1">
 			{$i18n.t('Made by OpenWebUI Community')}
 		</div>
 
 		<a
-			class=" flex cursor-pointer items-center justify-between hover:bg-gray-50 dark:hover:bg-gray-850 w-full mb-2 px-3.5 py-1.5 rounded-xl transition"
+			class="flex cursor-pointer items-center justify-between hover:bg-gray-50 w-full mb-2 px-3.5 py-1.5 rounded-xl transition"
 			href="https://openwebui.com/#open-webui-community"
 			target="_blank"
 		>
-			<div class=" self-center">
-				<div class=" font-semibold line-clamp-1">{$i18n.t('Discover a function')}</div>
-				<div class=" text-sm line-clamp-1">
+			<div class="self-center">
+				<div class="font-semibold line-clamp-1">{$i18n.t('Discover a function')}</div>
+				<div class="text-sm line-clamp-1">
 					{$i18n.t('Discover, download, and explore custom functions')}
 				</div>
 			</div>
@@ -484,8 +484,8 @@
 		deleteHandler(selectedFunction);
 	}}
 >
-	<div class=" text-sm text-gray-500">
-		{$i18n.t('This will delete')} <span class="  font-semibold">{selectedFunction.name}</span>.
+	<div class="text-sm text-gray-500">
+		{$i18n.t('This will delete')} <span class="font-semibold">{selectedFunction.name}</span>.
 	</div>
 </DeleteConfirmDialog>
 
@@ -524,10 +524,10 @@
 	}}
 >
 	<div class="text-sm text-gray-500">
-		<div class=" bg-yellow-500/20 text-yellow-700 dark:text-yellow-200 rounded-lg px-4 py-3">
+		<div class="bg-yellow-500/20 text-yellow-700 rounded-lg px-4 py-3">
 			<div>Please carefully review the following warnings:</div>
 
-			<ul class=" mt-1 list-disc pl-4 text-xs">
+			<ul class="mt-1 list-disc pl-4 text-xs">
 				<li>{$i18n.t('Functions allow arbitrary code execution.')}</li>
 				<li>{$i18n.t('Do not install functions from sources you do not fully trust.')}</li>
 			</ul>

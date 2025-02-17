@@ -349,7 +349,7 @@
 
 {#if loaded}
 	<div class="w-full font-primary">
-		<div class=" mx-auto inset-x-0 bg-transparent flex justify-center">
+		<div class="mx-auto inset-x-0 bg-transparent flex justify-center">
 			<div
 				class="flex flex-col px-3 {($settings?.widescreenMode ?? null)
 					? 'max-w-full'
@@ -358,10 +358,10 @@
 				<div class="relative">
 					{#if autoScroll === false && history?.currentId}
 						<div
-							class=" absolute -top-12 left-0 right-0 flex justify-center z-30 pointer-events-none"
+							class="absolute -top-12 left-0 right-0 flex justify-center z-30 pointer-events-none"
 						>
 							<button
-								class=" bg-white border border-gray-100 dark:border-none dark:bg-white/20 p-1.5 rounded-full pointer-events-auto"
+								class="bg-white border border-gray-100/20 p-1.5 rounded-full pointer-events-auto"
 								on:click={() => {
 									autoScroll = true;
 									scrollToBottom();
@@ -387,11 +387,11 @@
 				<div class="w-full relative">
 					{#if atSelectedModel !== undefined || selectedToolIds.length > 0 || webSearchEnabled || imageGenerationEnabled}
 						<div
-							class="px-3 pb-0.5 pt-1.5 text-left w-full flex flex-col absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white dark:from-gray-900 z-10"
+							class="px-3 pb-0.5 pt-1.5 text-left w-full flex flex-col absolute bottom-0 left-0 right-0 bg-gradient-to-t from-white z-10"
 						>
 							{#if selectedToolIds.length > 0}
 								<div class="flex items-center justify-between w-full">
-									<div class="flex items-center gap-2.5 text-sm dark:text-gray-500">
+									<div class="flex items-center gap-2.5 text-sm">
 										<div class="pl-1">
 											<span class="relative flex size-2">
 												<span
@@ -400,7 +400,7 @@
 												<span class="relative inline-flex rounded-full size-2 bg-yellow-500" />
 											</span>
 										</div>
-										<div class="  text-ellipsis line-clamp-1 flex">
+										<div class="text-ellipsis line-clamp-1 flex">
 											{#each selectedToolIds.map((id) => {
 												return $tools ? $tools.find((t) => t.id === id) : { id: id, name: id };
 											}) as tool, toolIdx (toolIdx)}
@@ -423,7 +423,7 @@
 
 							{#if imageGenerationEnabled}
 								<div class="flex items-center justify-between w-full">
-									<div class="flex items-center gap-2.5 text-sm dark:text-gray-500">
+									<div class="flex items-center gap-2.5 text-sm">
 										<div class="pl-1">
 											<span class="relative flex size-2">
 												<span
@@ -432,14 +432,14 @@
 												<span class="relative inline-flex rounded-full size-2 bg-green-500" />
 											</span>
 										</div>
-										<div class=" ">{$i18n.t('Image generation')}</div>
+										<div class="">{$i18n.t('Image generation')}</div>
 									</div>
 								</div>
 							{/if}
 
 							{#if webSearchEnabled}
 								<div class="flex items-center justify-between w-full">
-									<div class="flex items-center gap-2.5 text-sm dark:text-gray-500">
+									<div class="flex items-center gap-2.5 text-sm">
 										<div class="pl-1">
 											<span class="relative flex size-2">
 												<span
@@ -448,14 +448,14 @@
 												<span class="relative inline-flex rounded-full size-2 bg-green-500" />
 											</span>
 										</div>
-										<div class=" ">{$i18n.t('Search the web')}</div>
+										<div class="">{$i18n.t('Search the web')}</div>
 									</div>
 								</div>
 							{/if}
 
 							{#if atSelectedModel !== undefined}
 								<div class="flex items-center justify-between w-full">
-									<div class="pl-[1px] flex items-center gap-2 text-sm dark:text-gray-500">
+									<div class="pl-[1px] flex items-center gap-2 text-sm">
 										<img
 											crossorigin="anonymous"
 											alt="model profile"
@@ -467,12 +467,12 @@
 													: `${WEBUI_BASE_URL}/static/favicon.png`)}
 										/>
 										<div class="translate-y-[0.5px]">
-											Talking to <span class=" font-medium">{atSelectedModel.name}</span>
+											Talking to <span class="font-medium">{atSelectedModel.name}</span>
 										</div>
 									</div>
 									<div>
 										<button
-											class="flex items-center dark:text-gray-500"
+											class="flex items-center"
 											on:click={() => {
 												atSelectedModel = undefined;
 											}}
@@ -507,7 +507,7 @@
 			</div>
 		</div>
 
-		<div class="{transparentBackground ? 'bg-transparent' : 'bg-white dark:bg-gray-900'} ">
+		<div class="{transparentBackground ? 'bg-transparent' : 'bg-white'} ">
 			<div
 				class="{($settings?.widescreenMode ?? null)
 					? 'max-w-full'
@@ -564,14 +564,14 @@
 							}}
 						>
 							<div
-								class="flex-1 flex flex-col relative w-full rounded-3xl px-1 bg-gray-600/5 dark:bg-gray-400/5 dark:text-gray-100"
+								class="flex-1 flex flex-col relative w-full rounded-3xl px-1 bg-gray-600/5"
 								dir={$settings?.chatDirection ?? 'LTR'}
 							>
 								{#if files.length > 0}
 									<div class="mx-1 mt-2.5 mb-1 flex items-center flex-wrap gap-2">
 										{#each files as file, fileIdx}
 											{#if file.type === 'image'}
-												<div class=" relative group">
+												<div class="relative group">
 													<div class="relative flex items-center">
 														<Image
 															src={file.url}
@@ -604,9 +604,9 @@
 															</Tooltip>
 														{/if}
 													</div>
-													<div class=" absolute -top-1 -right-1">
+													<div class="absolute -top-1 -right-1">
 														<button
-															class=" bg-gray-400 text-white border border-white rounded-full group-hover:visible invisible transition"
+															class="bg-gray-400 text-white border border-white rounded-full group-hover:visible invisible transition"
 															type="button"
 															on:click={() => {
 																files.splice(fileIdx, 1);
@@ -656,7 +656,7 @@
 									</div>
 								{/if}
 
-								<div class=" flex">
+								<div class="flex">
 									<div class="ml-1 self-end mb-1.5 flex space-x-1">
 										<InputMenu
 											bind:imageGenerationEnabled
@@ -694,7 +694,7 @@
 											}}
 										>
 											<button
-												class="bg-transparent hover:bg-white/80 text-gray-800 dark:text-white dark:hover:bg-gray-800 transition rounded-full p-2 outline-none focus:outline-none"
+												class="bg-transparent hover:bg-white/80 text-gray-800 transition rounded-full p-2 outline-none focus:outline-none"
 												type="button"
 												aria-label="More"
 											>
@@ -714,7 +714,7 @@
 
 									{#if $settings?.richTextInput ?? true}
 										<div
-											class="scrollbar-hidden text-left bg-transparent dark:text-gray-100 outline-none w-full py-2.5 px-1 rounded-xl resize-none h-fit max-h-80 overflow-auto"
+											class="scrollbar-hidden text-left bg-transparent outline-none w-full py-2.5 px-1 rounded-xl resize-none h-fit max-h-80 overflow-auto"
 										>
 											<RichTextInput
 												bind:this={chatInputElement}
@@ -918,7 +918,7 @@
 										<textarea
 											id="chat-input"
 											bind:this={chatInputElement}
-											class="scrollbar-hidden bg-transparent dark:text-gray-100 outline-none w-full py-3 px-1 rounded-xl resize-none h-[48px]"
+											class="scrollbar-hidden bg-transparent outline-none w-full py-3 px-1 rounded-xl resize-none h-[48px]"
 											placeholder={placeholder ? placeholder : $i18n.t('Send a Message')}
 											bind:value={prompt}
 											on:keypress={(e) => {
@@ -1113,7 +1113,7 @@
 											<Tooltip content={$i18n.t('Record voice')}>
 												<button
 													id="voice-input-button"
-													class=" text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 transition rounded-full p-1.5 mr-0.5 self-center"
+													class="text-gray-600 hover:text-gray-700 transition rounded-full p-1.5 mr-0.5 self-center"
 													type="button"
 													on:click={async () => {
 														try {
@@ -1160,10 +1160,10 @@
 
 										{#if !history.currentId || history.messages[history.currentId]?.done == true}
 											{#if prompt === ''}
-												<div class=" flex items-center">
+												<div class="flex items-center">
 													<Tooltip content={$i18n.t('Call')}>
 														<button
-															class=" bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full p-2 self-center"
+															class="bg-black text-white hover:bg-gray-900 transition rounded-full p-2 self-center"
 															type="button"
 															on:click={async () => {
 																if (selectedModels.length > 1) {
@@ -1211,13 +1211,13 @@
 													</Tooltip>
 												</div>
 											{:else}
-												<div class=" flex items-center">
+												<div class="flex items-center">
 													<Tooltip content={$i18n.t('Send message')}>
 														<button
 															id="send-message-button"
 															class="{prompt !== ''
-																? 'bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100 '
-																: 'text-white bg-gray-200 dark:text-gray-900 dark:bg-gray-700 disabled'} transition rounded-full p-1.5 self-center"
+																? 'bg-black text-white hover:bg-gray-900 '
+																: 'text-white bg-gray-200 disabled'} transition rounded-full p-1.5 self-center"
 															type="submit"
 															disabled={prompt === ''}
 														>
@@ -1238,10 +1238,10 @@
 												</div>
 											{/if}
 										{:else}
-											<div class=" flex items-center">
+											<div class="flex items-center">
 												<Tooltip content={$i18n.t('Stop')}>
 													<button
-														class="bg-white hover:bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-800 transition rounded-full p-1.5"
+														class="bg-white hover:bg-gray-100 text-gray-800 transition rounded-full p-1.5"
 														on:click={() => {
 															stopResponse();
 														}}

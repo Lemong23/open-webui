@@ -204,7 +204,7 @@
 	<div class="overflow-y-scroll scrollbar-hidden h-full">
 		{#if PIPELINES_LIST !== null}
 			<div class="flex w-full justify-between mb-2">
-				<div class=" self-center text-sm font-semibold">
+				<div class="self-center text-sm font-semibold">
 					{$i18n.t('Manage Pipelines')}
 				</div>
 			</div>
@@ -214,7 +214,7 @@
 					<div class="flex gap-2">
 						<div class="flex-1">
 							<select
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 								bind:value={selectedPipelinesUrlIdx}
 								placeholder={$i18n.t('Select a pipeline url')}
 								on:change={async () => {
@@ -222,12 +222,12 @@
 									await setPipelines();
 								}}
 							>
-								<option value="" selected disabled class="bg-gray-100 dark:bg-gray-700"
+								<option value="" selected disabled class="bg-gray-100"
 									>{$i18n.t('Select a pipeline url')}</option
 								>
 
 								{#each PIPELINES_LIST as pipelines, idx}
-									<option value={pipelines.idx.toString()} class="bg-gray-100 dark:bg-gray-700"
+									<option value={pipelines.idx.toString()} class="bg-gray-100"
 										>{pipelines.url}</option
 									>
 								{/each}
@@ -236,8 +236,8 @@
 					</div>
 				</div>
 
-				<div class=" my-2">
-					<div class=" mb-2 text-sm font-medium">
+				<div class="my-2">
+					<div class="mb-2 text-sm font-medium">
 						{$i18n.t('Upload Pipeline')}
 					</div>
 					<div class="flex w-full">
@@ -251,7 +251,7 @@
 							/>
 
 							<button
-								class="w-full text-sm font-medium py-2 bg-transparent hover:bg-gray-100 border border-dashed dark:border-gray-800 dark:hover:bg-gray-850 text-center rounded-xl"
+								class="w-full text-sm font-medium py-2 bg-transparent hover:bg-gray-100 border border-dashed text-center rounded-xl"
 								type="button"
 								on:click={() => {
 									document.getElementById('pipelines-upload-input')?.click();
@@ -265,7 +265,7 @@
 							</button>
 						</div>
 						<button
-							class="px-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-gray-100 rounded-lg transition"
+							class="px-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg transition"
 							on:click={() => {
 								uploadPipelineHandler();
 							}}
@@ -275,7 +275,7 @@
 							{#if uploading}
 								<div class="self-center">
 									<svg
-										class=" w-4 h-4"
+										class="w-4 h-4"
 										viewBox="0 0 24 24"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
@@ -321,20 +321,20 @@
 					</div>
 				</div>
 
-				<div class=" my-2">
-					<div class=" mb-2 text-sm font-medium">
+				<div class="my-2">
+					<div class="mb-2 text-sm font-medium">
 						{$i18n.t('Install from Github URL')}
 					</div>
 					<div class="flex w-full">
 						<div class="flex-1 mr-2">
 							<input
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 								placeholder={$i18n.t('Enter Github Raw URL')}
 								bind:value={pipelineDownloadUrl}
 							/>
 						</div>
 						<button
-							class="px-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-gray-100 rounded-lg transition"
+							class="px-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg transition"
 							on:click={() => {
 								addPipelineHandler();
 							}}
@@ -344,7 +344,7 @@
 							{#if downloading}
 								<div class="self-center">
 									<svg
-										class=" w-4 h-4"
+										class="w-4 h-4"
 										viewBox="0 0 24 24"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
@@ -390,20 +390,20 @@
 					</div>
 
 					<div class="mt-2 text-xs text-gray-500">
-						<span class=" font-semibold dark:text-gray-200">Warning:</span> Pipelines are a plugin
+						<span class="font-semibold">Warning:</span> Pipelines are a plugin
 						system with arbitrary code execution —
-						<span class=" font-medium dark:text-gray-400"
+						<span class="font-medium"
 							>don't fetch random pipelines from sources you don't trust.</span
 						>
 					</div>
 				</div>
 
-				<hr class=" dark:border-gray-800 my-3 w-full" />
+				<hr class="my-3 w-full" />
 
 				{#if pipelines !== null}
 					{#if pipelines.length > 0}
 						<div class="flex w-full justify-between mb-2">
-							<div class=" self-center text-sm font-semibold">
+							<div class="self-center text-sm font-semibold">
 								{$i18n.t('Pipelines Valves')}
 							</div>
 						</div>
@@ -412,7 +412,7 @@
 								<div class="flex gap-2">
 									<div class="flex-1">
 										<select
-											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 											bind:value={selectedPipelineIdx}
 											placeholder={$i18n.t('Select a pipeline')}
 											on:change={async () => {
@@ -421,7 +421,7 @@
 											}}
 										>
 											{#each pipelines as pipeline, idx}
-												<option value={idx} class="bg-gray-100 dark:bg-gray-700"
+												<option value={idx} class="bg-gray-100"
 													>{pipeline.name} ({pipeline.type ?? 'pipe'})</option
 												>
 											{/each}
@@ -429,7 +429,7 @@
 									</div>
 
 									<button
-										class="px-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-gray-100 rounded-lg transition"
+										class="px-2.5 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded-lg transition"
 										on:click={() => {
 											deletePipelineHandler();
 										}}
@@ -455,9 +455,9 @@
 								{#if pipelines[selectedPipelineIdx].valves}
 									{#if valves}
 										{#each Object.keys(valves_spec.properties) as property, idx}
-											<div class=" py-0.5 w-full justify-between">
+											<div class="py-0.5 w-full justify-between">
 												<div class="flex w-full justify-between">
-													<div class=" self-center text-xs font-medium">
+													<div class="self-center text-xs font-medium">
 														{valves_spec.properties[property].title}
 													</div>
 
@@ -479,10 +479,10 @@
 												{#if (valves[property] ?? null) !== null}
 													<!-- {valves[property]} -->
 													<div class="flex mt-0.5 mb-1.5 space-x-2">
-														<div class=" flex-1">
+														<div class="flex-1">
 															{#if valves_spec.properties[property]?.enum ?? null}
 																<select
-																	class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+																	class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 																	bind:value={valves[property]}
 																>
 																	{#each valves_spec.properties[property].enum as option}
@@ -497,13 +497,13 @@
 																		{valves[property] ? 'Enabled' : 'Disabled'}
 																	</div>
 
-																	<div class=" pr-2">
+																	<div class="pr-2">
 																		<Switch bind:state={valves[property]} />
 																	</div>
 																</div>
 															{:else}
 																<input
-																	class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+																	class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 																	type="text"
 																	placeholder={valves_spec.properties[property].title}
 																	bind:value={valves[property]}
@@ -549,7 +549,7 @@
 	{#if PIPELINES_LIST !== null && PIPELINES_LIST.length > 0}
 		<div class="flex justify-end pt-3 text-sm font-medium">
 			<button
-				class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+				class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 				type="submit"
 			>
 				{$i18n.t('Save')}

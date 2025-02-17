@@ -34,18 +34,18 @@
 	<div class="flex flex-col lg:flex-row w-full h-full pb-2 lg:space-x-4">
 		<div
 			id="users-tabs-container"
-			class="tabs flex flex-row overflow-x-auto gap-2.5 max-w-full lg:gap-1 lg:flex-col lg:flex-none lg:w-40 dark:text-gray-200 text-sm font-medium text-left scrollbar-none"
+			class="tabs flex flex-row overflow-x-auto gap-2.5 max-w-full lg:gap-1 lg:flex-col lg:flex-none lg:w-40 text-sm font-medium text-left scrollbar-none"
 		>
 			<button
 				class="px-0.5 py-1 min-w-fit rounded-lg lg:flex-none flex text-right transition {selectedTab ===
 				'leaderboard'
 					? ''
-					: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+					: ' text-gray-300 hover:text-gray-700'}"
 				on:click={() => {
 					selectedTab = 'leaderboard';
 				}}
 			>
-				<div class=" self-center mr-2">
+				<div class="self-center mr-2">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 16 16"
@@ -59,19 +59,19 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center">{$i18n.t('Leaderboard')}</div>
+				<div class="self-center">{$i18n.t('Leaderboard')}</div>
 			</button>
 
 			<button
 				class="px-0.5 py-1 min-w-fit rounded-lg lg:flex-none flex text-right transition {selectedTab ===
 				'feedbacks'
 					? ''
-					: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+					: ' text-gray-300 hover:text-gray-700'}"
 				on:click={() => {
 					selectedTab = 'feedbacks';
 				}}
 			>
-				<div class=" self-center mr-2">
+				<div class="self-center mr-2">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 16 16"
@@ -85,7 +85,7 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center">{$i18n.t('Feedbacks')}</div>
+				<div class="self-center">{$i18n.t('Feedbacks')}</div>
 			</button>
 		</div>
 

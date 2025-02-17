@@ -10,7 +10,7 @@
 
 <Collapsible bind:open={state} className="w-full space-y-1">
 	<div
-		class="flex items-center gap-2 text-gray-500 hover:text-gray-700 dark:hover:text-gray-300 transition"
+		class="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition"
 	>
 		<slot />
 
@@ -21,25 +21,25 @@
 		{/if}
 	</div>
 	<div
-		class="text-sm border border-gray-300/30 dark:border-gray-700/50 rounded-xl mb-1.5"
+		class="text-sm border border-gray-300/30 rounded-xl mb-1.5"
 		slot="content"
 	>
 		{#if status?.query}
 			<a
 				href="https://www.google.com/search?q={status.query}"
 				target="_blank"
-				class="flex w-full items-center p-3 px-4 border-b border-gray-300/30 dark:border-gray-700/50 group/item justify-between font-normal text-gray-800 dark:text-gray-300 no-underline"
+				class="flex w-full items-center p-3 px-4 border-b border-gray-300/30 group/item justify-between font-normal text-gray-800 no-underline"
 			>
 				<div class="flex gap-2 items-center">
 					<MagnifyingGlass />
 
-					<div class=" line-clamp-1">
+					<div class="line-clamp-1">
 						{status.query}
 					</div>
 				</div>
 
 				<div
-					class=" ml-1 text-white dark:text-gray-900 group-hover/item:text-gray-600 dark:group-hover/item:text-white transition"
+					class="ml-1 text-white group-hover/item:text-gray-600 transition"
 				>
 					<!--  -->
 					<svg
@@ -64,14 +64,14 @@
 				target="_blank"
 				class="flex w-full items-center p-3 px-4 {urlIdx === status.urls.length - 1
 					? ''
-					: 'border-b border-gray-300/30 dark:border-gray-700/50'} group/item justify-between font-normal text-gray-800 dark:text-gray-300"
+					: 'border-b border-gray-300/30'} group/item justify-between font-normal text-gray-800"
 			>
-				<div class=" line-clamp-1">
+				<div class="line-clamp-1">
 					{url}
 				</div>
 
 				<div
-					class=" ml-1 text-white dark:text-gray-900 group-hover/item:text-gray-600 dark:group-hover/item:text-white transition"
+					class="ml-1 text-white group-hover/item:text-gray-600 transition"
 				>
 					<!--  -->
 					<svg

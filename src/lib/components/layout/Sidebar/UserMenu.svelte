@@ -31,14 +31,14 @@
 
 	<slot name="content">
 		<DropdownMenu.Content
-			class="w-full {className} text-sm rounded-xl px-1 py-1.5 z-50 bg-white dark:bg-gray-850 dark:text-white shadow-lg font-primary"
+			class="w-full {className} text-sm rounded-xl px-1 py-1.5 z-50 bg-white shadow-lg font-primary"
 			sideOffset={8}
 			side="bottom"
 			align="start"
 			transition={(e) => fade(e, { duration: 100 })}
 		>
 			<button
-				class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+				class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 transition"
 				on:click={async () => {
 					await showSettings.set(true);
 					show = false;
@@ -48,7 +48,7 @@
 					}
 				}}
 			>
-				<div class=" self-center mr-3">
+				<div class="self-center mr-3">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -69,11 +69,11 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center truncate">{$i18n.t('Settings')}</div>
+				<div class="self-center truncate">{$i18n.t('Settings')}</div>
 			</button>
 
 			<button
-				class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+				class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 transition"
 				on:click={() => {
 					dispatch('show', 'archived-chat');
 					show = false;
@@ -83,15 +83,15 @@
 					}
 				}}
 			>
-				<div class=" self-center mr-3">
+				<div class="self-center mr-3">
 					<ArchiveBox className="size-5" strokeWidth="1.5" />
 				</div>
-				<div class=" self-center truncate">{$i18n.t('Archived Chats')}</div>
+				<div class="self-center truncate">{$i18n.t('Archived Chats')}</div>
 			</button>
 
 			{#if role === 'admin'}
 				<a
-					class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+					class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 transition"
 					href="/playground"
 					on:click={() => {
 						show = false;
@@ -101,7 +101,7 @@
 						}
 					}}
 				>
-					<div class=" self-center mr-3">
+					<div class="self-center mr-3">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
@@ -117,11 +117,11 @@
 							/>
 						</svg>
 					</div>
-					<div class=" self-center truncate">{$i18n.t('Playground')}</div>
+					<div class="self-center truncate">{$i18n.t('Playground')}</div>
 				</a>
 
 				<a
-					class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+					class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 transition"
 					href="/admin"
 					on:click={() => {
 						show = false;
@@ -131,7 +131,7 @@
 						}
 					}}
 				>
-					<div class=" self-center mr-3">
+					<div class="self-center mr-3">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
@@ -147,14 +147,14 @@
 							/>
 						</svg>
 					</div>
-					<div class=" self-center truncate">{$i18n.t('Admin Panel')}</div>
+					<div class="self-center truncate">{$i18n.t('Admin Panel')}</div>
 				</a>
 			{/if}
 
-			<hr class=" border-gray-50 dark:border-gray-850 my-1 p-0" />
+			<hr class="border-gray-50 my-1 p-0" />
 
 			<button
-				class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 dark:hover:bg-gray-800 transition"
+				class="flex rounded-md py-2 px-3 w-full hover:bg-gray-50 transition"
 				on:click={async () => {
 					await userSignOut();
 					localStorage.removeItem('token');
@@ -162,7 +162,7 @@
 					show = false;
 				}}
 			>
-				<div class=" self-center mr-3">
+				<div class="self-center mr-3">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 20 20"
@@ -181,11 +181,11 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center truncate">{$i18n.t('Sign Out')}</div>
+				<div class="self-center truncate">{$i18n.t('Sign Out')}</div>
 			</button>
 
 			{#if $activeUserIds?.length > 0}
-				<hr class=" border-gray-50 dark:border-gray-850 my-1 p-0" />
+				<hr class="border-gray-50 my-1 p-0" />
 
 				<Tooltip
 					content={$USAGE_POOL && $USAGE_POOL.length > 0
@@ -193,7 +193,7 @@
 						: ''}
 				>
 					<div class="flex rounded-md py-1.5 px-3 text-xs gap-2.5 items-center">
-						<div class=" flex items-center">
+						<div class="flex items-center">
 							<span class="relative flex size-2">
 								<span
 									class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
@@ -202,11 +202,11 @@
 							</span>
 						</div>
 
-						<div class=" ">
+						<div class="">
 							<span class="">
 								{$i18n.t('Active Users')}:
 							</span>
-							<span class=" font-semibold">
+							<span class="font-semibold">
 								{$activeUserIds?.length}
 							</span>
 						</div>

@@ -85,9 +85,9 @@
 			<div class="">
 				<div class="text-sm font-medium mb-2">{$i18n.t('General Settings')}</div>
 
-				<div class=" mb-2">
+				<div class="mb-2">
 					<div class="flex justify-between items-center text-xs">
-						<div class=" text-xs font-medium">{$i18n.t('Arena Models')}</div>
+						<div class="text-xs font-medium">{$i18n.t('Arena Models')}</div>
 
 						<Tooltip content={$i18n.t(`Message rating should be enabled to use this feature`)}>
 							<Switch bind:state={config.ENABLE_EVALUATION_ARENA_MODELS} />
@@ -96,7 +96,7 @@
 				</div>
 
 				{#if config.ENABLE_EVALUATION_ARENA_MODELS}
-					<hr class=" border-gray-50 dark:border-gray-700/10 my-2" />
+					<hr class="border-gray-50 my-2" />
 
 					<div class="flex justify-between items-center mb-2">
 						<div class="text-sm font-medium">{$i18n.t('Manage Arena Models')}</div>
@@ -130,7 +130,7 @@
 								/>
 							{/each}
 						{:else}
-							<div class=" text-center text-xs text-gray-500">
+							<div class="text-center text-xs text-gray-500">
 								{$i18n.t(
 									`Using the default arena model with all models. Click the plus button to add custom models.`
 								)}
@@ -150,7 +150,7 @@
 
 	<div class="flex justify-end pt-3 text-sm font-medium">
 		<button
-			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 			type="submit"
 		>
 			{$i18n.t('Save')}

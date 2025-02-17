@@ -27,11 +27,11 @@
 </script>
 
 <Modal bind:show size="lg">
-	<div class="font-primary px-6 py-5 w-full flex flex-col justify-center dark:text-gray-400">
-		<div class=" pb-2">
+	<div class="font-primary px-6 py-5 w-full flex flex-col justify-center">
+		<div class="pb-2">
 			<div class="flex items-start justify-between">
 				<div>
-					<div class=" font-medium text-lg dark:text-gray-100">
+					<div class="font-medium text-lg">
 						<a
 							href={item.url ? (item.type === 'file' ? `${item.url}/content` : `${item.url}`) : '#'}
 							target="_blank"
@@ -55,7 +55,7 @@
 
 			<div>
 				<div class="flex flex-col items-center md:flex-row gap-1 justify-between w-full">
-					<div class=" flex flex-wrap text-sm gap-1 text-gray-500">
+					<div class="flex flex-wrap text-sm gap-1 text-gray-500">
 						{#if item.size}
 							<div class="capitalize shrink-0">{formatFileSize(item.size)}</div>
 							•

@@ -247,9 +247,9 @@
 	</DropdownMenu.Trigger>
 
 	<DropdownMenu.Content
-		class=" z-40 {$mobile
+		class="z-40 {$mobile
 			? `w-full`
-			: `${className}`} max-w-[calc(100vw-1rem)] justify-start rounded-xl  bg-white dark:bg-gray-850 dark:text-white shadow-lg  outline-none"
+			: `${className}`} max-w-[calc(100vw-1rem)] justify-start rounded-xl  bg-white shadow-lg  outline-none"
 		transition={flyAndScale}
 		side={$mobile ? 'bottom' : 'bottom-start'}
 		sideOffset={3}
@@ -285,16 +285,16 @@
 					/>
 				</div>
 
-				<hr class="border-gray-50 dark:border-gray-800" />
+				<hr class="border-gray-50" />
 			{/if}
 
 			<div class="px-3 my-2 max-h-64 overflow-y-auto scrollbar-hidden group">
 				{#each filteredItems as item, index}
 					<button
 						aria-label="model-item"
-						class="flex w-full text-left font-medium line-clamp-1 select-none items-center rounded-button py-2 pl-3 pr-1.5 text-sm text-gray-700 dark:text-gray-100 outline-none transition-all duration-75 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg cursor-pointer data-[highlighted]:bg-muted {index ===
+						class="flex w-full text-left font-medium line-clamp-1 select-none items-center rounded-button py-2 pl-3 pr-1.5 text-sm text-gray-700 outline-none transition-all duration-75 hover:bg-gray-100 rounded-lg cursor-pointer data-[highlighted]:bg-muted {index ===
 						selectedModelIdx
-							? 'bg-gray-100 dark:bg-gray-800 group-hover:bg-transparent'
+							? 'bg-gray-100 group-hover:bg-transparent'
 							: ''}"
 						data-arrow-selected={index === selectedModelIdx}
 						on:click={() => {
@@ -309,7 +309,7 @@
 								<div class="flex gap-0.5 self-start h-full mb-1.5 -translate-x-1">
 									{#each item.model?.info?.meta.tags as tag}
 										<div
-											class=" text-xs font-bold px-1 rounded uppercase line-clamp-1 bg-gray-500/20 text-gray-700 dark:text-gray-200"
+											class="text-xs font-bold px-1 rounded uppercase line-clamp-1 bg-gray-500/20 text-gray-700"
 										>
 											{tag.name}
 										</div>
@@ -348,7 +348,7 @@
 												className="self-end"
 											>
 												<span
-													class=" text-xs font-medium text-gray-600 dark:text-gray-400 line-clamp-1"
+													class="text-xs font-medium text-gray-600 line-clamp-1"
 													>{item.model.ollama?.details?.parameter_size ?? ''}</span
 												>
 											</Tooltip>
@@ -391,7 +391,7 @@
 											)
 										)}`}
 									>
-										<div class=" translate-y-[1px]">
+										<div class="translate-y-[1px]">
 											<svg
 												xmlns="http://www.w3.org/2000/svg"
 												fill="none"
@@ -415,7 +415,7 @@
 										{#each item.model?.info?.meta.tags as tag}
 											<Tooltip content={tag.name}>
 												<div
-													class=" text-xs font-bold px-1 rounded uppercase line-clamp-1 bg-gray-500/20 text-gray-700 dark:text-gray-200"
+													class="text-xs font-bold px-1 rounded uppercase line-clamp-1 bg-gray-500/20 text-gray-700"
 												>
 													{tag.name}
 												</div>
@@ -434,7 +434,7 @@
 					</button>
 				{:else}
 					<div>
-						<div class="block px-3 py-2 text-sm text-gray-700 dark:text-gray-100">
+						<div class="block px-3 py-2 text-sm text-gray-700">
 							{$i18n.t('No results found')}
 						</div>
 					</div>
@@ -448,12 +448,12 @@
 						placement="top-start"
 					>
 						<button
-							class="flex w-full font-medium line-clamp-1 select-none items-center rounded-button py-2 pl-3 pr-1.5 text-sm text-gray-700 dark:text-gray-100 outline-none transition-all duration-75 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg cursor-pointer data-[highlighted]:bg-muted"
+							class="flex w-full font-medium line-clamp-1 select-none items-center rounded-button py-2 pl-3 pr-1.5 text-sm text-gray-700 outline-none transition-all duration-75 hover:bg-gray-100 rounded-lg cursor-pointer data-[highlighted]:bg-muted"
 							on:click={() => {
 								pullModelHandler();
 							}}
 						>
-							<div class=" truncate">
+							<div class="truncate">
 								{$i18n.t(`Pull "{{searchValue}}" from Ollama.com`, { searchValue: searchValue })}
 							</div>
 						</button>
@@ -462,7 +462,7 @@
 
 				{#each Object.keys($MODEL_DOWNLOAD_POOL) as model}
 					<div
-						class="flex w-full justify-between font-medium select-none rounded-button py-2 pl-3 pr-1.5 text-sm text-gray-700 dark:text-gray-100 outline-none transition-all duration-75 rounded-lg cursor-pointer data-[highlighted]:bg-muted"
+						class="flex w-full justify-between font-medium select-none rounded-button py-2 pl-3 pr-1.5 text-sm text-gray-700 outline-none transition-all duration-75 rounded-lg cursor-pointer data-[highlighted]:bg-muted"
 					>
 						<div class="flex">
 							<div class="-ml-2 mr-2.5 translate-y-0.5">
@@ -505,7 +505,7 @@
 								</div>
 
 								{#if 'digest' in $MODEL_DOWNLOAD_POOL[model] && $MODEL_DOWNLOAD_POOL[model].digest}
-									<div class="-mt-1 h-fit text-[0.7rem] dark:text-gray-500 line-clamp-1">
+									<div class="-mt-1 h-fit text-[0.7rem] line-clamp-1">
 										{$MODEL_DOWNLOAD_POOL[model].digest}
 									</div>
 								{/if}
@@ -515,13 +515,13 @@
 						<div class="mr-2 ml-1 translate-y-0.5">
 							<Tooltip content={$i18n.t('Cancel')}>
 								<button
-									class="text-gray-800 dark:text-gray-100"
+									class="text-gray-800"
 									on:click={() => {
 										cancelModelPullHandler(model);
 									}}
 								>
 									<svg
-										class="w-4 h-4 text-gray-800 dark:text-white"
+										class="w-4 h-4 text-gray-800"
 										aria-hidden="true"
 										xmlns="http://www.w3.org/2000/svg"
 										width="24"
@@ -545,11 +545,11 @@
 			</div>
 
 			{#if showTemporaryChatControl}
-				<hr class="border-gray-50 dark:border-gray-800" />
+				<hr class="border-gray-50" />
 
 				<div class="flex items-center mx-2 my-2">
 					<button
-						class="flex justify-between w-full font-medium line-clamp-1 select-none items-center rounded-button py-2 px-3 text-sm text-gray-700 dark:text-gray-100 outline-none transition-all duration-75 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg cursor-pointer data-[highlighted]:bg-muted"
+						class="flex justify-between w-full font-medium line-clamp-1 select-none items-center rounded-button py-2 px-3 text-sm text-gray-700 outline-none transition-all duration-75 hover:bg-gray-100 rounded-lg cursor-pointer data-[highlighted]:bg-muted"
 						on:click={async () => {
 							temporaryChatEnabled.set(!$temporaryChatEnabled);
 							await goto('/');

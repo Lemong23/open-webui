@@ -102,7 +102,7 @@
 
 						<div class="self-center flex-shrink-0">
 							<button
-								class="bg-gray-50 hover:bg-gray-100 text-black dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white transition px-2 py-1 rounded-full flex gap-1 items-center"
+								class="bg-gray-50 hover:bg-gray-100 text-black transition px-2 py-1 rounded-full flex gap-1 items-center"
 								type="button"
 								on:click={() => {
 									showAccessControlModal = true;
@@ -120,7 +120,7 @@
 					<div class="flex gap-0.5 items-center text-xs text-gray-500">
 						<div class="">/</div>
 						<input
-							class=" w-full bg-transparent outline-none"
+							class="w-full bg-transparent outline-none"
 							placeholder={$i18n.t('Command')}
 							bind:value={command}
 							required
@@ -133,7 +133,7 @@
 
 		<div class="my-2">
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-sm font-semibold">{$i18n.t('Prompt Content')}</div>
+				<div class="self-center text-sm font-semibold">{$i18n.t('Prompt Content')}</div>
 			</div>
 
 			<div class="mt-2">
@@ -147,19 +147,19 @@
 					/>
 				</div>
 
-				<div class="text-xs text-gray-400 dark:text-gray-500">
+				<div class="text-xs text-gray-400">
 					ⓘ {$i18n.t('Format your variables using brackets like this:')}&nbsp;<span
-						class=" text-gray-600 dark:text-gray-300 font-medium"
+						class="text-gray-600 font-medium"
 						>{'{{'}{$i18n.t('variable')}{'}}'}</span
 					>.
 					{$i18n.t('Make sure to enclose them with')}
-					<span class=" text-gray-600 dark:text-gray-300 font-medium">{'{{'}</span>
+					<span class="text-gray-600 font-medium">{'{{'}</span>
 					{$i18n.t('and')}
-					<span class=" text-gray-600 dark:text-gray-300 font-medium">{'}}'}</span>.
+					<span class="text-gray-600 font-medium">{'}}'}</span>.
 				</div>
 
-				<div class="text-xs text-gray-400 dark:text-gray-500">
-					{$i18n.t('Utilize')}<span class=" text-gray-600 dark:text-gray-300 font-medium">
+				<div class="text-xs text-gray-400">
+					{$i18n.t('Utilize')}<span class="text-gray-600 font-medium">
 						{` {{CLIPBOARD}}`}</span
 					>
 					{$i18n.t('variable to have them replaced with clipboard content.')}
@@ -169,18 +169,18 @@
 
 		<div class="my-4 flex justify-end pb-20">
 			<button
-				class=" text-sm w-full lg:w-fit px-4 py-2 transition rounded-lg {loading
-					? ' cursor-not-allowed bg-black hover:bg-gray-900 text-white dark:bg-white dark:hover:bg-gray-100 dark:text-black'
-					: 'bg-black hover:bg-gray-900 text-white dark:bg-white dark:hover:bg-gray-100 dark:text-black'} flex w-full justify-center"
+				class="text-sm w-full lg:w-fit px-4 py-2 transition rounded-lg {loading
+					? ' cursor-not-allowed bg-black hover:bg-gray-900 text-white'
+					: 'bg-black hover:bg-gray-900 text-white'} flex w-full justify-center"
 				type="submit"
 				disabled={loading}
 			>
-				<div class=" self-center font-medium">{$i18n.t('Save & Create')}</div>
+				<div class="self-center font-medium">{$i18n.t('Save & Create')}</div>
 
 				{#if loading}
 					<div class="ml-1.5 self-center">
 						<svg
-							class=" w-4 h-4"
+							class="w-4 h-4"
 							viewBox="0 0 24 24"
 							fill="currentColor"
 							xmlns="http://www.w3.org/2000/svg"

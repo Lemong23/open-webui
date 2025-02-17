@@ -326,10 +326,10 @@
 				<div class="relative">
 					{#if scrollEnd === false}
 						<div
-							class=" absolute -top-12 left-0 right-0 flex justify-center z-30 pointer-events-none"
+							class="absolute -top-12 left-0 right-0 flex justify-center z-30 pointer-events-none"
 						>
 							<button
-								class=" bg-white border border-gray-100 dark:border-none dark:bg-white/20 p-1.5 rounded-full pointer-events-auto"
+								class="bg-white border border-gray-100/20 p-1.5 rounded-full pointer-events-auto"
 								on:click={() => {
 									scrollEnd = true;
 									scrollToBottom();
@@ -353,10 +353,10 @@
 				</div>
 
 				<div class="relative">
-					<div class=" -mt-5">
+					<div class="-mt-5">
 						{#if typingUsers.length > 0}
-							<div class=" text-xs px-4 mb-1">
-								<span class=" font-normal text-black dark:text-white">
+							<div class="text-xs px-4 mb-1">
+								<span class="font-normal text-black">
 									{typingUsers.map((user) => user.name).join(', ')}
 								</span>
 								{$i18n.t('is typing...')}
@@ -394,14 +394,14 @@
 					}}
 				>
 					<div
-						class="flex-1 flex flex-col relative w-full rounded-3xl px-1 bg-gray-600/5 dark:bg-gray-400/5 dark:text-gray-100"
+						class="flex-1 flex flex-col relative w-full rounded-3xl px-1 bg-gray-600/5"
 						dir={$settings?.chatDirection ?? 'LTR'}
 					>
 						{#if files.length > 0}
 							<div class="mx-1 mt-2.5 mb-1 flex flex-wrap gap-2">
 								{#each files as file, fileIdx}
 									{#if file.type === 'image'}
-										<div class=" relative group">
+										<div class="relative group">
 											<div class="relative">
 												<Image
 													src={file.url}
@@ -409,9 +409,9 @@
 													imageClassName=" h-16 w-16 rounded-xl object-cover"
 												/>
 											</div>
-											<div class=" absolute -top-1 -right-1">
+											<div class="absolute -top-1 -right-1">
 												<button
-													class=" bg-gray-400 text-white border border-white rounded-full group-hover:visible invisible transition"
+													class="bg-gray-400 text-white border border-white rounded-full group-hover:visible invisible transition"
 													type="button"
 													on:click={() => {
 														files.splice(fileIdx, 1);
@@ -453,7 +453,7 @@
 							</div>
 						{/if}
 
-						<div class=" flex">
+						<div class="flex">
 							<div class="ml-1 self-end mb-1.5 flex space-x-1">
 								<InputMenu
 									{screenCaptureHandler}
@@ -462,7 +462,7 @@
 									}}
 								>
 									<button
-										class="bg-transparent hover:bg-white/80 text-gray-800 dark:text-white dark:hover:bg-gray-800 transition rounded-full p-2 outline-none focus:outline-none"
+										class="bg-transparent hover:bg-white/80 text-gray-800 transition rounded-full p-2 outline-none focus:outline-none"
 										type="button"
 										aria-label="More"
 									>
@@ -481,7 +481,7 @@
 							</div>
 
 							<div
-								class="scrollbar-hidden text-left bg-transparent dark:text-gray-100 outline-none w-full py-2.5 px-1 rounded-xl resize-none h-fit max-h-80 overflow-auto"
+								class="scrollbar-hidden text-left bg-transparent outline-none w-full py-2.5 px-1 rounded-xl resize-none h-fit max-h-80 overflow-auto"
 							>
 								<RichTextInput
 									bind:value={content}
@@ -534,7 +534,7 @@
 									<Tooltip content={$i18n.t('Record voice')}>
 										<button
 											id="voice-input-button"
-											class=" text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200 transition rounded-full p-1.5 mr-0.5 self-center"
+											class="text-gray-600 hover:text-gray-700 transition rounded-full p-1.5 mr-0.5 self-center"
 											type="button"
 											on:click={async () => {
 												try {
@@ -576,14 +576,14 @@
 									</Tooltip>
 								{/if}
 
-								<div class=" flex items-center">
-									<div class=" flex items-center">
+								<div class="flex items-center">
+									<div class="flex items-center">
 										<Tooltip content={$i18n.t('Send message')}>
 											<button
 												id="send-message-button"
 												class="{content !== '' || files.length !== 0
-													? 'bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100 '
-													: 'text-white bg-gray-200 dark:text-gray-900 dark:bg-gray-700 disabled'} transition rounded-full p-1.5 self-center"
+													? 'bg-black text-white hover:bg-gray-900 '
+													: 'text-white bg-gray-200 disabled'} transition rounded-full p-1.5 self-center"
 												type="submit"
 												disabled={content === '' && files.length === 0}
 											>

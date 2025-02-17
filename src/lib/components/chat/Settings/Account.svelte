@@ -81,7 +81,7 @@
 </script>
 
 <div class="flex flex-col h-full justify-between text-sm">
-	<div class=" space-y-3 overflow-y-scroll max-h-[28rem] lg:max-h-full">
+	<div class="space-y-3 overflow-y-scroll max-h-[28rem] lg:max-h-full">
 		<input
 			id="profile-image-input"
 			bind:this={profileImageInputElement}
@@ -145,13 +145,13 @@
 		/>
 
 		<div class="space-y-1">
-			<!-- <div class=" text-sm font-medium">{$i18n.t('Account')}</div> -->
+			<!-- <div class="text-sm font-medium">{$i18n.t('Account')}</div> -->
 
 			<div class="flex space-x-5">
 				<div class="flex flex-col">
 					<div class="self-center mt-2">
 						<button
-							class="relative rounded-full dark:bg-gray-700"
+							class="relative rounded-full"
 							type="button"
 							on:click={() => {
 								profileImageInputElement.click();
@@ -160,7 +160,7 @@
 							<img
 								src={profileImageUrl !== '' ? profileImageUrl : generateInitialsImage(name)}
 								alt="profile"
-								class=" rounded-full size-16 object-cover"
+								class="rounded-full size-16 object-cover"
 							/>
 
 							<div
@@ -184,11 +184,11 @@
 				</div>
 
 				<div class="flex-1 flex flex-col self-center gap-0.5">
-					<div class=" mb-0.5 text-sm font-medium">{$i18n.t('Profile Image')}</div>
+					<div class="mb-0.5 text-sm font-medium">{$i18n.t('Profile Image')}</div>
 
 					<div>
 						<button
-							class=" text-xs text-center text-gray-800 dark:text-gray-400 rounded-full px-4 py-0.5 bg-gray-100 dark:bg-gray-850"
+							class="text-xs text-center text-gray-800 rounded-full px-4 py-0.5 bg-gray-100"
 							on:click={async () => {
 								if (canvasPixelTest()) {
 									profileImageUrl = generateInitialsImage(name);
@@ -206,7 +206,7 @@
 						>
 
 						<button
-							class=" text-xs text-center text-gray-800 dark:text-gray-400 rounded-full px-4 py-0.5 bg-gray-100 dark:bg-gray-850"
+							class="text-xs text-center text-gray-800 rounded-full px-4 py-0.5 bg-gray-100"
 							on:click={async () => {
 								const url = await getGravatarUrl($user.email);
 
@@ -215,7 +215,7 @@
 						>
 
 						<button
-							class=" text-xs text-center text-gray-800 dark:text-gray-400 rounded-lg px-2 py-1"
+							class="text-xs text-center text-gray-800 rounded-lg px-2 py-1"
 							on:click={async () => {
 								profileImageUrl = '/user.png';
 							}}>{$i18n.t('Remove')}</button
@@ -226,11 +226,11 @@
 
 			<div class="pt-0.5">
 				<div class="flex flex-col w-full">
-					<div class=" mb-1 text-xs font-medium">{$i18n.t('Name')}</div>
+					<div class="mb-1 text-xs font-medium">{$i18n.t('Name')}</div>
 
 					<div class="flex-1">
 						<input
-							class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-2 px-4 text-sm outline-none"
 							type="text"
 							bind:value={name}
 							required
@@ -241,11 +241,11 @@
 
 			<div class="pt-2">
 				<div class="flex flex-col w-full">
-					<div class=" mb-1 text-xs font-medium">{$i18n.t('Notification Webhook')}</div>
+					<div class="mb-1 text-xs font-medium">{$i18n.t('Notification Webhook')}</div>
 
 					<div class="flex-1">
 						<input
-							class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-2 px-4 text-sm outline-none"
 							type="url"
 							placeholder={$i18n.t('Enter your webhook URL')}
 							bind:value={webhookUrl}
@@ -260,12 +260,12 @@
 			<UpdatePassword />
 		</div>
 
-		<hr class=" dark:border-gray-850 my-4" />
+		<hr class="my-4" />
 
 		<div class="flex justify-between items-center text-sm">
-			<div class="  font-medium">{$i18n.t('API keys')}</div>
+			<div class="font-medium">{$i18n.t('API keys')}</div>
 			<button
-				class=" text-xs font-medium text-gray-500"
+				class="text-xs font-medium text-gray-500"
 				type="button"
 				on:click={() => {
 					showAPIKeys = !showAPIKeys;
@@ -284,7 +284,7 @@
 						<SensitiveInput value={localStorage.token} readOnly={true} />
 
 						<button
-							class="ml-1.5 px-1.5 py-1 dark:hover:bg-gray-850 transition rounded-lg"
+							class="ml-1.5 px-1.5 py-1 transition rounded-lg"
 							on:click={() => {
 								copyToClipboard(localStorage.token);
 								JWTTokenCopied = true;
@@ -338,7 +338,7 @@
 								<SensitiveInput value={APIKey} readOnly={true} />
 
 								<button
-									class="ml-1.5 px-1.5 py-1 dark:hover:bg-gray-850 transition rounded-lg"
+									class="ml-1.5 px-1.5 py-1 transition rounded-lg"
 									on:click={() => {
 										copyToClipboard(APIKey);
 										APIKeyCopied = true;
@@ -383,7 +383,7 @@
 
 								<Tooltip content={$i18n.t('Create new key')}>
 									<button
-										class=" px-1.5 py-1 dark:hover:bg-gray-850transition rounded-lg"
+										class="px-1.5 py-1 transition rounded-lg"
 										on:click={() => {
 											createAPIKeyHandler();
 										}}
@@ -406,7 +406,7 @@
 								</Tooltip>
 							{:else}
 								<button
-									class="flex gap-1.5 items-center font-medium px-3.5 py-1.5 rounded-lg bg-gray-100/70 hover:bg-gray-100 dark:bg-gray-850 dark:hover:bg-gray-850 transition"
+									class="flex gap-1.5 items-center font-medium px-3.5 py-1.5 rounded-lg bg-gray-100/70 hover:bg-gray-100 transition"
 									on:click={() => {
 										createAPIKeyHandler();
 									}}
@@ -425,7 +425,7 @@
 
 	<div class="flex justify-end pt-3 text-sm font-medium">
 		<button
-			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 			on:click={async () => {
 				const res = await submitHandler();
 

@@ -29,7 +29,7 @@
 >
 	<Tooltip content={$i18n.t('Add Content')}>
 		<button
-			class=" p-1.5 rounded-xl hover:bg-gray-100 dark:bg-gray-850 dark:hover:bg-gray-800 transition font-medium text-sm flex items-center space-x-1"
+			class="p-1.5 rounded-xl hover:bg-gray-100 transition font-medium text-sm flex items-center space-x-1"
 			on:click={(e) => {
 				e.stopPropagation();
 				show = true;
@@ -50,14 +50,14 @@
 
 	<div slot="content">
 		<DropdownMenu.Content
-			class="w-full max-w-44 rounded-xl p-1 z-50 bg-white dark:bg-gray-850 dark:text-white shadow"
+			class="w-full max-w-44 rounded-xl p-1 z-50 bg-white shadow"
 			sideOffset={4}
 			side="bottom"
 			align="end"
 			transition={flyAndScale}
 		>
 			<DropdownMenu.Item
-				class="flex  gap-2  items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex  gap-2  items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				on:click={() => {
 					dispatch('upload', { type: 'files' });
 				}}
@@ -67,7 +67,7 @@
 			</DropdownMenu.Item>
 
 			<DropdownMenu.Item
-				class="flex  gap-2  items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex  gap-2  items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				on:click={() => {
 					dispatch('upload', { type: 'directory' });
 				}}
@@ -83,7 +83,7 @@
 				className="w-full"
 			>
 				<DropdownMenu.Item
-					class="flex  gap-2  items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+					class="flex  gap-2  items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 					on:click={() => {
 						dispatch('sync', { type: 'directory' });
 					}}
@@ -94,7 +94,7 @@
 			</Tooltip>
 
 			<DropdownMenu.Item
-				class="flex  gap-2  items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex  gap-2  items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				on:click={() => {
 					dispatch('upload', { type: 'text' });
 				}}

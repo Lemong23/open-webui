@@ -145,13 +145,13 @@
 				}}
 			>
 				<div
-					class=" {$showCallOverlay || $showOverview || $showArtifacts
+					class="{$showCallOverlay || $showOverview || $showArtifacts
 						? ' h-screen  w-full'
 						: 'px-6 py-4'} h-full"
 				>
 					{#if $showCallOverlay}
 						<div
-							class=" h-full max-h-[100dvh] bg-white text-gray-700 dark:bg-black dark:text-gray-300 flex justify-center"
+							class="h-full max-h-[100dvh] bg-white text-gray-700 flex justify-center"
 						>
 							<CallOverlay
 								bind:files
@@ -230,7 +230,7 @@
 					<div
 						class="w-full {($showOverview || $showArtifacts) && !$showCallOverlay
 							? ' '
-							: 'px-4 py-4 bg-white dark:shadow-lg dark:bg-gray-850  border border-gray-50 dark:border-gray-850'}  rounded-xl z-40 pointer-events-auto overflow-y-auto scrollbar-hidden"
+							: 'px-4 py-4 bg-white border border-gray-50'}  rounded-xl z-40 pointer-events-auto overflow-y-auto scrollbar-hidden"
 					>
 						{#if $showCallOverlay}
 							<div class="w-full h-full flex justify-center">

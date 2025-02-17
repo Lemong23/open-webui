@@ -49,7 +49,7 @@
 <div>
 	<div class="flex w-full">
 		<div class="flex flex-1">
-			<div class=" self-center mr-3">
+			<div class="self-center mr-3">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
@@ -64,7 +64,7 @@
 				</svg>
 			</div>
 			<input
-				class=" w-full text-sm pr-4 rounded-r-xl outline-none bg-transparent"
+				class="w-full text-sm pr-4 rounded-r-xl outline-none bg-transparent"
 				bind:value={query}
 				placeholder={$i18n.t('Search')}
 			/>
@@ -93,7 +93,7 @@
 							<Tooltip content={user.email} placement="top-start">
 								<div class="flex">
 									<img
-										class=" rounded-full size-5 object-cover mr-2.5"
+										class="rounded-full size-5 object-cover mr-2.5"
 										src={user.profile_image_url.startsWith(WEBUI_BASE_URL) ||
 										user.profile_image_url.startsWith('https://www.gravatar.com/avatar/') ||
 										user.profile_image_url.startsWith('data:')
@@ -102,7 +102,7 @@
 										alt="user"
 									/>
 
-									<div class=" font-medium self-center">{user.name}</div>
+									<div class="font-medium self-center">{user.name}</div>
 								</div>
 							</Tooltip>
 

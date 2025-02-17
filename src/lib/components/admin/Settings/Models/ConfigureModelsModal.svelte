@@ -111,8 +111,8 @@
 
 <Modal size="sm" bind:show>
 	<div>
-		<div class=" flex justify-between dark:text-gray-100 px-5 pt-4 pb-2">
-			<div class=" text-lg font-medium self-center font-primary">
+		<div class="flex justify-between px-5 pt-4 pb-2">
+			<div class="text-lg font-medium self-center font-primary">
 				{$i18n.t('Settings')}
 			</div>
 			<button
@@ -134,8 +134,8 @@
 			</button>
 		</div>
 
-		<div class="flex flex-col md:flex-row w-full px-5 pb-4 md:space-x-4 dark:text-gray-200">
-			<div class=" flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
+		<div class="flex flex-col md:flex-row w-full px-5 pb-4 md:space-x-4">
+			<div class="flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
 				{#if config}
 					<form
 						class="flex flex-col w-full"
@@ -153,7 +153,7 @@
 							</div>
 						</div>
 
-						<hr class=" border-gray-100 dark:border-gray-700/10 my-2.5 w-full" />
+						<hr class="border-gray-100 my-2.5 w-full" />
 
 						<div>
 							<div class="flex flex-col w-full">
@@ -165,25 +165,25 @@
 									<select
 										class="w-full py-1 text-sm rounded-lg bg-transparent {selectedModelId
 											? ''
-											: 'text-gray-500'} placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-none"
+											: 'text-gray-500'} placeholder:text-gray-300 outline-none"
 										bind:value={selectedModelId}
 									>
 										<option value="">{$i18n.t('Select a model')}</option>
 										{#each $models as model}
-											<option value={model.id} class="bg-gray-50 dark:bg-gray-700"
+											<option value={model.id} class="bg-gray-50"
 												>{model.name}</option
 											>
 										{/each}
 									</select>
 								</div>
 
-								<!-- <hr class=" border-gray-100 dark:border-gray-700/10 my-2.5 w-full" /> -->
+								<!-- <hr class="border-gray-100 my-2.5 w-full" /> -->
 
 								{#if defaultModelIds.length > 0}
 									<div class="flex flex-col">
 										{#each defaultModelIds as modelId, modelIdx}
-											<div class=" flex gap-2 w-full justify-between items-center">
-												<div class=" text-sm flex-1 py-1 rounded-lg">
+											<div class="flex gap-2 w-full justify-between items-center">
+												<div class="text-sm flex-1 py-1 rounded-lg">
 													{$models.find((model) => model.id === modelId)?.name}
 												</div>
 												<div class="flex-shrink-0">
@@ -212,7 +212,7 @@
 						<div class="flex justify-between pt-3 text-sm font-medium gap-1.5">
 							<Tooltip content={$i18n.t('This will delete all models including custom models')}>
 								<button
-									class="px-3.5 py-1.5 text-sm font-medium dark:bg-black dark:hover:bg-gray-950 dark:text-white bg-white text-black hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center"
+									class="px-3.5 py-1.5 text-sm font-medium bg-white text-black hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center"
 									type="button"
 									on:click={() => {
 										showResetModal = true;
@@ -224,7 +224,7 @@
 							</Tooltip>
 
 							<button
-								class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center {loading
+								class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full flex flex-row space-x-1 items-center {loading
 									? ' cursor-not-allowed'
 									: ''}"
 								type="submit"
@@ -235,7 +235,7 @@
 								{#if loading}
 									<div class="ml-2 self-center">
 										<svg
-											class=" w-4 h-4"
+											class="w-4 h-4"
 											viewBox="0 0 24 24"
 											fill="currentColor"
 											xmlns="http://www.w3.org/2000/svg"

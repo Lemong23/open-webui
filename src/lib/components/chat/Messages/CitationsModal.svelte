@@ -21,12 +21,12 @@
 
 	function getRelevanceColor(percentage: number) {
 		if (percentage >= 80)
-			return 'bg-green-200 dark:bg-green-800 text-green-800 dark:text-green-200';
+			return 'bg-green-200 text-green-800';
 		if (percentage >= 60)
-			return 'bg-yellow-200 dark:bg-yellow-800 text-yellow-800 dark:text-yellow-200';
+			return 'bg-yellow-200 text-yellow-800';
 		if (percentage >= 40)
-			return 'bg-orange-200 dark:bg-orange-800 text-orange-800 dark:text-orange-200';
-		return 'bg-red-200 dark:bg-red-800 text-red-800 dark:text-red-200';
+			return 'bg-orange-200 text-orange-800';
+		return 'bg-red-200 text-red-800';
 	}
 
 	$: if (citation) {
@@ -48,8 +48,8 @@
 
 <Modal size="lg" bind:show>
 	<div>
-		<div class=" flex justify-between dark:text-gray-300 px-5 pt-4 pb-2">
-			<div class=" text-lg font-medium self-center capitalize">
+		<div class="flex justify-between px-5 pt-4 pb-2">
+			<div class="text-lg font-medium self-center capitalize">
 				{$i18n.t('Citation')}
 			</div>
 			<button
@@ -73,11 +73,11 @@
 
 		<div class="flex flex-col md:flex-row w-full px-6 pb-5 md:space-x-4">
 			<div
-				class="flex flex-col w-full dark:text-gray-200 overflow-y-scroll max-h-[22rem] scrollbar-hidden"
+				class="flex flex-col w-full overflow-y-scroll max-h-[22rem] scrollbar-hidden"
 			>
 				{#each mergedDocuments as document, documentIdx}
 					<div class="flex flex-col w-full">
-						<div class="text-sm font-medium dark:text-gray-300">
+						<div class="text-sm font-medium">
 							{$i18n.t('Source')}
 						</div>
 
@@ -88,9 +88,9 @@
 								placement="top-start"
 								tippyOptions={{ duration: [500, 0] }}
 							>
-								<div class="text-sm dark:text-gray-400 flex items-center gap-2 w-fit">
+								<div class="text-sm flex items-center gap-2 w-fit">
 									<a
-										class="hover:text-gray-500 hover:dark:text-gray-100 underline flex-grow"
+										class="hover:text-gray-500 underline flex-grow"
 										href={document?.metadata?.file_id
 											? `${WEBUI_API_BASE_URL}/files/${document?.metadata?.file_id}/content${document?.metadata?.page !== undefined ? `#page=${document.metadata.page + 1}` : ''}`
 											: document.source?.url?.includes('http')
@@ -101,7 +101,7 @@
 										{document?.metadata?.name ?? document.source.name}
 									</a>
 									{#if document?.metadata?.page}
-										<span class="text-xs text-gray-500 dark:text-gray-400">
+										<span class="text-xs text-gray-500">
 											({$i18n.t('page')}
 											{document.metadata.page + 1})
 										</span>
@@ -109,7 +109,7 @@
 								</div>
 							</Tooltip>
 							{#if showRelevance}
-								<div class="text-sm font-medium dark:text-gray-300 mt-2">
+								<div class="text-sm font-medium mt-2">
 									{$i18n.t('Relevance')}
 								</div>
 								{#if document.distance !== undefined}
@@ -119,36 +119,36 @@
 										placement="top-start"
 										tippyOptions={{ duration: [500, 0] }}
 									>
-										<div class="text-sm my-1 dark:text-gray-400 flex items-center gap-2 w-fit">
+										<div class="text-sm my-1 flex items-center gap-2 w-fit">
 											{#if showPercentage}
 												{@const percentage = calculatePercentage(document.distance)}
 												<span class={`px-1 rounded font-medium ${getRelevanceColor(percentage)}`}>
 													{percentage.toFixed(2)}%
 												</span>
-												<span class="text-gray-500 dark:text-gray-500">
+												<span class="text-gray-500">
 													({document.distance.toFixed(4)})
 												</span>
 											{:else}
-												<span class="text-gray-500 dark:text-gray-500">
+												<span class="text-gray-500">
 													{document.distance.toFixed(4)}
 												</span>
 											{/if}
 										</div>
 									</Tooltip>
 								{:else}
-									<div class="text-sm dark:text-gray-400">
+									<div class="text-sm">
 										{$i18n.t('No distance available')}
 									</div>
 								{/if}
 							{/if}
 						{:else}
-							<div class="text-sm dark:text-gray-400">
+							<div class="text-sm">
 								{$i18n.t('No source available')}
 							</div>
 						{/if}
 					</div>
 					<div class="flex flex-col w-full">
-						<div class=" text-sm font-medium dark:text-gray-300 mt-2">
+						<div class="text-sm font-medium mt-2">
 							{$i18n.t('Content')}
 						</div>
 						{#if document.metadata?.html}
@@ -159,14 +159,14 @@
 								title={$i18n.t('Content')}
 							></iframe>
 						{:else}
-							<pre class="text-sm dark:text-gray-400 whitespace-pre-line">
+							<pre class="text-sm whitespace-pre-line">
                 {document.document}
               </pre>
 						{/if}
 					</div>
 
 					{#if documentIdx !== mergedDocuments.length - 1}
-						<hr class=" dark:border-gray-850 my-3" />
+						<hr class="my-3" />
 					{/if}
 				{/each}
 			</div>

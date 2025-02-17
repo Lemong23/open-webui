@@ -17,9 +17,9 @@
 	let showValves = false;
 </script>
 
-<div class=" dark:text-white">
-	<div class=" flex items-center justify-between dark:text-gray-100 mb-2">
-		<div class=" text-lg font-medium self-center font-primary">{$i18n.t('Chat Controls')}</div>
+<div class="">
+	<div class="flex items-center justify-between mb-2">
+		<div class="text-lg font-medium self-center font-primary">{$i18n.t('Chat Controls')}</div>
 		<button
 			class="self-center"
 			on:click={() => {
@@ -31,7 +31,7 @@
 	</div>
 
 	{#if $user.role === 'admin' || $user?.permissions.chat?.controls}
-		<div class=" dark:text-gray-200 text-sm font-primary py-0.5 px-0.5">
+		<div class="text-sm font-primary py-0.5 px-0.5">
 			{#if chatFiles.length > 0}
 				<Collapsible title={$i18n.t('Files')} open={true} buttonClassName="w-full">
 					<div class="flex flex-col gap-1 mt-1.5" slot="content">
@@ -59,7 +59,7 @@
 					</div>
 				</Collapsible>
 
-				<hr class="my-2 border-gray-50 dark:border-gray-700/10" />
+				<hr class="my-2 border-gray-50" />
 			{/if}
 
 			<Collapsible bind:open={showValves} title={$i18n.t('Valves')} buttonClassName="w-full">
@@ -68,7 +68,7 @@
 				</div>
 			</Collapsible>
 
-			<hr class="my-2 border-gray-50 dark:border-gray-700/10" />
+			<hr class="my-2 border-gray-50" />
 
 			<Collapsible title={$i18n.t('System Prompt')} open={true} buttonClassName="w-full">
 				<div class="" slot="content">
@@ -81,7 +81,7 @@
 				</div>
 			</Collapsible>
 
-			<hr class="my-2 border-gray-50 dark:border-gray-700/10" />
+			<hr class="my-2 border-gray-50" />
 
 			<Collapsible title={$i18n.t('Advanced Params')} open={true} buttonClassName="w-full">
 				<div class="text-sm mt-1.5" slot="content">
@@ -92,7 +92,7 @@
 			</Collapsible>
 		</div>
 	{:else}
-		<div class="text-sm dark:text-gray-300 text-center py-2 px-10">
+		<div class="text-sm text-center py-2 px-10">
 			{$i18n.t('You do not have permission to access this feature.')}
 		</div>
 	{/if}

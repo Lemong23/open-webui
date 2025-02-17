@@ -41,18 +41,18 @@
 <div class="flex flex-col lg:flex-row w-full h-full pb-2 lg:space-x-4">
 	<div
 		id="admin-settings-tabs-container"
-		class="tabs flex flex-row overflow-x-auto gap-2.5 max-w-full lg:gap-1 lg:flex-col lg:flex-none lg:w-40 dark:text-gray-200 text-sm font-medium text-left scrollbar-none"
+		class="tabs flex flex-row overflow-x-auto gap-2.5 max-w-full lg:gap-1 lg:flex-col lg:flex-none lg:w-40 text-sm font-medium text-left scrollbar-none"
 	>
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 lg:flex-none flex text-right transition {selectedTab ===
 			'general'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'general';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 16 16"
@@ -66,19 +66,19 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('General')}</div>
+			<div class="self-center">{$i18n.t('General')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'connections'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'connections';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 16 16"
@@ -90,19 +90,19 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('Connections')}</div>
+			<div class="self-center">{$i18n.t('Connections')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'models'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'models';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
@@ -116,34 +116,34 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('Models')}</div>
+			<div class="self-center">{$i18n.t('Models')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'evaluations'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'evaluations';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<DocumentChartBar />
 			</div>
-			<div class=" self-center">{$i18n.t('Evaluations')}</div>
+			<div class="self-center">{$i18n.t('Evaluations')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'documents'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'documents';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -161,19 +161,19 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('Documents')}</div>
+			<div class="self-center">{$i18n.t('Documents')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'web'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'web';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -185,19 +185,19 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('Web Search')}</div>
+			<div class="self-center">{$i18n.t('Web Search')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'interface'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'interface';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 16 16"
@@ -211,19 +211,19 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('Interface')}</div>
+			<div class="self-center">{$i18n.t('Interface')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'audio'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'audio';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 16 16"
@@ -238,19 +238,19 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('Audio')}</div>
+			<div class="self-center">{$i18n.t('Audio')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'images'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'images';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 16 16"
@@ -264,19 +264,19 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('Images')}</div>
+			<div class="self-center">{$i18n.t('Images')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'pipelines'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'pipelines';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -294,19 +294,19 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('Pipelines')}</div>
+			<div class="self-center">{$i18n.t('Pipelines')}</div>
 		</button>
 
 		<button
 			class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-right transition {selectedTab ===
 			'db'
 				? ''
-				: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+				: ' text-gray-300 hover:text-gray-700'}"
 			on:click={() => {
 				selectedTab = 'db';
 			}}
 		>
-			<div class=" self-center mr-2">
+			<div class="self-center mr-2">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 16 16"
@@ -322,7 +322,7 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center">{$i18n.t('Database')}</div>
+			<div class="self-center">{$i18n.t('Database')}</div>
 		</button>
 	</div>
 

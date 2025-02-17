@@ -124,15 +124,15 @@
 <div class="mt-0.5 mb-2 gap-1 flex flex-col md:flex-row justify-between">
 	<div class="flex md:self-center text-lg font-medium px-0.5">
 		{$i18n.t('Users')}
-		<div class="flex self-center w-[1px] h-6 mx-2.5 bg-gray-50 dark:bg-gray-850" />
+		<div class="flex self-center w-[1px] h-6 mx-2.5 bg-gray-50" />
 
-		<span class="text-lg font-medium text-gray-500 dark:text-gray-300">{users.length}</span>
+		<span class="text-lg font-medium text-gray-500">{users.length}</span>
 	</div>
 
 	<div class="flex gap-1">
-		<div class=" flex w-full space-x-2">
+		<div class="flex w-full space-x-2">
 			<div class="flex flex-1">
-				<div class=" self-center ml-1 mr-3">
+				<div class="self-center ml-1 mr-3">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 20 20"
@@ -147,7 +147,7 @@
 					</svg>
 				</div>
 				<input
-					class=" w-full text-sm pr-4 py-1 rounded-r-xl outline-none bg-transparent"
+					class="w-full text-sm pr-4 py-1 rounded-r-xl outline-none bg-transparent"
 					bind:value={search}
 					placeholder={$i18n.t('Search')}
 				/>
@@ -156,7 +156,7 @@
 			<div>
 				<Tooltip content={$i18n.t('Add User')}>
 					<button
-						class=" p-2 rounded-xl hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-850 transition font-medium text-sm flex items-center space-x-1"
+						class="p-2 rounded-xl hover:bg-gray-100 transition font-medium text-sm flex items-center space-x-1"
 						on:click={() => {
 							showAddUserModal = !showAddUserModal;
 						}}
@@ -171,10 +171,10 @@
 
 <div class="scrollbar-hidden relative whitespace-nowrap overflow-x-auto max-w-full rounded pt-0.5">
 	<table
-		class="w-full text-sm text-left text-gray-500 dark:text-gray-400 table-auto max-w-full rounded"
+		class="w-full text-sm text-left text-gray-500 table-auto max-w-full rounded"
 	>
 		<thead
-			class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-850 dark:text-gray-400 -translate-y-0.5"
+			class="text-xs text-gray-700 uppercase bg-gray-50 -translate-y-0.5"
 		>
 			<tr class="">
 				<th
@@ -322,10 +322,10 @@
 		</thead>
 		<tbody class="">
 			{#each filteredUsers as user, userIdx}
-				<tr class="bg-white dark:bg-gray-900 dark:border-gray-850 text-xs">
+				<tr class="bg-white text-xs">
 					<td class="px-3 py-1 min-w-[7rem] w-28">
 						<button
-							class=" translate-y-0.5"
+							class="translate-y-0.5"
 							on:click={() => {
 								if (user.role === 'user') {
 									updateRoleHandler(user.id, 'admin');
@@ -342,10 +342,10 @@
 							/>
 						</button>
 					</td>
-					<td class="px-3 py-1 font-medium text-gray-900 dark:text-white w-max">
+					<td class="px-3 py-1 font-medium text-gray-900 w-max">
 						<div class="flex flex-row w-max">
 							<img
-								class=" rounded-full w-6 h-6 object-cover mr-2.5"
+								class="rounded-full w-6 h-6 object-cover mr-2.5"
 								src={user.profile_image_url.startsWith(WEBUI_BASE_URL) ||
 								user.profile_image_url.startsWith('https://www.gravatar.com/avatar/') ||
 								user.profile_image_url.startsWith('data:')
@@ -354,27 +354,27 @@
 								alt="user"
 							/>
 
-							<div class=" font-medium self-center">{user.name}</div>
+							<div class="font-medium self-center">{user.name}</div>
 						</div>
 					</td>
-					<td class=" px-3 py-1"> {user.email} </td>
+					<td class="px-3 py-1"> {user.email} </td>
 
-					<td class=" px-3 py-1">
+					<td class="px-3 py-1">
 						{dayjs(user.last_active_at * 1000).fromNow()}
 					</td>
 
-					<td class=" px-3 py-1">
+					<td class="px-3 py-1">
 						{dayjs(user.created_at * 1000).format($i18n.t('MMMM DD, YYYY'))}
 					</td>
 
-					<td class=" px-3 py-1"> {user.oauth_sub ?? ''} </td>
+					<td class="px-3 py-1"> {user.oauth_sub ?? ''} </td>
 
 					<td class="px-3 py-1 text-right">
 						<div class="flex justify-end w-full">
 							{#if $config.features.enable_admin_chat_access && user.role !== 'admin'}
 								<Tooltip content={$i18n.t('Chats')}>
 									<button
-										class="self-center w-fit text-sm px-2 py-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+										class="self-center w-fit text-sm px-2 py-2 hover:bg-black/5 rounded-xl"
 										on:click={async () => {
 											showUserChatsModal = !showUserChatsModal;
 											selectedUser = user;
@@ -387,7 +387,7 @@
 
 							<Tooltip content={$i18n.t('Edit User')}>
 								<button
-									class="self-center w-fit text-sm px-2 py-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+									class="self-center w-fit text-sm px-2 py-2 hover:bg-black/5 rounded-xl"
 									on:click={async () => {
 										showEditUserModal = !showEditUserModal;
 										selectedUser = user;
@@ -413,7 +413,7 @@
 							{#if user.role !== 'admin'}
 								<Tooltip content={$i18n.t('Delete User')}>
 									<button
-										class="self-center w-fit text-sm px-2 py-2 hover:bg-black/5 dark:hover:bg-white/5 rounded-xl"
+										class="self-center w-fit text-sm px-2 py-2 hover:bg-black/5 rounded-xl"
 										on:click={async () => {
 											showDeleteConfirmDialog = true;
 											selectedUser = user;
@@ -444,7 +444,7 @@
 	</table>
 </div>
 
-<div class=" text-gray-500 text-xs mt-1.5 text-right">
+<div class="text-gray-500 text-xs mt-1.5 text-right">
 	ⓘ {$i18n.t("Click on the user role button to change a user's role.")}
 </div>
 

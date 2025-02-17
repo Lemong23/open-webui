@@ -43,8 +43,8 @@
 
 <Modal size="sm" bind:show>
 	<div>
-		<div class=" flex justify-between dark:text-gray-300 px-5 py-4">
-			<div class=" text-lg font-medium self-center">{$i18n.t('Edit User')}</div>
+		<div class="flex justify-between px-5 py-4">
+			<div class="text-lg font-medium self-center">{$i18n.t('Edit User')}</div>
 			<button
 				class="self-center"
 				on:click={() => {
@@ -63,27 +63,27 @@
 				</svg>
 			</button>
 		</div>
-		<hr class=" dark:border-gray-800" />
+		<hr class="" />
 
-		<div class="flex flex-col md:flex-row w-full p-5 md:space-x-4 dark:text-gray-200">
-			<div class=" flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
+		<div class="flex flex-col md:flex-row w-full p-5 md:space-x-4">
+			<div class="flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
 				<form
 					class="flex flex-col w-full"
 					on:submit|preventDefault={() => {
 						submitHandler();
 					}}
 				>
-					<div class=" flex items-center rounded-md py-2 px-4 w-full">
-						<div class=" self-center mr-5">
+					<div class="flex items-center rounded-md py-2 px-4 w-full">
+						<div class="self-center mr-5">
 							<img
 								src={selectedUser.profile_image_url}
-								class=" max-w-[55px] object-cover rounded-full"
+								class="max-w-[55px] object-cover rounded-full"
 								alt="User profile"
 							/>
 						</div>
 
 						<div>
-							<div class=" self-center capitalize font-semibold">{selectedUser.name}</div>
+							<div class="self-center capitalize font-semibold">{selectedUser.name}</div>
 
 							<div class="text-xs text-gray-500">
 								{$i18n.t('Created at')}
@@ -92,15 +92,15 @@
 						</div>
 					</div>
 
-					<hr class=" dark:border-gray-800 my-3 w-full" />
+					<hr class="my-3 w-full" />
 
-					<div class=" flex flex-col space-y-1.5">
+					<div class="flex flex-col space-y-1.5">
 						<div class="flex flex-col w-full">
-							<div class=" mb-1 text-xs text-gray-500">{$i18n.t('Email')}</div>
+							<div class="mb-1 text-xs text-gray-500">{$i18n.t('Email')}</div>
 
 							<div class="flex-1">
 								<input
-									class="w-full rounded py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-800 disabled:text-gray-500 dark:disabled:text-gray-500 outline-none"
+									class="w-full rounded py-2 px-4 text-sm disabled:text-gray-500 outline-none"
 									type="email"
 									bind:value={_user.email}
 									autocomplete="off"
@@ -111,11 +111,11 @@
 						</div>
 
 						<div class="flex flex-col w-full">
-							<div class=" mb-1 text-xs text-gray-500">{$i18n.t('Name')}</div>
+							<div class="mb-1 text-xs text-gray-500">{$i18n.t('Name')}</div>
 
 							<div class="flex-1">
 								<input
-									class="w-full rounded py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-800 outline-none"
+									class="w-full rounded py-2 px-4 text-sm outline-none"
 									type="text"
 									bind:value={_user.name}
 									autocomplete="off"
@@ -125,11 +125,11 @@
 						</div>
 
 						<div class="flex flex-col w-full">
-							<div class=" mb-1 text-xs text-gray-500">{$i18n.t('New Password')}</div>
+							<div class="mb-1 text-xs text-gray-500">{$i18n.t('New Password')}</div>
 
 							<div class="flex-1">
 								<input
-									class="w-full rounded py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-800 outline-none"
+									class="w-full rounded py-2 px-4 text-sm outline-none"
 									type="password"
 									bind:value={_user.password}
 									autocomplete="new-password"
@@ -140,7 +140,7 @@
 
 					<div class="flex justify-end pt-3 text-sm font-medium">
 						<button
-							class=" px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-lg"
+							class="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-lg"
 							type="submit"
 						>
 							{$i18n.t('Save')}

@@ -31,9 +31,9 @@
 		saveHandler();
 	}}
 >
-	<div class=" space-y-3 overflow-y-scroll scrollbar-hidden h-full">
+	<div class="space-y-3 overflow-y-scroll scrollbar-hidden h-full">
 		<div>
-			<div class=" mb-2 text-sm font-medium">{$i18n.t('Database')}</div>
+			<div class="mb-2 text-sm font-medium">{$i18n.t('Database')}</div>
 
 			<input
 				id="config-json-input"
@@ -63,12 +63,12 @@
 
 			<button
 				type="button"
-				class=" flex rounded-md py-2 px-3 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+				class="flex rounded-md py-2 px-3 w-full hover:bg-gray-200 transition"
 				on:click={async () => {
 					document.getElementById('config-json-input').click();
 				}}
 			>
-				<div class=" self-center mr-3">
+				<div class="self-center mr-3">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 16 16"
@@ -83,14 +83,14 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center text-sm font-medium">
+				<div class="self-center text-sm font-medium">
 					{$i18n.t('Import Config from JSON File')}
 				</div>
 			</button>
 
 			<button
 				type="button"
-				class=" flex rounded-md py-2 px-3 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+				class="flex rounded-md py-2 px-3 w-full hover:bg-gray-200 transition"
 				on:click={async () => {
 					const config = await exportConfig(localStorage.token);
 					const blob = new Blob([JSON.stringify(config)], {
@@ -99,7 +99,7 @@
 					saveAs(blob, `config-${Date.now()}.json`);
 				}}
 			>
-				<div class=" self-center mr-3">
+				<div class="self-center mr-3">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 16 16"
@@ -114,19 +114,19 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center text-sm font-medium">
+				<div class="self-center text-sm font-medium">
 					{$i18n.t('Export Config to JSON File')}
 				</div>
 			</button>
 
-			<hr class=" dark:border-gray-850 my-1" />
+			<hr class="my-1" />
 
 			{#if $config?.features.enable_admin_export ?? true}
-				<div class="  flex w-full justify-between">
-					<!-- <div class=" self-center text-xs font-medium">{$i18n.t('Allow Chat Deletion')}</div> -->
+				<div class="flex w-full justify-between">
+					<!-- <div class="self-center text-xs font-medium">{$i18n.t('Allow Chat Deletion')}</div> -->
 
 					<button
-						class=" flex rounded-md py-1.5 px-3 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+						class="flex rounded-md py-1.5 px-3 w-full hover:bg-gray-200 transition"
 						type="button"
 						on:click={() => {
 							// exportAllUserChats();
@@ -136,7 +136,7 @@
 							});
 						}}
 					>
-						<div class=" self-center mr-3">
+						<div class="self-center mr-3">
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								viewBox="0 0 16 16"
@@ -151,17 +151,17 @@
 								/>
 							</svg>
 						</div>
-						<div class=" self-center text-sm font-medium">{$i18n.t('Download Database')}</div>
+						<div class="self-center text-sm font-medium">{$i18n.t('Download Database')}</div>
 					</button>
 				</div>
 
 				<button
-					class=" flex rounded-md py-2 px-3 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+					class="flex rounded-md py-2 px-3 w-full hover:bg-gray-200 transition"
 					on:click={() => {
 						exportAllUserChats();
 					}}
 				>
-					<div class=" self-center mr-3">
+					<div class="self-center mr-3">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 16 16"
@@ -176,7 +176,7 @@
 							/>
 						</svg>
 					</div>
-					<div class=" self-center text-sm font-medium">
+					<div class="self-center text-sm font-medium">
 						{$i18n.t('Export All Chats (All Users)')}
 					</div>
 				</button>
@@ -186,7 +186,7 @@
 
 	<!-- <div class="flex justify-end pt-3 text-sm font-medium">
 		<button
-			class=" px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-lg"
+			class="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-lg"
 			type="submit"
 		>
 			{$i18n.t('Save')}

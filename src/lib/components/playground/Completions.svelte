@@ -120,9 +120,9 @@
 	});
 </script>
 
-<div class=" flex flex-col justify-between w-full overflow-y-auto h-full">
+<div class="flex flex-col justify-between w-full overflow-y-auto h-full">
 	<div class="mx-auto w-full md:px-0 h-full">
-		<div class=" flex flex-col h-full px-4">
+		<div class="flex flex-col h-full px-4">
 			<div class="flex flex-col justify-between mb-1 gap-1">
 				<div class="flex flex-col gap-1 w-full">
 					<div class="flex w-full">
@@ -144,15 +144,15 @@
 			</div>
 
 			<div
-				class=" pt-0.5 pb-2.5 flex flex-col justify-between w-full flex-auto overflow-auto h-0"
+				class="pt-0.5 pb-2.5 flex flex-col justify-between w-full flex-auto overflow-auto h-0"
 				id="messages-container"
 			>
-				<div class=" h-full w-full flex flex-col">
+				<div class="h-full w-full flex flex-col">
 					<div class="flex-1">
 						<textarea
 							id="text-completion-textarea"
 							bind:this={textCompletionAreaElement}
-							class="w-full h-full p-3 bg-transparent border border-gray-50 dark:border-gray-850 outline-none resize-none rounded-lg text-sm"
+							class="w-full h-full p-3 bg-transparent border border-gray-50 outline-none resize-none rounded-lg text-sm"
 							bind:value={text}
 							placeholder={$i18n.t("You're a helpful assistant.")}
 						/>
@@ -163,7 +163,7 @@
 			<div class="pb-3 flex justify-end">
 				{#if !loading}
 					<button
-						class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+						class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 						on:click={() => {
 							submitHandler();
 						}}

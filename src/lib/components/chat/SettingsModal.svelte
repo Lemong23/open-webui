@@ -353,9 +353,9 @@
 </script>
 
 <Modal size="xl" bind:show>
-	<div class="text-gray-700 dark:text-gray-100">
-		<div class=" flex justify-between dark:text-gray-300 px-5 pt-4 pb-1">
-			<div class=" text-lg font-medium self-center">{$i18n.t('Settings')}</div>
+	<div class="text-gray-700">
+		<div class="flex justify-between px-5 pt-4 pb-1">
+			<div class="text-lg font-medium self-center">{$i18n.t('Settings')}</div>
 			<button
 				class="self-center"
 				on:click={() => {
@@ -378,14 +378,14 @@
 		<div class="flex flex-col md:flex-row w-full px-4 pt-1 pb-4 md:space-x-4">
 			<div
 				id="settings-tabs-container"
-				class="tabs flex flex-row overflow-x-auto gap-2.5 md:gap-1 md:flex-col flex-1 md:flex-none md:w-40 dark:text-gray-200 text-sm font-medium text-left mb-1 md:mb-0 -translate-y-1"
+				class="tabs flex flex-row overflow-x-auto gap-2.5 md:gap-1 md:flex-col flex-1 md:flex-none md:w-40 text-sm font-medium text-left mb-1 md:mb-0 -translate-y-1"
 			>
 				<div class="hidden md:flex w-full rounded-xl -mb-1 px-0.5 gap-2" id="settings-search">
 					<div class="self-center rounded-l-xl bg-transparent">
 						<Search className="size-3.5" />
 					</div>
 					<input
-						class="w-full py-1.5 text-sm bg-transparent dark:text-gray-300 outline-none"
+						class="w-full py-1.5 text-sm bg-transparent outline-none"
 						bind:value={search}
 						on:input={searchDebounceHandler}
 						placeholder={$i18n.t('Search')}
@@ -399,12 +399,12 @@
 								class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-left transition {selectedTab ===
 								'general'
 									? ''
-									: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									: ' text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'general';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -418,19 +418,19 @@
 										/>
 									</svg>
 								</div>
-								<div class=" self-center">{$i18n.t('General')}</div>
+								<div class="self-center">{$i18n.t('General')}</div>
 							</button>
 						{:else if tabId === 'interface'}
 							<button
 								class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-left transition {selectedTab ===
 								'interface'
 									? ''
-									: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									: ' text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'interface';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 16 16"
@@ -444,34 +444,34 @@
 										/>
 									</svg>
 								</div>
-								<div class=" self-center">{$i18n.t('Interface')}</div>
+								<div class="self-center">{$i18n.t('Interface')}</div>
 							</button>
 						{:else if tabId === 'personalization'}
 							<button
 								class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-left transition {selectedTab ===
 								'personalization'
 									? ''
-									: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									: ' text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'personalization';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2">
 									<User />
 								</div>
-								<div class=" self-center">{$i18n.t('Personalization')}</div>
+								<div class="self-center">{$i18n.t('Personalization')}</div>
 							</button>
 						{:else if tabId === 'audio'}
 							<button
 								class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-left transition {selectedTab ===
 								'audio'
 									? ''
-									: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									: ' text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'audio';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 16 16"
@@ -486,19 +486,19 @@
 										/>
 									</svg>
 								</div>
-								<div class=" self-center">{$i18n.t('Audio')}</div>
+								<div class="self-center">{$i18n.t('Audio')}</div>
 							</button>
 						{:else if tabId === 'chats'}
 							<button
 								class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-left transition {selectedTab ===
 								'chats'
 									? ''
-									: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									: ' text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'chats';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 16 16"
@@ -512,19 +512,19 @@
 										/>
 									</svg>
 								</div>
-								<div class=" self-center">{$i18n.t('Chats')}</div>
+								<div class="self-center">{$i18n.t('Chats')}</div>
 							</button>
 						{:else if tabId === 'account'}
 							<button
 								class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-left transition {selectedTab ===
 								'account'
 									? ''
-									: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									: ' text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'account';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 16 16"
@@ -538,19 +538,19 @@
 										/>
 									</svg>
 								</div>
-								<div class=" self-center">{$i18n.t('Account')}</div>
+								<div class="self-center">{$i18n.t('Account')}</div>
 							</button>
 						{:else if tabId === 'about'}
 							<button
 								class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-left transition {selectedTab ===
 								'about'
 									? ''
-									: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									: ' text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'about';
 								}}
 							>
-								<div class=" self-center mr-2">
+								<div class="self-center mr-2">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -564,7 +564,7 @@
 										/>
 									</svg>
 								</div>
-								<div class=" self-center">{$i18n.t('About')}</div>
+								<div class="self-center">{$i18n.t('About')}</div>
 							</button>
 						{:else if tabId === 'admin'}
 							{#if $user.role === 'admin'}
@@ -572,13 +572,13 @@
 									class="px-0.5 py-1 min-w-fit rounded-lg flex-1 md:flex-none flex text-left transition {selectedTab ===
 									'admin'
 										? ''
-										: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+										: ' text-gray-300 hover:text-gray-700'}"
 									on:click={async () => {
 										await goto('/admin/settings');
 										show = false;
 									}}
 								>
-									<div class=" self-center mr-2">
+									<div class="self-center mr-2">
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
 											viewBox="0 0 24 24"
@@ -592,7 +592,7 @@
 											/>
 										</svg>
 									</div>
-									<div class=" self-center">{$i18n.t('Admin Settings')}</div>
+									<div class="self-center">{$i18n.t('Admin Settings')}</div>
 								</button>
 							{/if}
 						{/if}

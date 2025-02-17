@@ -10,14 +10,14 @@
 	export let small = false;
 </script>
 
-<div class=" max-h-full flex flex-col w-full">
+<div class="max-h-full flex flex-col w-full">
 	{#each files as file}
 		<div class="mt-1 px-2">
 			<FileItem
 				className="w-full"
 				colorClassName="{selectedFileId === file.id
-					? ' bg-gray-50 dark:bg-gray-850'
-					: 'bg-transparent'} hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+					? ' bg-gray-50'
+					: 'bg-transparent'} hover:bg-gray-50 transition"
 				{small}
 				item={file}
 				name={file?.name ?? file?.meta?.name}

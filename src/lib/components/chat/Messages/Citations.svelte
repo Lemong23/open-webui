@@ -95,25 +95,25 @@
 />
 
 {#if citations.length > 0}
-	<div class=" py-0.5 -mx-0.5 w-full flex gap-1 items-center flex-wrap">
+	<div class="py-0.5 -mx-0.5 w-full flex gap-1 items-center flex-wrap">
 		{#if citations.length <= 3}
 			<div class="flex text-xs font-medium">
 				{#each citations as citation, idx}
 					<button
 						id={`source-${citation.source.name}`}
-						class="no-toggle outline-none flex dark:text-gray-300 p-1 bg-white dark:bg-gray-900 rounded-xl max-w-96"
+						class="no-toggle outline-none flex p-1 bg-white rounded-xl max-w-96"
 						on:click={() => {
 							showCitationModal = true;
 							selectedCitation = citation;
 						}}
 					>
 						{#if citations.every((c) => c.distances !== undefined)}
-							<div class="bg-gray-50 dark:bg-gray-800 rounded-full size-4">
+							<div class="bg-gray-50 rounded-full size-4">
 								{idx + 1}
 							</div>
 						{/if}
 						<div
-							class="flex-1 mx-1 line-clamp-1 text-black/60 hover:text-black dark:text-white/60 dark:hover:text-white transition"
+							class="flex-1 mx-1 line-clamp-1 text-black/60 hover:text-black/60 transition"
 						>
 							{citation.source.name}
 						</div>
@@ -123,7 +123,7 @@
 		{:else}
 			<Collapsible bind:open={isCollapsibleOpen} className="w-full">
 				<div
-					class="flex items-center gap-2 text-gray-500 hover:text-gray-600 dark:hover:text-gray-400 transition cursor-pointer"
+					class="flex items-center gap-2 text-gray-500 hover:text-gray-600 transition cursor-pointer"
 				>
 					<div class="flex-grow flex items-center gap-1 overflow-hidden">
 						<span class="whitespace-nowrap hidden sm:inline">{$i18n.t('References from')}</span>
@@ -131,7 +131,7 @@
 							<div class="flex text-xs font-medium items-center">
 								{#each citations.slice(0, 2) as citation, idx}
 									<button
-										class="no-toggle outline-none flex dark:text-gray-300 p-1 bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-850 transition rounded-xl max-w-96"
+										class="no-toggle outline-none flex p-1 bg-gray-50 hover:bg-gray-100 transition rounded-xl max-w-96"
 										on:click={() => {
 											showCitationModal = true;
 											selectedCitation = citation;
@@ -141,7 +141,7 @@
 										}}
 									>
 										{#if citations.every((c) => c.distances !== undefined)}
-											<div class="bg-gray-50 dark:bg-gray-800 rounded-full size-4">
+											<div class="bg-gray-50 rounded-full size-4">
 												{idx + 1}
 											</div>
 										{/if}
@@ -170,14 +170,14 @@
 					<div class="flex text-xs font-medium">
 						{#each citations as citation, idx}
 							<button
-								class="no-toggle outline-none flex dark:text-gray-300 p-1 bg-gray-50 hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-850 transition rounded-xl max-w-96"
+								class="no-toggle outline-none flex p-1 bg-gray-50 hover:bg-gray-100 transition rounded-xl max-w-96"
 								on:click={() => {
 									showCitationModal = true;
 									selectedCitation = citation;
 								}}
 							>
 								{#if citations.every((c) => c.distances !== undefined)}
-									<div class="bg-gray-50 dark:bg-gray-800 rounded-full size-4">
+									<div class="bg-gray-50 rounded-full size-4">
 										{idx + 1}
 									</div>
 								{/if}

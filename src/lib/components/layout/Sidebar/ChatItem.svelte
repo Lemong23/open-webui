@@ -203,17 +203,17 @@
 		deleteChatHandler(id);
 	}}
 >
-	<div class=" text-sm text-gray-500 flex-1 line-clamp-3">
-		{$i18n.t('This will delete')} <span class="  font-semibold">{title}</span>.
+	<div class="text-sm text-gray-500 flex-1 line-clamp-3">
+		{$i18n.t('This will delete')} <span class="font-semibold">{title}</span>.
 	</div>
 </DeleteConfirmDialog>
 
 {#if dragged && x && y}
 	<DragGhost {x} {y}>
-		<div class=" bg-black/80 backdrop-blur-2xl px-2 py-1 rounded-lg w-fit max-w-40">
+		<div class="bg-black/80 backdrop-blur-2xl px-2 py-1 rounded-lg w-fit max-w-40">
 			<div class="flex items-center gap-1">
 				<Document className=" size-[18px]" strokeWidth="2" />
-				<div class=" text-xs text-white line-clamp-1">
+				<div class="text-xs text-white line-clamp-1">
 					{title}
 				</div>
 			</div>
@@ -221,31 +221,31 @@
 	</DragGhost>
 {/if}
 
-<div bind:this={itemElement} class=" w-full {className} relative group" {draggable}>
+<div bind:this={itemElement} class="w-full {className} relative group" {draggable}>
 	{#if confirmEdit}
 		<div
-			class=" w-full flex justify-between rounded-lg px-[11px] py-[6px] {id === $chatId ||
+			class="w-full flex justify-between rounded-lg px-[11px] py-[6px] {id === $chatId ||
 			confirmEdit
-				? 'bg-gray-200 dark:bg-gray-900'
+				? 'bg-gray-200'
 				: selected
-					? 'bg-gray-100 dark:bg-gray-950'
-					: 'group-hover:bg-gray-100 dark:group-hover:bg-gray-950'}  whitespace-nowrap text-ellipsis"
+					? 'bg-gray-100'
+					: 'group-hover:bg-gray-100'}  whitespace-nowrap text-ellipsis"
 		>
 			<input
 				use:focusEdit
 				bind:value={chatTitle}
 				id="chat-title-input-{id}"
-				class=" bg-transparent w-full outline-none mr-10"
+				class="bg-transparent w-full outline-none mr-10"
 			/>
 		</div>
 	{:else}
 		<a
-			class=" w-full flex justify-between rounded-lg px-[11px] py-[6px] {id === $chatId ||
+			class="w-full flex justify-between rounded-lg px-[11px] py-[6px] {id === $chatId ||
 			confirmEdit
-				? 'bg-gray-200 dark:bg-gray-900'
+				? 'bg-gray-200'
 				: selected
-					? 'bg-gray-100 dark:bg-gray-950'
-					: ' group-hover:bg-gray-100 dark:group-hover:bg-gray-950'}  whitespace-nowrap text-ellipsis"
+					? 'bg-gray-100'
+					: ' group-hover:bg-gray-100'}  whitespace-nowrap text-ellipsis"
 			href="/c/{id}"
 			on:click={() => {
 				dispatch('select');
@@ -267,8 +267,8 @@
 			on:focus={(e) => {}}
 			draggable="false"
 		>
-			<div class=" flex self-center flex-1 w-full">
-				<div class=" text-left self-center overflow-hidden w-full h-[20px]">
+			<div class="flex self-center flex-1 w-full">
+				<div class="text-left self-center overflow-hidden w-full h-[20px]">
 					{title}
 				</div>
 			</div>
@@ -279,10 +279,10 @@
 	<div
 		class="
         {id === $chatId || confirmEdit
-			? 'from-gray-200 dark:from-gray-900'
+			? 'from-gray-200'
 			: selected
-				? 'from-gray-100 dark:from-gray-950'
-				: 'invisible group-hover:visible from-gray-100 dark:from-gray-950'}
+				? 'from-gray-100'
+				: 'invisible group-hover:visible from-gray-100'}
             absolute {className === 'pr-2'
 			? 'right-[8px]'
 			: 'right-0'}  top-[4px] py-1 pr-0.5 mr-1.5 pl-5 bg-gradient-to-l from-80%
@@ -301,7 +301,7 @@
 			>
 				<Tooltip content={$i18n.t('Confirm')}>
 					<button
-						class=" self-center dark:hover:text-white transition"
+						class="self-center transition"
 						on:click={() => {
 							editChatTitle(id, chatTitle);
 							confirmEdit = false;
@@ -314,7 +314,7 @@
 
 				<Tooltip content={$i18n.t('Cancel')}>
 					<button
-						class=" self-center dark:hover:text-white transition"
+						class="self-center transition"
 						on:click={() => {
 							confirmEdit = false;
 							chatTitle = '';
@@ -325,10 +325,10 @@
 				</Tooltip>
 			</div>
 		{:else if shiftKey && mouseOver}
-			<div class=" flex items-center self-center space-x-1.5">
+			<div class="flex items-center self-center space-x-1.5">
 				<Tooltip content={$i18n.t('Archive')} className="flex items-center">
 					<button
-						class=" self-center dark:hover:text-white transition"
+						class="self-center transition"
 						on:click={() => {
 							archiveChatHandler(id);
 						}}
@@ -340,7 +340,7 @@
 
 				<Tooltip content={$i18n.t('Delete')}>
 					<button
-						class=" self-center dark:hover:text-white transition"
+						class="self-center transition"
 						on:click={() => {
 							deleteChatHandler(id);
 						}}
@@ -388,7 +388,7 @@
 				>
 					<button
 						aria-label="Chat Menu"
-						class=" self-center dark:hover:text-white transition"
+						class="self-center transition"
 						on:click={() => {
 							dispatch('select');
 						}}

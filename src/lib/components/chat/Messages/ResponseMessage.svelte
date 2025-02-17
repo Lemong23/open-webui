@@ -476,7 +476,7 @@
 
 {#key message.id}
 	<div
-		class=" flex w-full message-{message.id}"
+		class="flex w-full message-{message.id}"
 		id="message-{message.id}"
 		dir={$settings.chatDirection}
 	>
@@ -498,7 +498,7 @@
 
 				{#if message.timestamp}
 					<div
-						class=" self-center text-xs invisible group-hover:visible text-gray-400 font-medium first-letter:capitalize ml-0.5 translate-y-[1px]"
+						class="self-center text-xs invisible group-hover:visible text-gray-400 font-medium first-letter:capitalize ml-0.5 translate-y-[1px]"
 					>
 						<Tooltip content={dayjs(message.timestamp * 1000).format('dddd, DD MMMM YYYY HH:mm')}>
 							<span class="line-clamp-1">{formatDate(message.timestamp * 1000)}</span>
@@ -565,7 +565,7 @@
 											<div
 												class="{status?.done === false
 													? 'shimmer'
-													: ''} text-gray-500 dark:text-gray-500 text-base line-clamp-1 text-wrap"
+													: ''} text-gray-500 text-base line-clamp-1 text-wrap"
 											>
 												{$i18n.t(`Searching Knowledge for "{{searchQuery}}"`, {
 													searchQuery: status.query
@@ -577,7 +577,7 @@
 											<div
 												class="{status?.done === false
 													? 'shimmer'
-													: ''} text-gray-500 dark:text-gray-500 text-base line-clamp-1 text-wrap"
+													: ''} text-gray-500 text-base line-clamp-1 text-wrap"
 											>
 												<!-- $i18n.t(`Searching "{{searchQuery}}"`) -->
 												{#if status?.description.includes('{{searchQuery}}')}
@@ -599,11 +599,11 @@
 						{/if}
 
 						{#if edit === true}
-							<div class="w-full bg-gray-50 dark:bg-gray-800 rounded-3xl px-5 py-3 my-2">
+							<div class="w-full bg-gray-50 rounded-3xl px-5 py-3 my-2">
 								<textarea
 									id="message-edit-{message.id}"
 									bind:this={editTextAreaElement}
-									class=" bg-transparent outline-none w-full resize-none"
+									class="bg-transparent outline-none w-full resize-none"
 									bind:value={editedContent}
 									on:input={(e) => {
 										e.target.style.height = '';
@@ -623,11 +623,11 @@
 									}}
 								/>
 
-								<div class=" mt-2 mb-1 flex justify-between text-sm font-medium">
+								<div class="mt-2 mb-1 flex justify-between text-sm font-medium">
 									<div>
 										<button
 											id="save-new-message-button"
-											class=" px-4 py-2 bg-gray-50 hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 border dark:border-gray-700 text-gray-700 dark:text-gray-200 transition rounded-3xl"
+											class="px-4 py-2 bg-gray-50 hover:bg-gray-100 border text-gray-700 transition rounded-3xl"
 											on:click={() => {
 												saveAsCopyHandler();
 											}}
@@ -639,7 +639,7 @@
 									<div class="flex space-x-1.5">
 										<button
 											id="close-edit-message-button"
-											class="px-4 py-2 bg-white dark:bg-gray-900 hover:bg-gray-100 text-gray-800 dark:text-gray-100 transition rounded-3xl"
+											class="px-4 py-2 bg-white hover:bg-gray-100 text-gray-800 transition rounded-3xl"
 											on:click={() => {
 												cancelEditMessage();
 											}}
@@ -649,7 +649,7 @@
 
 										<button
 											id="confirm-edit-message-button"
-											class=" px-4 py-2 bg-gray-900 dark:bg-white hover:bg-gray-850 text-gray-100 dark:text-gray-800 transition rounded-3xl"
+											class="px-4 py-2 bg-gray-900 hover:bg-gray-850 text-gray-100 transition rounded-3xl"
 											on:click={() => {
 												editMessageConfirmHandler();
 											}}
@@ -729,12 +729,12 @@
 				{#if !edit}
 					{#if message.done || siblings.length > 1}
 						<div
-							class=" flex justify-start overflow-x-auto buttons text-gray-600 dark:text-gray-500 mt-0.5"
+							class="flex justify-start overflow-x-auto buttons text-gray-600 mt-0.5"
 						>
 							{#if siblings.length > 1}
 								<div class="flex self-center min-w-fit" dir="ltr">
 									<button
-										class="self-center p-1 hover:bg-black/5 dark:hover:bg-white/5 dark:hover:text-white hover:text-black rounded-md transition"
+										class="self-center p-1 hover:bg-black/5 hover:text-black rounded-md transition"
 										on:click={() => {
 											showPreviousMessage(message);
 										}}
@@ -756,13 +756,13 @@
 									</button>
 
 									<div
-										class="text-sm tracking-widest font-semibold self-center dark:text-gray-100 min-w-fit"
+										class="text-sm tracking-widest font-semibold self-center min-w-fit"
 									>
 										{siblings.indexOf(message.id) + 1}/{siblings.length}
 									</div>
 
 									<button
-										class="self-center p-1 hover:bg-black/5 dark:hover:bg-white/5 dark:hover:text-white hover:text-black rounded-md transition"
+										class="self-center p-1 hover:bg-black/5 hover:text-black rounded-md transition"
 										on:click={() => {
 											showNextMessage(message);
 										}}
@@ -792,7 +792,7 @@
 											<button
 												class="{isLastMessage
 													? 'visible'
-													: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg dark:hover:text-white hover:text-black transition"
+													: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 rounded-lg hover:text-black transition"
 												on:click={() => {
 													editMessageHandler();
 												}}
@@ -820,7 +820,7 @@
 									<button
 										class="{isLastMessage
 											? 'visible'
-											: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg dark:hover:text-white hover:text-black transition copy-response-button"
+											: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 rounded-lg hover:text-black transition copy-response-button"
 										on:click={() => {
 											copyToClipboard(message.content);
 										}}
@@ -847,7 +847,7 @@
 										id="speak-button-{message.id}"
 										class="{isLastMessage
 											? 'visible'
-											: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg dark:hover:text-white hover:text-black transition"
+											: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 rounded-lg hover:text-black transition"
 										on:click={() => {
 											if (!loadingSpeech) {
 												toggleSpeakMessage();
@@ -856,7 +856,7 @@
 									>
 										{#if loadingSpeech}
 											<svg
-												class=" w-4 h-4"
+												class="w-4 h-4"
 												fill="currentColor"
 												viewBox="0 0 24 24"
 												xmlns="http://www.w3.org/2000/svg"
@@ -925,7 +925,7 @@
 										<button
 											class="{isLastMessage
 												? 'visible'
-												: 'invisible group-hover:visible'}  p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg dark:hover:text-white hover:text-black transition"
+												: 'invisible group-hover:visible'}  p-1.5 hover:bg-black/5 rounded-lg hover:text-black transition"
 											on:click={() => {
 												if (!generatingImage) {
 													generateImage(message);
@@ -934,7 +934,7 @@
 										>
 											{#if generatingImage}
 												<svg
-													class=" w-4 h-4"
+													class="w-4 h-4"
 													fill="currentColor"
 													viewBox="0 0 24 24"
 													xmlns="http://www.w3.org/2000/svg"
@@ -1000,9 +1000,9 @@
 										placement="bottom"
 									>
 										<button
-											class=" {isLastMessage
+											class="{isLastMessage
 												? 'visible'
-												: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg dark:hover:text-white hover:text-black transition whitespace-pre-wrap"
+												: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 rounded-lg hover:text-black transition whitespace-pre-wrap"
 											on:click={() => {
 												console.log(message);
 											}}
@@ -1032,11 +1032,11 @@
 											<button
 												class="{isLastMessage
 													? 'visible'
-													: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg {(
+													: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 rounded-lg {(
 													message?.annotation?.rating ?? ''
 												).toString() === '1'
-													? 'bg-gray-100 dark:bg-gray-800'
-													: ''} dark:hover:text-white hover:text-black transition disabled:cursor-progress disabled:hover:bg-transparent"
+													? 'bg-gray-100'
+													: ''} hover:text-black transition disabled:cursor-progress disabled:hover:bg-transparent"
 												disabled={feedbackLoading}
 												on:click={async () => {
 													await feedbackHandler(1);
@@ -1068,11 +1068,11 @@
 											<button
 												class="{isLastMessage
 													? 'visible'
-													: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg {(
+													: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 rounded-lg {(
 													message?.annotation?.rating ?? ''
 												).toString() === '-1'
-													? 'bg-gray-100 dark:bg-gray-800'
-													: ''} dark:hover:text-white hover:text-black transition disabled:cursor-progress disabled:hover:bg-transparent"
+													? 'bg-gray-100'
+													: ''} hover:text-black transition disabled:cursor-progress disabled:hover:bg-transparent"
 												disabled={feedbackLoading}
 												on:click={async () => {
 													await feedbackHandler(-1);
@@ -1108,7 +1108,7 @@
 												id="continue-response-button"
 												class="{isLastMessage
 													? 'visible'
-													: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg dark:hover:text-white hover:text-black transition regenerate-response-button"
+													: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 rounded-lg hover:text-black transition regenerate-response-button"
 												on:click={() => {
 													continueResponse();
 												}}
@@ -1141,7 +1141,7 @@
 											type="button"
 											class="{isLastMessage
 												? 'visible'
-												: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg dark:hover:text-white hover:text-black transition regenerate-response-button"
+												: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 rounded-lg hover:text-black transition regenerate-response-button"
 											on:click={() => {
 												showRateComment = false;
 												regenerateResponse(message);
@@ -1183,7 +1183,7 @@
 													type="button"
 													class="{isLastMessage
 														? 'visible'
-														: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 dark:hover:bg-white/5 rounded-lg dark:hover:text-white hover:text-black transition"
+														: 'invisible group-hover:visible'} p-1.5 hover:bg-black/5 rounded-lg hover:text-black transition"
 													on:click={() => {
 														actionMessage(action.id, message);
 													}}
@@ -1193,7 +1193,7 @@
 															<img
 																src={action.icon_url}
 																class="w-4 h-4 {action.icon_url.includes('svg')
-																	? 'dark:invert-[80%]'
+																	? ''
 																	: ''}"
 																style="fill: currentColor;"
 																alt={action.name}

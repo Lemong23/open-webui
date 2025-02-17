@@ -560,7 +560,7 @@
 			<div class="m-auto pt-64 flex flex-col justify-center">
 				<div class="max-w-md">
 					<AddFilesPlaceholder>
-						<div class=" mt-2 text-center text-sm dark:text-gray-200 w-full">
+						<div class="mt-2 text-center text-sm w-full">
 							Drop any files here to add to my documents
 						</div>
 					</AddFilesPlaceholder>
@@ -623,7 +623,7 @@
 			accessRoles={['read', 'write']}
 		/>
 		<div class="w-full mb-2.5">
-			<div class=" flex w-full">
+			<div class="flex w-full">
 				<div class="flex-1">
 					<div class="flex items-center justify-between w-full px-0.5 mb-1">
 						<div class="w-full">
@@ -640,7 +640,7 @@
 
 						<div class="self-center flex-shrink-0">
 							<button
-								class="bg-gray-50 hover:bg-gray-100 text-black dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-white transition px-2 py-1 rounded-full flex gap-1 items-center"
+								class="bg-gray-50 hover:bg-gray-100 text-black transition px-2 py-1 rounded-full flex gap-1 items-center"
 								type="button"
 								on:click={() => {
 									showAccessControlModal = true;
@@ -674,12 +674,12 @@
 			{#if largeScreen}
 				<div class="flex-1 flex justify-start w-full h-full max-h-full">
 					{#if selectedFile}
-						<div class=" flex flex-col w-full h-full max-h-full">
+						<div class="flex flex-col w-full h-full max-h-full">
 							<div class="flex-shrink-0 mb-2 flex items-center">
 								{#if !showSidepanel}
 									<div class="-translate-x-2">
 										<button
-											class="w-full text-left text-sm p-1.5 rounded-lg dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-gray-850"
+											class="w-full text-left text-sm p-1.5 rounded-lg hover:bg-black/5"
 											on:click={() => {
 												pane.expand();
 											}}
@@ -689,9 +689,9 @@
 									</div>
 								{/if}
 
-								<div class=" flex-1 text-xl font-medium">
+								<div class="flex-1 text-xl font-medium">
 									<a
-										class="hover:text-gray-500 hover:dark:text-gray-100 hover:underline flex-grow line-clamp-1"
+										class="hover:text-gray-500 hover:underline flex-grow line-clamp-1"
 										href={selectedFile.id ? `/api/v1/files/${selectedFile.id}/content` : '#'}
 										target="_blank"
 									>
@@ -701,7 +701,7 @@
 
 								<div>
 									<button
-										class="self-center w-fit text-sm py-1 px-2.5 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-lg"
+										class="self-center w-fit text-sm py-1 px-2.5 hover:bg-black/5 rounded-lg"
 										on:click={() => {
 											updateFileContentHandler();
 										}}
@@ -712,7 +712,7 @@
 							</div>
 
 							<div
-								class=" flex-1 w-full h-full max-h-full text-sm bg-transparent outline-none overflow-y-auto scrollbar-hidden"
+								class="flex-1 w-full h-full max-h-full text-sm bg-transparent outline-none overflow-y-auto scrollbar-hidden"
 							>
 								{#key selectedFile.id}
 									<RichTextInput
@@ -726,7 +726,7 @@
 						</div>
 					{:else}
 						<div class="h-full flex w-full">
-							<div class="m-auto text-xs text-center text-gray-200 dark:text-gray-700">
+							<div class="m-auto text-xs text-center text-gray-200">
 								{$i18n.t('Drag and drop a file to upload or select a file to view')}
 							</div>
 						</div>
@@ -741,11 +741,11 @@
 					}}
 				>
 					<div class="flex flex-col justify-start h-full max-h-full p-2">
-						<div class=" flex flex-col w-full h-full max-h-full">
+						<div class="flex flex-col w-full h-full max-h-full">
 							<div class="flex-shrink-0 mt-1 mb-2 flex items-center">
 								<div class="mr-2">
 									<button
-										class="w-full text-left text-sm p-1.5 rounded-lg dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-gray-850"
+										class="w-full text-left text-sm p-1.5 rounded-lg hover:bg-black/5"
 										on:click={() => {
 											selectedFileId = null;
 										}}
@@ -753,13 +753,13 @@
 										<ChevronLeft strokeWidth="2.5" />
 									</button>
 								</div>
-								<div class=" flex-1 text-xl line-clamp-1">
+								<div class="flex-1 text-xl line-clamp-1">
 									{selectedFile?.meta?.name}
 								</div>
 
 								<div>
 									<button
-										class="self-center w-fit text-sm py-1 px-2.5 dark:text-gray-300 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/5 rounded-lg"
+										class="self-center w-fit text-sm py-1 px-2.5 hover:bg-black/5 rounded-lg"
 										on:click={() => {
 											updateFileContentHandler();
 										}}
@@ -770,7 +770,7 @@
 							</div>
 
 							<div
-								class=" flex-1 w-full h-full max-h-full py-2.5 px-3.5 rounded-lg text-sm bg-transparent overflow-y-auto scrollbar-hidden"
+								class="flex-1 w-full h-full max-h-full py-2.5 px-3.5 rounded-lg text-sm bg-transparent overflow-y-auto scrollbar-hidden"
 							>
 								{#key selectedFile.id}
 									<RichTextInput
@@ -794,13 +794,13 @@
 			border
 			border-gray-50
 			h-full
-			dark:border-gray-850"
+			"
 			>
-				<div class=" flex flex-col w-full space-x-2 rounded-lg h-full">
+				<div class="flex flex-col w-full space-x-2 rounded-lg h-full">
 					<div class="w-full h-full flex flex-col">
-						<div class=" px-3">
+						<div class="px-3">
 							<div class="flex mb-0.5">
-								<div class=" self-center ml-1 mr-3">
+								<div class="self-center ml-1 mr-3">
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 20 20"
@@ -815,7 +815,7 @@
 									</svg>
 								</div>
 								<input
-									class=" w-full text-sm pr-4 py-1 rounded-r-xl outline-none bg-transparent"
+									class="w-full text-sm pr-4 py-1 rounded-r-xl outline-none bg-transparent"
 									bind:value={query}
 									placeholder={$i18n.t('Search Collection')}
 									on:focus={() => {
@@ -843,7 +843,7 @@
 						</div>
 
 						{#if filteredItems.length > 0}
-							<div class=" flex overflow-y-auto h-full w-full scrollbar-hidden text-xs">
+							<div class="flex overflow-y-auto h-full w-full scrollbar-hidden text-xs">
 								<Files
 									small
 									files={filteredItems}

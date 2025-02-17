@@ -187,14 +187,14 @@
 	});
 </script>
 
-<div class=" flex flex-col justify-between w-full overflow-y-auto h-full">
+<div class="flex flex-col justify-between w-full overflow-y-auto h-full">
 	<div class="mx-auto w-full md:px-0 h-full relative">
-		<Sidebar bind:show={showSettings} className=" bg-white dark:bg-gray-900" width="300px">
+		<Sidebar bind:show={showSettings} className=" bg-white" width="300px">
 			<div class="flex flex-col px-5 py-3 text-sm">
 				<div class="flex justify-between items-center mb-2">
-					<div class=" font-medium text-base">Settings</div>
+					<div class="font-medium text-base">Settings</div>
 
-					<div class=" translate-x-1.5">
+					<div class="translate-x-1.5">
 						<button
 							class="p-1.5 bg-transparent hover:bg-white/5 transition rounded-lg"
 							on:click={() => {
@@ -208,15 +208,15 @@
 
 				<div class="mt-1">
 					<div>
-						<div class=" text-xs font-medium mb-1">Model</div>
+						<div class="text-xs font-medium mb-1">Model</div>
 
 						<div class="w-full">
 							<select
-								class="w-full bg-transparent border border-gray-50 dark:border-gray-850 rounded-lg py-1 px-2 -mx-0.5 text-sm outline-none"
+								class="w-full bg-transparent border border-gray-50 rounded-lg py-1 px-2 -mx-0.5 text-sm outline-none"
 								bind:value={selectedModelId}
 							>
 								{#each $models as model}
-									<option value={model.id} class="bg-gray-50 dark:bg-gray-700">{model.name}</option>
+									<option value={model.id} class="bg-gray-50">{model.name}</option>
 								{/each}
 							</select>
 						</div>
@@ -225,21 +225,21 @@
 			</div>
 		</Sidebar>
 
-		<div class=" flex flex-col h-full px-3.5">
+		<div class="flex flex-col h-full px-3.5">
 			<div class="flex w-full items-start gap-1.5">
 				<Collapsible
 					className="w-full flex-1"
 					bind:open={showSystem}
-					buttonClassName="w-full rounded-lg text-sm border border-gray-50 dark:border-gray-850 w-full py-1 px-1.5"
+					buttonClassName="w-full rounded-lg text-sm border border-gray-50 w-full py-1 px-1.5"
 					grow={true}
 				>
 					<div class="flex gap-2 justify-between items-center">
-						<div class=" flex-shrink-0 font-medium ml-1.5">
+						<div class="flex-shrink-0 font-medium ml-1.5">
 							{$i18n.t('System Instructions')}
 						</div>
 
 						{#if !showSystem}
-							<div class=" flex-1 text-gray-500 line-clamp-1">
+							<div class="flex-1 text-gray-500 line-clamp-1">
 								{system}
 							</div>
 						{/if}
@@ -281,11 +281,11 @@
 			</div>
 
 			<div
-				class=" pb-2.5 flex flex-col justify-between w-full flex-auto overflow-auto h-0"
+				class="pb-2.5 flex flex-col justify-between w-full flex-auto overflow-auto h-0"
 				id="messages-container"
 				bind:this={messagesContainerElement}
 			>
-				<div class=" h-full w-full flex flex-col">
+				<div class="h-full w-full flex flex-col">
 					<div class="flex-1 p-1">
 						<Messages bind:messages />
 					</div>
@@ -296,13 +296,13 @@
 				<div class="text-xs font-medium text-gray-500 px-2 py-1">
 					{selectedModelId}
 				</div>
-				<div class="border border-gray-50 dark:border-gray-850 w-full px-3 py-2.5 rounded-xl">
+				<div class="border border-gray-50 w-full px-3 py-2.5 rounded-xl">
 					<div class="py-0.5">
 						<!-- $i18n.t('a user') -->
 						<!-- $i18n.t('an assistant') -->
 						<textarea
 							bind:value={message}
-							class=" w-full h-full bg-transparent resize-none outline-none text-sm"
+							class="w-full h-full bg-transparent resize-none outline-none text-sm"
 							placeholder={$i18n.t(`Enter {{role}} message here`, {
 								role: role === 'user' ? $i18n.t('a user') : $i18n.t('an assistant')
 							})}
@@ -321,7 +321,7 @@
 					<div class="flex justify-between">
 						<div>
 							<button
-								class="px-3.5 py-1.5 text-sm font-medium bg-gray-50 hover:bg-gray-100 text-gray-900 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-gray-200 transition rounded-lg"
+								class="px-3.5 py-1.5 text-sm font-medium bg-gray-50 hover:bg-gray-100 text-gray-900 transition rounded-lg"
 								on:click={() => {
 									role = role === 'user' ? 'assistant' : 'user';
 								}}
@@ -338,7 +338,7 @@
 							{#if !loading}
 								<button
 									disabled={message === ''}
-									class="px-3.5 py-1.5 text-sm font-medium disabled:bg-gray-50 dark:disabled:hover:bg-gray-850 disabled:cursor-not-allowed bg-gray-50 hover:bg-gray-100 text-gray-900 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-gray-200 transition rounded-lg"
+									class="px-3.5 py-1.5 text-sm font-medium disabled:bg-gray-50 disabled:cursor-not-allowed bg-gray-50 hover:bg-gray-100 text-gray-900 transition rounded-lg"
 									on:click={() => {
 										addHandler();
 										role = role === 'user' ? 'assistant' : 'user';
@@ -348,7 +348,7 @@
 								</button>
 
 								<button
-									class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-lg"
+									class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-lg"
 									on:click={() => {
 										submitHandler();
 									}}

@@ -20,14 +20,14 @@
 
 <div class="relative flex-1 w-full h-full flex justify-center overflow-auto px-5">
 	{#if loading}
-		<div class=" absolute top-0 bottom-0 left-0 right-0 flex">
+		<div class="absolute top-0 bottom-0 left-0 right-0 flex">
 			<div class="m-auto">
 				<Spinner />
 			</div>
 		</div>
 	{/if}
 
-	<div class=" w-full flex flex-col gap-2 {loading ? 'opacity-20' : ''}">
+	<div class="w-full flex flex-col gap-2 {loading ? 'opacity-20' : ''}">
 		<div class="flex-shrink-0 w-full flex justify-between items-center">
 			<div class="w-full">
 				<input
@@ -40,7 +40,7 @@
 			</div>
 		</div>
 
-		<div class=" flex-1 w-full h-full">
+		<div class="flex-1 w-full h-full">
 			<RichTextInput
 				className=" input-prose-sm"
 				bind:value={content}
@@ -80,7 +80,7 @@
 			{:else}
 				<Tooltip content={$i18n.t('Voice Input')}>
 					<button
-						class="cursor-pointer p-2.5 flex rounded-full hover:bg-gray-100 dark:hover:bg-gray-850 transition shadow-xl"
+						class="cursor-pointer p-2.5 flex rounded-full hover:bg-gray-100 transition shadow-xl"
 						type="button"
 						on:click={async () => {
 							try {
@@ -112,7 +112,7 @@
 			{/if}
 
 			<!-- <button
-				class="cursor-pointer p-2.5 flex rounded-full hover:bg-gray-100 dark:hover:bg-gray-850 transition shadow-xl"
+				class="cursor-pointer p-2.5 flex rounded-full hover:bg-gray-100 transition shadow-xl"
 			>
 				<SparklesSolid className="size-4" />
 			</button> -->

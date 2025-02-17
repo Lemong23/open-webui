@@ -449,7 +449,7 @@
 
 {#if $showSidebar}
 	<div
-		class=" {$isApp
+		class="{$isApp
 			? ' ml-[4.5rem] md:ml-0'
 			: ''} fixed md:hidden z-40 top-0 right-0 left-0 bottom-0 bg-black/60 w-full min-h-screen h-screen flex justify-center overflow-hidden overscroll-contain"
 		on:mousedown={() => {
@@ -465,7 +465,7 @@
 		? 'md:relative w-[260px] max-w-[260px]'
 		: '-translate-x-[260px] w-[0px]'} {$isApp
 		? `ml-[4.5rem] md:ml-0 `
-		: 'transition-width duration-200 ease-in-out'}  flex-shrink-0 bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-gray-200 text-sm fixed z-50 top-0 left-0 overflow-x-hidden
+		: 'transition-width duration-200 ease-in-out'}  flex-shrink-0 bg-gray-50 text-gray-900 text-sm fixed z-50 top-0 left-0 overflow-x-hidden
         "
 	data-state={$showSidebar}
 >
@@ -474,14 +474,14 @@
 			? ''
 			: 'invisible'}"
 	>
-		<div class="px-1.5 flex justify-between space-x-1 text-gray-600 dark:text-gray-400">
+		<div class="px-1.5 flex justify-between space-x-1 text-gray-600">
 			<button
-				class=" cursor-pointer p-[7px] flex rounded-xl hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				class="cursor-pointer p-[7px] flex rounded-xl hover:bg-gray-100 transition"
 				on:click={() => {
 					showSidebar.set(!$showSidebar);
 				}}
 			>
-				<div class=" m-auto self-center">
+				<div class="m-auto self-center">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
@@ -501,7 +501,7 @@
 
 			<a
 				id="sidebar-new-chat-button"
-				class="flex justify-between items-center flex-1 rounded-lg px-2 py-1 h-full text-right hover:bg-gray-100 dark:hover:bg-gray-900 transition no-drag-region"
+				class="flex justify-between items-center flex-1 rounded-lg px-2 py-1 h-full text-right hover:bg-gray-100 transition no-drag-region"
 				href="/"
 				draggable="false"
 				on:click={async () => {
@@ -521,11 +521,11 @@
 						<img
 							crossorigin="anonymous"
 							src="{WEBUI_BASE_URL}/static/favicon.png"
-							class=" size-5 -translate-x-1.5 rounded-full"
+							class="size-5 -translate-x-1.5 rounded-full"
 							alt="logo"
 						/>
 					</div>
-					<div class=" self-center font-medium text-sm text-gray-850 dark:text-white font-primary">
+					<div class="self-center font-medium text-sm text-gray-850 font-primary">
 						{$i18n.t('New Chat')}
 					</div>
 				</div>
@@ -537,9 +537,9 @@
 		</div>
 
 		{#if $user?.role === 'admin' || $user?.permissions?.workspace?.models || $user?.permissions?.workspace?.knowledge || $user?.permissions?.workspace?.prompts || $user?.permissions?.workspace?.tools}
-			<div class="px-1.5 flex justify-center text-gray-800 dark:text-gray-200">
+			<div class="px-1.5 flex justify-center text-gray-800">
 				<a
-					class="flex-grow flex space-x-3 rounded-lg px-2 py-[7px] hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+					class="flex-grow flex space-x-3 rounded-lg px-2 py-[7px] hover:bg-gray-100 transition"
 					href="/workspace"
 					on:click={() => {
 						selectedChatId = null;
@@ -569,7 +569,7 @@
 					</div>
 
 					<div class="flex self-center">
-						<div class=" self-center font-medium text-sm font-primary">{$i18n.t('Workspace')}</div>
+						<div class="self-center font-medium text-sm font-primary">{$i18n.t('Workspace')}</div>
 					</div>
 				</a>
 			</div>
@@ -727,7 +727,7 @@
 							name={$i18n.t('Pinned')}
 						>
 							<div
-								class="ml-3 pl-1 mt-[1px] flex flex-col overflow-y-auto scrollbar-hidden border-s border-gray-100 dark:border-gray-900"
+								class="ml-3 pl-1 mt-[1px] flex flex-col overflow-y-auto scrollbar-hidden border-s border-gray-100"
 							>
 								{#each $pinnedChats as chat, idx}
 									<ChatItem
@@ -772,13 +772,13 @@
 					/>
 				{/if}
 
-				<div class=" flex-1 flex flex-col overflow-y-auto scrollbar-hidden">
+				<div class="flex-1 flex flex-col overflow-y-auto scrollbar-hidden">
 					<div class="pt-1.5">
 						{#if $chats}
 							{#each $chats as chat, idx}
 								{#if idx === 0 || (idx > 0 && chat.time_range !== $chats[idx - 1].time_range)}
 									<div
-										class="w-full pl-2.5 text-xs text-gray-500 dark:text-gray-500 font-medium {idx ===
+										class="w-full pl-2.5 text-xs text-gray-500 font-medium {idx ===
 										0
 											? ''
 											: 'pt-5'} pb-1.5"
@@ -839,14 +839,14 @@
 										class="w-full flex justify-center py-1 text-xs animate-pulse items-center gap-2"
 									>
 										<Spinner className=" size-4" />
-										<div class=" ">Loading...</div>
+										<div class="">Loading...</div>
 									</div>
 								</Loader>
 							{/if}
 						{:else}
 							<div class="w-full flex justify-center py-1 text-xs animate-pulse items-center gap-2">
 								<Spinner className=" size-4" />
-								<div class=" ">Loading...</div>
+								<div class="">Loading...</div>
 							</div>
 						{/if}
 					</div>
@@ -866,19 +866,19 @@
 						}}
 					>
 						<button
-							class=" flex items-center rounded-xl py-2.5 px-2.5 w-full hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+							class="flex items-center rounded-xl py-2.5 px-2.5 w-full hover:bg-gray-100 transition"
 							on:click={() => {
 								showDropdown = !showDropdown;
 							}}
 						>
-							<div class=" self-center mr-3">
+							<div class="self-center mr-3">
 								<img
 									src={$user.profile_image_url}
-									class=" max-w-[30px] object-cover rounded-full"
+									class="max-w-[30px] object-cover rounded-full"
 									alt="User profile"
 								/>
 							</div>
-							<div class=" self-center font-medium">{$user.name}</div>
+							<div class="self-center font-medium">{$user.name}</div>
 						</button>
 					</UserMenu>
 				{/if}

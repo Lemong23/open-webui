@@ -273,13 +273,13 @@
 		}}
 	/>
 
-	<div class=" space-y-3 overflow-y-scroll max-h-[28rem] lg:max-h-full">
+	<div class="space-y-3 overflow-y-scroll max-h-[28rem] lg:max-h-full">
 		<div>
-			<div class=" mb-1.5 text-sm font-medium">{$i18n.t('UI')}</div>
+			<div class="mb-1.5 text-sm font-medium">{$i18n.t('UI')}</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Landing Page Mode')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Landing Page Mode')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -298,8 +298,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Chat Bubble UI')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Chat Bubble UI')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -319,8 +319,8 @@
 
 			{#if !$settings.chatBubble}
 				<div>
-					<div class=" py-0.5 flex w-full justify-between">
-						<div class=" self-center text-xs">
+					<div class="py-0.5 flex w-full justify-between">
+						<div class="self-center text-xs">
 							{$i18n.t('Display the username instead of You in the Chat')}
 						</div>
 
@@ -342,8 +342,8 @@
 			{/if}
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Widescreen Mode')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Widescreen Mode')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -362,8 +362,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Chat direction')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Chat direction')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -380,8 +380,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">
 						{$i18n.t('Notification Sound')}
 					</div>
 
@@ -403,8 +403,8 @@
 
 			{#if $user.role === 'admin'}
 				<div>
-					<div class=" py-0.5 flex w-full justify-between">
-						<div class=" self-center text-xs">
+					<div class="py-0.5 flex w-full justify-between">
+						<div class="self-center text-xs">
 							{$i18n.t('Toast notifications for new updates')}
 						</div>
 
@@ -425,8 +425,8 @@
 				</div>
 
 				<div>
-					<div class=" py-0.5 flex w-full justify-between">
-						<div class=" self-center text-xs">
+					<div class="py-0.5 flex w-full justify-between">
+						<div class="self-center text-xs">
 							{$i18n.t(`Show "What's New" modal on login`)}
 						</div>
 
@@ -447,11 +447,11 @@
 				</div>
 			{/if}
 
-			<div class=" my-1.5 text-sm font-medium">{$i18n.t('Chat')}</div>
+			<div class="my-1.5 text-sm font-medium">{$i18n.t('Chat')}</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Title Auto-Generation')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Title Auto-Generation')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -470,8 +470,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Chat Tags Auto-Generation')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Chat Tags Auto-Generation')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -490,8 +490,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">
 						{$i18n.t('Auto-Copy Response to Clipboard')}
 					</div>
 
@@ -512,8 +512,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">
 						{$i18n.t('Rich Text Input for Chat')}
 					</div>
 
@@ -534,8 +534,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">
 						{$i18n.t('Paste Large Text as File')}
 					</div>
 
@@ -556,8 +556,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">
 						{$i18n.t('Chat Background Image')}
 					</div>
 
@@ -583,8 +583,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Allow User Location')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Allow User Location')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -603,8 +603,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Haptic Feedback')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Haptic Feedback')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -623,8 +623,8 @@
 			</div>
 
 			<!-- <div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">
 						{$i18n.t('Fluidly stream large external response chunks')}
 					</div>
 
@@ -645,8 +645,8 @@
 			</div> -->
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">
 						{$i18n.t('Scroll to bottom when switching between branches')}
 					</div>
 
@@ -666,11 +666,11 @@
 				</div>
 			</div>
 
-			<div class=" my-1.5 text-sm font-medium">{$i18n.t('Voice')}</div>
+			<div class="my-1.5 text-sm font-medium">{$i18n.t('Voice')}</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Allow Voice Interruption in Call')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Allow Voice Interruption in Call')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -689,8 +689,8 @@
 			</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Display Emoji in Call')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Display Emoji in Call')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -708,11 +708,11 @@
 				</div>
 			</div>
 
-			<div class=" my-1.5 text-sm font-medium">{$i18n.t('File')}</div>
+			<div class="my-1.5 text-sm font-medium">{$i18n.t('File')}</div>
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs">{$i18n.t('Image Compression')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs">{$i18n.t('Image Compression')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -732,8 +732,8 @@
 
 			{#if imageCompression}
 				<div>
-					<div class=" py-0.5 flex w-full justify-between text-xs">
-						<div class=" self-center text-xs">{$i18n.t('Image Max Compression Size')}</div>
+					<div class="py-0.5 flex w-full justify-between text-xs">
+						<div class="self-center text-xs">{$i18n.t('Image Max Compression Size')}</div>
 
 						<div>
 							<input
@@ -759,7 +759,7 @@
 
 	<div class="flex justify-end text-sm font-medium">
 		<button
-			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 			type="submit"
 		>
 			{$i18n.t('Save')}

@@ -101,7 +101,7 @@
 	{/if}
 
 	<div
-		class="w-full text-3xl text-gray-800 dark:text-gray-100 font-medium text-center flex items-center gap-4 font-primary"
+		class="w-full text-3xl text-gray-800 font-medium text-center flex items-center gap-4 font-primary"
 	>
 		<div class="w-full flex flex-col justify-center items-center">
 			<div class="flex flex-row justify-center gap-3 sm:gap-3.5 w-fit px-5">
@@ -125,7 +125,7 @@
 											($i18n.language === 'dg-DG'
 												? `/doge.png`
 												: `${WEBUI_BASE_URL}/static/favicon.png`)}
-										class=" size-9 sm:size-10 rounded-full border-[1px] border-gray-200 dark:border-none"
+										class="size-9 sm:size-10 rounded-full border-[1px] border-gray-200"
 										alt="logo"
 										draggable="false"
 									/>
@@ -135,7 +135,7 @@
 					</div>
 				</div>
 
-				<div class=" text-3xl sm:text-4xl line-clamp-1" in:fade={{ duration: 100 }}>
+				<div class="text-3xl sm:text-4xl line-clamp-1" in:fade={{ duration: 100 }}>
 					{#if models[selectedModelIdx]?.name}
 						{models[selectedModelIdx]?.name}
 					{:else}
@@ -155,7 +155,7 @@
 							placement="top"
 						>
 							<div
-								class="mt-0.5 px-2 text-sm font-normal text-gray-500 dark:text-gray-400 line-clamp-2 max-w-xl markdown"
+								class="mt-0.5 px-2 text-sm font-normal text-gray-500 line-clamp-2 max-w-xl markdown"
 							>
 								{@html marked.parse(
 									sanitizeResponseContent(models[selectedModelIdx]?.info?.meta?.description)
@@ -164,7 +164,7 @@
 						</Tooltip>
 
 						{#if models[selectedModelIdx]?.info?.meta?.user}
-							<div class="mt-0.5 text-sm font-normal text-gray-400 dark:text-gray-500">
+							<div class="mt-0.5 text-sm font-normal text-gray-400">
 								By
 								{#if models[selectedModelIdx]?.info?.meta?.user.community}
 									<a

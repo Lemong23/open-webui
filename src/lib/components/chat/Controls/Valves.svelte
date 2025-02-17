@@ -148,12 +148,12 @@
 				<div class="flex gap-2">
 					<div class="flex-1">
 						<select
-							class="  w-full rounded text-xs py-2 px-1 bg-transparent outline-none"
+							class="w-full rounded text-xs py-2 px-1 bg-transparent outline-none"
 							bind:value={tab}
 							placeholder="Select"
 						>
-							<option value="tools" class="bg-gray-100 dark:bg-gray-800">{$i18n.t('Tools')}</option>
-							<option value="functions" class="bg-gray-100 dark:bg-gray-800"
+							<option value="tools" class="bg-gray-100">{$i18n.t('Tools')}</option>
+							<option value="functions" class="bg-gray-100"
 								>{$i18n.t('Functions')}</option
 							>
 						</select>
@@ -168,20 +168,20 @@
 							}}
 						>
 							{#if tab === 'tools'}
-								<option value="" selected disabled class="bg-gray-100 dark:bg-gray-800"
+								<option value="" selected disabled class="bg-gray-100"
 									>{$i18n.t('Select a tool')}</option
 								>
 
 								{#each $tools as tool, toolIdx}
-									<option value={tool.id} class="bg-gray-100 dark:bg-gray-800">{tool.name}</option>
+									<option value={tool.id} class="bg-gray-100">{tool.name}</option>
 								{/each}
 							{:else if tab === 'functions'}
-								<option value="" selected disabled class="bg-gray-100 dark:bg-gray-800"
+								<option value="" selected disabled class="bg-gray-100"
 									>{$i18n.t('Select a function')}</option
 								>
 
 								{#each $functions as func, funcIdx}
-									<option value={func.id} class="bg-gray-100 dark:bg-gray-800">{func.name}</option>
+									<option value={func.id} class="bg-gray-100">{func.name}</option>
 								{/each}
 							{/if}
 						</select>
@@ -190,7 +190,7 @@
 			</div>
 
 			{#if selectedId}
-				<hr class="dark:border-gray-800 my-1 w-full" />
+				<hr class="my-1 w-full" />
 
 				<div class="my-2 text-xs">
 					{#if !loading}

@@ -288,15 +288,15 @@
 		submitHandler();
 	}}
 >
-	<div class=" space-y-2.5 overflow-y-scroll scrollbar-hidden h-full pr-1.5">
+	<div class="space-y-2.5 overflow-y-scroll scrollbar-hidden h-full pr-1.5">
 		<div class="flex flex-col gap-0.5">
-			<div class=" mb-0.5 text-sm font-medium">{$i18n.t('General Settings')}</div>
+			<div class="mb-0.5 text-sm font-medium">{$i18n.t('General Settings')}</div>
 
-			<div class=" flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">{$i18n.t('Embedding Model Engine')}</div>
+			<div class="flex w-full justify-between">
+				<div class="self-center text-xs font-medium">{$i18n.t('Embedding Model Engine')}</div>
 				<div class="flex items-center relative">
 					<select
-						class="dark:bg-gray-900 w-fit pr-8 rounded px-2 p-1 text-xs bg-transparent outline-none text-right"
+						class="w-fit pr-8 rounded px-2 p-1 text-xs bg-transparent outline-none text-right"
 						bind:value={embeddingEngine}
 						placeholder="Select an embedding model engine"
 						on:change={(e) => {
@@ -346,8 +346,8 @@
 
 			{#if embeddingEngine === 'ollama' || embeddingEngine === 'openai'}
 				<div class="flex mt-0.5 space-x-2">
-					<div class=" self-center text-xs font-medium">{$i18n.t('Embedding Batch Size')}</div>
-					<div class=" flex-1">
+					<div class="self-center text-xs font-medium">{$i18n.t('Embedding Batch Size')}</div>
+					<div class="flex-1">
 						<input
 							id="steps-range"
 							type="range"
@@ -355,14 +355,14 @@
 							max="2048"
 							step="1"
 							bind:value={embeddingBatchSize}
-							class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+							class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 						/>
 					</div>
 					<div class="">
 						<input
 							bind:value={embeddingBatchSize}
 							type="number"
-							class=" bg-transparent text-center w-14"
+							class="bg-transparent text-center w-14"
 							min="-2"
 							max="16000"
 							step="1"
@@ -371,8 +371,8 @@
 				</div>
 			{/if}
 
-			<div class=" flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">{$i18n.t('Hybrid Search')}</div>
+			<div class="flex w-full justify-between">
+				<div class="self-center text-xs font-medium">{$i18n.t('Hybrid Search')}</div>
 
 				<button
 					class="p-1 px-3 text-xs flex rounded transition"
@@ -390,17 +390,17 @@
 			</div>
 		</div>
 
-		<hr class="dark:border-gray-850" />
+		<hr class="" />
 
 		<div class="space-y-2" />
 		<div>
-			<div class=" mb-2 text-sm font-medium">{$i18n.t('Embedding Model')}</div>
+			<div class="mb-2 text-sm font-medium">{$i18n.t('Embedding Model')}</div>
 
 			{#if embeddingEngine === 'ollama'}
 				<div class="flex w-full">
 					<div class="flex-1 mr-2">
 						<input
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 							bind:value={embeddingModel}
 							placeholder={$i18n.t('Set embedding model')}
 							required
@@ -411,7 +411,7 @@
 				<div class="flex w-full">
 					<div class="flex-1 mr-2">
 						<input
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 							placeholder={$i18n.t('Set embedding model (e.g. {{model}})', {
 								model: embeddingModel.slice(-40)
 							})}
@@ -421,7 +421,7 @@
 
 					{#if embeddingEngine === ''}
 						<button
-							class="px-2.5 bg-gray-50 hover:bg-gray-200 text-gray-800 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-gray-100 rounded-lg transition"
+							class="px-2.5 bg-gray-50 hover:bg-gray-200 text-gray-800 rounded-lg transition"
 							on:click={() => {
 								embeddingModelUpdateHandler();
 							}}
@@ -430,7 +430,7 @@
 							{#if updateEmbeddingModelLoading}
 								<div class="self-center">
 									<svg
-										class=" w-4 h-4"
+										class="w-4 h-4"
 										viewBox="0 0 24 24"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
@@ -477,20 +477,20 @@
 				</div>
 			{/if}
 
-			<div class="mt-2 mb-1 text-xs text-gray-400 dark:text-gray-500">
+			<div class="mt-2 mb-1 text-xs text-gray-400">
 				{$i18n.t(
 					'Warning: If you update or change your embedding model, you will need to re-import all documents.'
 				)}
 			</div>
 
 			{#if querySettings.hybrid === true}
-				<div class=" ">
-					<div class=" mb-2 text-sm font-medium">{$i18n.t('Reranking Model')}</div>
+				<div class="">
+					<div class="mb-2 text-sm font-medium">{$i18n.t('Reranking Model')}</div>
 
 					<div class="flex w-full">
 						<div class="flex-1 mr-2">
 							<input
-								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+								class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 								placeholder={$i18n.t('Set reranking model (e.g. {{model}})', {
 									model: 'BAAI/bge-reranker-v2-m3'
 								})}
@@ -498,7 +498,7 @@
 							/>
 						</div>
 						<button
-							class="px-2.5 bg-gray-50 hover:bg-gray-200 text-gray-800 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-gray-100 rounded-lg transition"
+							class="px-2.5 bg-gray-50 hover:bg-gray-200 text-gray-800 rounded-lg transition"
 							on:click={() => {
 								rerankingModelUpdateHandler();
 							}}
@@ -507,7 +507,7 @@
 							{#if updateRerankingModelLoading}
 								<div class="self-center">
 									<svg
-										class=" w-4 h-4"
+										class="w-4 h-4"
 										viewBox="0 0 24 24"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"
@@ -555,7 +555,7 @@
 			{/if}
 		</div>
 
-		<hr class=" dark:border-gray-850" />
+		<hr class="" />
 
 		<div class="">
 			<div class="text-sm font-medium mb-1">{$i18n.t('Content Extraction')}</div>
@@ -564,7 +564,7 @@
 				<div class="self-center text-xs font-medium">{$i18n.t('Engine')}</div>
 				<div class="flex items-center relative">
 					<select
-						class="dark:bg-gray-900 w-fit pr-8 rounded px-2 text-xs bg-transparent outline-none text-right"
+						class="w-fit pr-8 rounded px-2 text-xs bg-transparent outline-none text-right"
 						bind:value={contentExtractionEngine}
 						on:change={(e) => {
 							showTikaServerUrl = e.target.value === 'tika';
@@ -580,7 +580,7 @@
 				<div class="flex w-full mt-1">
 					<div class="flex-1 mr-2">
 						<input
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 							placeholder={$i18n.t('Enter Tika Server URL')}
 							bind:value={tikaServerUrl}
 						/>
@@ -589,7 +589,7 @@
 			{/if}
 		</div>
 
-		<hr class=" dark:border-gray-850" />
+		<hr class="" />
 
 		<div class="text-sm font-medium mb-1">{$i18n.t('Google Drive')}</div>
 
@@ -602,18 +602,18 @@
 			</div>
 		</div>
 
-		<hr class=" dark:border-gray-850" />
+		<hr class="" />
 
-		<div class=" ">
-			<div class=" text-sm font-medium mb-1">{$i18n.t('Query Params')}</div>
+		<div class="">
+			<div class="text-sm font-medium mb-1">{$i18n.t('Query Params')}</div>
 
-			<div class=" flex gap-1.5">
+			<div class="flex gap-1.5">
 				<div class="flex flex-col w-full gap-1">
-					<div class=" text-xs font-medium w-full">{$i18n.t('Top K')}</div>
+					<div class="text-xs font-medium w-full">{$i18n.t('Top K')}</div>
 
 					<div class="w-full">
 						<input
-							class=" w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 outline-none"
 							type="number"
 							placeholder={$i18n.t('Enter Top K')}
 							bind:value={querySettings.k}
@@ -624,14 +624,14 @@
 				</div>
 
 				{#if querySettings.hybrid === true}
-					<div class=" flex flex-col w-full gap-1">
+					<div class="flex flex-col w-full gap-1">
 						<div class="text-xs font-medium w-full">
 							{$i18n.t('Minimum Score')}
 						</div>
 
 						<div class="w-full">
 							<input
-								class=" w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+								class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 outline-none"
 								type="number"
 								step="0.01"
 								placeholder={$i18n.t('Enter Score')}
@@ -646,7 +646,7 @@
 			</div>
 
 			{#if querySettings.hybrid === true}
-				<div class="mt-2 text-xs text-gray-400 dark:text-gray-500">
+				<div class="mt-2 text-xs text-gray-400">
 					{$i18n.t(
 						'Note: If you set a minimum score, the search will only return documents with a score greater than or equal to the minimum score.'
 					)}
@@ -654,7 +654,7 @@
 			{/if}
 
 			<div class="mt-2">
-				<div class=" mb-1 text-xs font-medium">{$i18n.t('RAG Template')}</div>
+				<div class="mb-1 text-xs font-medium">{$i18n.t('RAG Template')}</div>
 				<Tooltip
 					content={$i18n.t('Leave empty to use the default prompt, or enter a custom prompt')}
 					placement="top-start"
@@ -667,16 +667,16 @@
 			</div>
 		</div>
 
-		<hr class=" dark:border-gray-850" />
+		<hr class="" />
 
-		<div class=" ">
+		<div class="">
 			<div class="mb-1 text-sm font-medium">{$i18n.t('Chunk Params')}</div>
 
 			<div class="flex w-full justify-between mb-1.5">
 				<div class="self-center text-xs font-medium">{$i18n.t('Text Splitter')}</div>
 				<div class="flex items-center relative">
 					<select
-						class="dark:bg-gray-900 w-fit pr-8 rounded px-2 text-xs bg-transparent outline-none text-right"
+						class="w-fit pr-8 rounded px-2 text-xs bg-transparent outline-none text-right"
 						bind:value={textSplitter}
 					>
 						<option value="">{$i18n.t('Default')} ({$i18n.t('Character')})</option>
@@ -685,14 +685,14 @@
 				</div>
 			</div>
 
-			<div class=" flex gap-1.5">
-				<div class="  w-full justify-between">
+			<div class="flex gap-1.5">
+				<div class="w-full justify-between">
 					<div class="self-center text-xs font-medium min-w-fit mb-1">
 						{$i18n.t('Chunk Size')}
 					</div>
 					<div class="self-center">
 						<input
-							class=" w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 outline-none"
 							type="number"
 							placeholder={$i18n.t('Enter Chunk Size')}
 							bind:value={chunkSize}
@@ -703,13 +703,13 @@
 				</div>
 
 				<div class="w-full">
-					<div class=" self-center text-xs font-medium min-w-fit mb-1">
+					<div class="self-center text-xs font-medium min-w-fit mb-1">
 						{$i18n.t('Chunk Overlap')}
 					</div>
 
 					<div class="self-center">
 						<input
-							class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 outline-none"
 							type="number"
 							placeholder={$i18n.t('Enter Chunk Overlap')}
 							bind:value={chunkOverlap}
@@ -722,7 +722,7 @@
 
 			<div class="my-2">
 				<div class="flex justify-between items-center text-xs">
-					<div class=" text-xs font-medium">{$i18n.t('PDF Extract Images (OCR)')}</div>
+					<div class="text-xs font-medium">{$i18n.t('PDF Extract Images (OCR)')}</div>
 
 					<div>
 						<Switch bind:state={pdfExtractImages} />
@@ -731,14 +731,14 @@
 			</div>
 		</div>
 
-		<hr class=" dark:border-gray-850" />
+		<hr class="" />
 
 		<div class="">
 			<div class="text-sm font-medium mb-1">{$i18n.t('Files')}</div>
 
-			<div class=" flex gap-1.5">
+			<div class="flex gap-1.5">
 				<div class="w-full">
-					<div class=" self-center text-xs font-medium min-w-fit mb-1">
+					<div class="self-center text-xs font-medium min-w-fit mb-1">
 						{$i18n.t('Max Upload Size')}
 					</div>
 
@@ -750,7 +750,7 @@
 							placement="top-start"
 						>
 							<input
-								class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+								class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 outline-none"
 								type="number"
 								placeholder={$i18n.t('Leave empty for unlimited')}
 								bind:value={fileMaxSize}
@@ -761,7 +761,7 @@
 					</div>
 				</div>
 
-				<div class="  w-full">
+				<div class="w-full">
 					<div class="self-center text-xs font-medium min-w-fit mb-1">
 						{$i18n.t('Max Upload Count')}
 					</div>
@@ -773,7 +773,7 @@
 							placement="top-start"
 						>
 							<input
-								class=" w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+								class="w-full rounded-lg py-1.5 px-4 text-sm bg-gray-50 outline-none"
 								type="number"
 								placeholder={$i18n.t('Leave empty for unlimited')}
 								bind:value={fileMaxCount}
@@ -786,17 +786,17 @@
 			</div>
 		</div>
 
-		<hr class=" dark:border-gray-850" />
+		<hr class="" />
 
 		<div>
 			<button
-				class=" flex rounded-xl py-2 px-3.5 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+				class="flex rounded-xl py-2 px-3.5 w-full hover:bg-gray-200 transition"
 				on:click={() => {
 					showResetUploadDirConfirm = true;
 				}}
 				type="button"
 			>
-				<div class=" self-center mr-3">
+				<div class="self-center mr-3">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
@@ -813,17 +813,17 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center text-sm font-medium">{$i18n.t('Reset Upload Directory')}</div>
+				<div class="self-center text-sm font-medium">{$i18n.t('Reset Upload Directory')}</div>
 			</button>
 
 			<button
-				class=" flex rounded-xl py-2 px-3.5 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+				class="flex rounded-xl py-2 px-3.5 w-full hover:bg-gray-200 transition"
 				on:click={() => {
 					showResetConfirm = true;
 				}}
 				type="button"
 			>
-				<div class=" self-center mr-3">
+				<div class="self-center mr-3">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 16 16"
@@ -837,7 +837,7 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center text-sm font-medium">
+				<div class="self-center text-sm font-medium">
 					{$i18n.t('Reset Vector Storage/Knowledge')}
 				</div>
 			</button>
@@ -845,7 +845,7 @@
 	</div>
 	<div class="flex justify-end pt-3 text-sm font-medium">
 		<button
-			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 			type="submit"
 		>
 			{$i18n.t('Save')}

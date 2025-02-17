@@ -16,7 +16,7 @@
 			/>
 
 			<div class="flex w-full flex-col justify-center">
-				<div class=" py-3">
+				<div class="py-3">
 					<Spinner className="ml-2" />
 				</div>
 

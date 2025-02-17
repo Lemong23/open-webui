@@ -36,8 +36,8 @@
 
 <Modal bind:show size="sm">
 	<div>
-		<div class=" flex justify-between dark:text-gray-300 px-5 pt-4 pb-2">
-			<div class=" text-lg font-medium self-center">
+		<div class="flex justify-between px-5 pt-4 pb-2">
+			<div class="text-lg font-medium self-center">
 				{$i18n.t('Add Memory')}
 			</div>
 			<button
@@ -59,8 +59,8 @@
 			</button>
 		</div>
 
-		<div class="flex flex-col md:flex-row w-full px-5 pb-4 md:space-x-4 dark:text-gray-200">
-			<div class=" flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
+		<div class="flex flex-col md:flex-row w-full px-5 pb-4 md:space-x-4">
+			<div class="flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
 				<form
 					class="flex flex-col w-full"
 					on:submit|preventDefault={() => {
@@ -70,7 +70,7 @@
 					<div class="">
 						<textarea
 							bind:value={content}
-							class=" bg-transparent w-full text-sm resize-none rounded-xl p-3 outline outline-1 outline-gray-100 dark:outline-gray-800"
+							class="bg-transparent w-full text-sm resize-none rounded-xl p-3 outline outline-1 outline-gray-100"
 							rows="3"
 							placeholder={$i18n.t('Enter a detail about yourself for your LLMs to recall')}
 						/>
@@ -82,7 +82,7 @@
 
 					<div class="flex justify-end pt-1 text-sm font-medium">
 						<button
-							class=" px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-3xl flex flex-row space-x-1 items-center {loading
+							class="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-3xl flex flex-row space-x-1 items-center {loading
 								? ' cursor-not-allowed'
 								: ''}"
 							type="submit"
@@ -93,7 +93,7 @@
 							{#if loading}
 								<div class="ml-2 self-center">
 									<svg
-										class=" w-4 h-4"
+										class="w-4 h-4"
 										viewBox="0 0 24 24"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"

@@ -52,13 +52,13 @@
 	};
 </script>
 
-<div class=" rounded-lg flex flex-col gap-2">
+<div class="rounded-lg flex flex-col gap-2">
 	<div class="">
-		<div class=" text-sm font-semibold mb-1">{$i18n.t('Visibility')}</div>
+		<div class="text-sm font-semibold mb-1">{$i18n.t('Visibility')}</div>
 
 		<div class="flex gap-2.5 items-center mb-1">
 			<div>
-				<div class=" p-2 bg-black/5 dark:bg-white/5 rounded-full">
+				<div class="p-2 bg-black/5/5 rounded-full">
 					{#if accessControl !== null}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
@@ -113,11 +113,11 @@
 						}
 					}}
 				>
-					<option class=" text-gray-700" value="private" selected>Private</option>
-					<option class=" text-gray-700" value="public" selected>Public</option>
+					<option class="text-gray-700" value="private" selected>Private</option>
+					<option class="text-gray-700" value="public" selected>Public</option>
 				</select>
 
-				<div class=" text-xs text-gray-400 font-medium">
+				<div class="text-xs text-gray-400 font-medium">
 					{#if accessControl !== null}
 						{$i18n.t('Only select users and groups with permission can access')}
 					{:else}
@@ -144,23 +144,21 @@
 						<div class="flex flex-1 items-center">
 							<div class="w-full px-0.5">
 								<select
-									class="outline-none bg-transparent text-sm rounded-lg block w-full pr-10 max-w-full
-									{selectedGroupId ? '' : 'text-gray-500'}
-									dark:placeholder-gray-500"
+									class="outline-none bg-transparent text-sm rounded-lg block w-full pr-10 max-w-full {selectedGroupId ? '' : 'text-gray-500'}"
 									bind:value={selectedGroupId}
 								>
-									<option class=" text-gray-700" value="" disabled selected
+									<option class="text-gray-700" value="" disabled selected
 										>{$i18n.t('Select a group')}</option
 									>
 									{#each groups.filter((group) => !accessControl.read.group_ids.includes(group.id)) as group}
-										<option class=" text-gray-700" value={group.id}>{group.name}</option>
+										<option class="text-gray-700" value={group.id}>{group.name}</option>
 									{/each}
 								</select>
 							</div>
 							<!-- <div>
 								<Tooltip content={$i18n.t('Add Group')}>
 									<button
-										class=" p-1 rounded-xl bg-transparent dark:hover:bg-white/5 hover:bg-black/5 transition font-medium text-sm flex items-center space-x-1"
+										class="p-1 rounded-xl bg-transparent hover:bg-black/5 transition font-medium text-sm flex items-center space-x-1"
 										type="button"
 										on:click={() => {}}
 									>
@@ -172,7 +170,7 @@
 					</div>
 				</div>
 
-				<hr class=" border-gray-100 dark:border-gray-700/10 mt-1.5 mb-2.5 w-full" />
+				<hr class="border-gray-100 mt-1.5 mb-2.5 w-full" />
 
 				<div class="flex flex-col gap-2 mb-1 px-0.5">
 					{#if accessGroups.length > 0}
@@ -215,7 +213,7 @@
 									</button>
 
 									<button
-										class=" rounded-full p-1 hover:bg-gray-100 dark:hover:bg-gray-850 transition"
+										class="rounded-full p-1 hover:bg-gray-100 transition"
 										type="button"
 										on:click={() => {
 											accessControl.read.group_ids = accessControl.read.group_ids.filter(

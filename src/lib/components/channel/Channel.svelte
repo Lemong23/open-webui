@@ -211,7 +211,7 @@
 			<div class="flex-1 overflow-y-auto">
 				{#if channel}
 					<div
-						class=" pb-2.5 max-w-full z-10 scrollbar-hidden w-full h-full pt-6 flex-1 flex flex-col-reverse overflow-auto"
+						class="pb-2.5 max-w-full z-10 scrollbar-hidden w-full h-full pt-6 flex-1 flex flex-col-reverse overflow-auto"
 						id="messages-container"
 						bind:this={messagesContainerElement}
 						on:scroll={(e) => {
@@ -246,7 +246,7 @@
 				{/if}
 			</div>
 
-			<div class=" pb-[1rem]">
+			<div class="pb-[1rem]">
 				<MessageInput
 					id="root"
 					{typingUsers}
@@ -266,7 +266,7 @@
 						threadId = null;
 					}}
 				>
-					<div class=" {threadId !== null ? ' h-screen  w-full' : 'px-6 py-4'} h-full">
+					<div class="{threadId !== null ? ' h-screen  w-full' : 'px-6 py-4'} h-full">
 						<Thread
 							{threadId}
 							{channel}
@@ -279,7 +279,7 @@
 			{/if}
 		{:else if threadId !== null}
 			<PaneResizer
-				class="relative flex w-[3px] items-center justify-center bg-background group bg-gray-50 dark:bg-gray-850"
+				class="relative flex w-[3px] items-center justify-center bg-background group bg-gray-50"
 			>
 				<div class="z-10 flex h-7 w-5 items-center justify-center rounded-sm">
 					<EllipsisVertical className="size-4 invisible group-hover:visible" />

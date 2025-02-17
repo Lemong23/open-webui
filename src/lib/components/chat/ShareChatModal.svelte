@@ -82,8 +82,8 @@
 
 <Modal bind:show size="md">
 	<div>
-		<div class=" flex justify-between dark:text-gray-300 px-5 pt-4 pb-0.5">
-			<div class=" text-lg font-medium self-center">{$i18n.t('Share Chat')}</div>
+		<div class="flex justify-between px-5 pt-4 pb-0.5">
+			<div class="text-lg font-medium self-center">{$i18n.t('Share Chat')}</div>
 			<button
 				class="self-center"
 				on:click={() => {
@@ -105,11 +105,11 @@
 
 		{#if chat}
 			<div class="px-5 pt-4 pb-5 w-full flex flex-col justify-center">
-				<div class=" text-sm dark:text-gray-300 mb-1">
+				<div class="text-sm mb-1">
 					{#if chat.share_id}
 						<a href="/s/{chat.share_id}" target="_blank"
 							>{$i18n.t('You have shared this chat')}
-							<span class=" underline">{$i18n.t('before')}</span>.</a
+							<span class="underline">{$i18n.t('before')}</span>.</a
 						>
 						{$i18n.t('Click here to')}
 						<button
@@ -136,7 +136,7 @@
 						<div class="flex gap-1">
 							{#if $config?.features.enable_community_sharing}
 								<button
-									class="self-center flex items-center gap-1 px-3.5 py-2 text-sm font-medium bg-gray-100 hover:bg-gray-200 text-gray-800 dark:bg-gray-850 dark:text-white dark:hover:bg-gray-800 transition rounded-full"
+									class="self-center flex items-center gap-1 px-3.5 py-2 text-sm font-medium bg-gray-100 hover:bg-gray-200 text-gray-800 transition rounded-full"
 									type="button"
 									on:click={() => {
 										shareChat();
@@ -148,7 +148,7 @@
 							{/if}
 
 							<button
-								class="self-center flex items-center gap-1 px-3.5 py-2 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+								class="self-center flex items-center gap-1 px-3.5 py-2 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 								type="button"
 								id="copy-and-share-chat-button"
 								on:click={async () => {

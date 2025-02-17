@@ -34,12 +34,12 @@
 {#if modelIds.length > 0}
 	<div class="flex flex-col -translate-x-1" bind:this={modelListElement}>
 		{#each modelIds as modelId, modelIdx (modelId)}
-			<div class=" flex gap-2 w-full justify-between items-center" id="model-item-{modelId}">
+			<div class="flex gap-2 w-full justify-between items-center" id="model-item-{modelId}">
 				<Tooltip content={modelId} placement="top-start">
 					<div class="flex items-center gap-1">
 						<EllipsisVertical className="size-4 cursor-move" />
 
-						<div class=" text-sm flex-1 py-1 rounded-lg">
+						<div class="text-sm flex-1 py-1 rounded-lg">
 							{#if $models.find((model) => model.id === modelId)}
 								{$models.find((model) => model.id === modelId).name}
 							{:else}

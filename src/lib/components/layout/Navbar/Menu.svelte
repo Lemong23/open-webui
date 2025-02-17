@@ -110,14 +110,14 @@
 
 	<div slot="content">
 		<DropdownMenu.Content
-			class="w-full max-w-[200px] rounded-xl px-1 py-1.5  z-50 bg-white dark:bg-gray-850 dark:text-white shadow-lg"
+			class="w-full max-w-[200px] rounded-xl px-1 py-1.5  z-50 bg-white shadow-lg"
 			sideOffset={8}
 			side="bottom"
 			align="end"
 			transition={flyAndScale}
 		>
 			<!-- <DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer dark:hover:bg-gray-800 rounded-md"
+				class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer rounded-md"
 				on:click={async () => {
 					await showSettings.set(!$showSettings);
 				}}
@@ -146,7 +146,7 @@
 
 			{#if $mobile}
 				<DropdownMenu.Item
-					class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+					class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 					id="chat-controls-button"
 					on:click={async () => {
 						await showControls.set(true);
@@ -161,7 +161,7 @@
 
 			{#if !$temporaryChatEnabled}
 				<DropdownMenu.Item
-					class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+					class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 					id="chat-share-button"
 					on:click={() => {
 						shareHandler();
@@ -184,7 +184,7 @@
 			{/if}
 
 			<DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				id="chat-overview-button"
 				on:click={async () => {
 					await showControls.set(true);
@@ -197,7 +197,7 @@
 			</DropdownMenu.Item>
 
 			<DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				id="chat-overview-button"
 				on:click={async () => {
 					await showControls.set(true);
@@ -211,7 +211,7 @@
 
 			<DropdownMenu.Sub>
 				<DropdownMenu.SubTrigger
-					class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+					class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -231,12 +231,12 @@
 					<div class="flex items-center">{$i18n.t('Download')}</div>
 				</DropdownMenu.SubTrigger>
 				<DropdownMenu.SubContent
-					class="w-full rounded-xl px-1 py-1.5 z-50 bg-white dark:bg-gray-850 dark:text-white shadow-lg"
+					class="w-full rounded-xl px-1 py-1.5 z-50 bg-white shadow-lg"
 					transition={flyAndScale}
 					sideOffset={8}
 				>
 					<DropdownMenu.Item
-						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 						on:click={() => {
 							downloadJSONExport();
 						}}
@@ -244,7 +244,7 @@
 						<div class="flex items-center line-clamp-1">{$i18n.t('Export chat (.json)')}</div>
 					</DropdownMenu.Item>
 					<DropdownMenu.Item
-						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 						on:click={() => {
 							downloadTxt();
 						}}
@@ -253,7 +253,7 @@
 					</DropdownMenu.Item>
 
 					<DropdownMenu.Item
-						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+						class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 						on:click={() => {
 							downloadPdf();
 						}}
@@ -264,7 +264,7 @@
 			</DropdownMenu.Sub>
 
 			<DropdownMenu.Item
-				class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
+				class="flex gap-2 items-center px-3 py-2 text-sm  cursor-pointer hover:bg-gray-50 rounded-md"
 				id="chat-copy-button"
 				on:click={async () => {
 					const res = await copyToClipboard(await getChatAsText()).catch((e) => {
@@ -281,7 +281,7 @@
 			</DropdownMenu.Item>
 
 			{#if !$temporaryChatEnabled}
-				<hr class="border-gray-50 dark:border-gray-850 my-0.5" />
+				<hr class="border-gray-50 my-0.5" />
 
 				<div class="flex p-1">
 					<Tags chatId={chat.id} />

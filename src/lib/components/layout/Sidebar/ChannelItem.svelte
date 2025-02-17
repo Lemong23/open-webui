@@ -43,13 +43,13 @@
 
 <div
 	bind:this={itemElement}
-	class=" w-full {className} rounded-lg flex relative group hover:bg-gray-100 dark:hover:bg-gray-900 {$page
+	class="w-full {className} rounded-lg flex relative group hover:bg-gray-100 {$page
 		.url.pathname === `/channels/${channel.id}`
-		? 'bg-gray-100 dark:bg-gray-900'
+		? 'bg-gray-100'
 		: ''} px-2.5 py-1"
 >
 	<a
-		class=" w-full flex justify-between"
+		class="w-full flex justify-between"
 		href="/channels/{channel.id}"
 		on:click={() => {
 			if ($mobile) {
@@ -72,7 +72,7 @@
 				/>
 			</svg>
 
-			<div class=" text-left self-center overflow-hidden w-full line-clamp-1">
+			<div class="text-left self-center overflow-hidden w-full line-clamp-1">
 				{channel.name}
 			</div>
 		</div>
@@ -80,13 +80,13 @@
 
 	{#if $user?.role === 'admin'}
 		<button
-			class="absolute z-10 right-2 invisible group-hover:visible self-center flex items-center dark:text-gray-300"
+			class="absolute z-10 right-2 invisible group-hover:visible self-center flex items-center"
 			on:click={(e) => {
 				e.stopPropagation();
 				showEditChannelModal = true;
 			}}
 		>
-			<button class="p-0.5 dark:hover:bg-gray-850 rounded-lg touch-auto" on:click={(e) => {}}>
+			<button class="p-0.5 rounded-lg touch-auto" on:click={(e) => {}}>
 				<Cog6 className="size-3.5" />
 			</button>
 		</button>

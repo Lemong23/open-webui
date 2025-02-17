@@ -46,25 +46,25 @@
 
 <div class="sticky top-0 z-30 w-full px-1.5 py-1.5 -mb-8 flex items-center">
 	<div
-		class=" bg-gradient-to-b via-50% from-white via-white to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent pointer-events-none absolute inset-0 -bottom-7 z-[-1] blur"
+		class="bg-gradient-to-b via-50% from-white via-white to-transparent pointer-events-none absolute inset-0 -bottom-7 z-[-1] blur"
 	></div>
 
-	<div class=" flex max-w-full w-full mx-auto px-1 pt-0.5 bg-transparent">
+	<div class="flex max-w-full w-full mx-auto px-1 pt-0.5 bg-transparent">
 		<div class="flex items-center w-full max-w-full">
 			<div
 				class="{$showSidebar
 					? 'md:hidden'
-					: ''} mr-1 self-start flex flex-none items-center text-gray-600 dark:text-gray-400"
+					: ''} mr-1 self-start flex flex-none items-center text-gray-600"
 			>
 				<button
 					id="sidebar-toggle-button"
-					class="cursor-pointer px-2 py-2 flex rounded-xl hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+					class="cursor-pointer px-2 py-2 flex rounded-xl hover:bg-gray-50 transition"
 					on:click={() => {
 						showSidebar.set(!$showSidebar);
 					}}
 					aria-label="Toggle Sidebar"
 				>
-					<div class=" m-auto self-center">
+					<div class="m-auto self-center">
 						<MenuLines />
 					</div>
 				</button>
@@ -80,8 +80,8 @@
 				{/if}
 			</div>
 
-			<div class="self-start flex flex-none items-center text-gray-600 dark:text-gray-400">
-				<!-- <div class="md:hidden flex self-center w-[1px] h-5 mx-2 bg-gray-300 dark:bg-stone-700" /> -->
+			<div class="self-start flex flex-none items-center text-gray-600">
+				<!-- <div class="md:hidden flex self-center w-[1px] h-5 mx-2 bg-gray-300" /> -->
 				{#if shareEnabled && chat && (chat.id || $temporaryChatEnabled)}
 					<Menu
 						{chat}
@@ -94,10 +94,10 @@
 						}}
 					>
 						<button
-							class="flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+							class="flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 transition"
 							id="chat-context-menu-button"
 						>
-							<div class=" m-auto self-center">
+							<div class="m-auto self-center">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									fill="none"
@@ -118,13 +118,13 @@
 				{:else if $mobile}
 					<Tooltip content={$i18n.t('Controls')}>
 						<button
-							class=" flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+							class="flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 transition"
 							on:click={async () => {
 								await showControls.set(!$showControls);
 							}}
 							aria-label="Controls"
 						>
-							<div class=" m-auto self-center">
+							<div class="m-auto self-center">
 								<AdjustmentsHorizontal className=" size-5" strokeWidth="0.5" />
 							</div>
 						</button>
@@ -134,13 +134,13 @@
 				{#if !$mobile}
 					<Tooltip content={$i18n.t('Controls')}>
 						<button
-							class=" flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+							class="flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 transition"
 							on:click={async () => {
 								await showControls.set(!$showControls);
 							}}
 							aria-label="Controls"
 						>
-							<div class=" m-auto self-center">
+							<div class="m-auto self-center">
 								<AdjustmentsHorizontal className=" size-5" strokeWidth="0.5" />
 							</div>
 						</button>
@@ -150,15 +150,15 @@
 				<Tooltip content={$i18n.t('New Chat')}>
 					<button
 						id="new-chat-button"
-						class=" flex {$showSidebar
+						class="flex {$showSidebar
 							? 'md:hidden'
-							: ''} cursor-pointer px-2 py-2 rounded-xl text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+							: ''} cursor-pointer px-2 py-2 rounded-xl text-gray-600 hover:bg-gray-50 transition"
 						on:click={() => {
 							initNewChat();
 						}}
 						aria-label="New Chat"
 					>
-						<div class=" m-auto self-center">
+						<div class="m-auto self-center">
 							<PencilSquare className=" size-5" strokeWidth="2" />
 						</div>
 					</button>
@@ -175,10 +175,10 @@
 						}}
 					>
 						<button
-							class="select-none flex rounded-xl p-1.5 w-full hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+							class="select-none flex rounded-xl p-1.5 w-full hover:bg-gray-50 transition"
 							aria-label="User Menu"
 						>
-							<div class=" self-center">
+							<div class="self-center">
 								<img
 									src={$user.profile_image_url}
 									class="size-6 object-cover rounded-full"

@@ -24,18 +24,18 @@
 
 <div>
 	<div class="flex w-full justify-between mb-1">
-		<div class=" self-center text-sm font-semibold">{$i18n.t('Actions')}</div>
+		<div class="self-center text-sm font-semibold">{$i18n.t('Actions')}</div>
 	</div>
 
-	<div class=" text-xs dark:text-gray-500">
+	<div class="text-xs">
 		{$i18n.t('To select actions here, add them to the "Functions" workspace first.')}
 	</div>
 
 	<div class="flex flex-col">
 		{#if actions.length > 0}
-			<div class=" flex items-center mt-2 flex-wrap">
+			<div class="flex items-center mt-2 flex-wrap">
 				{#each Object.keys(_actions) as action, actionIdx}
-					<div class=" flex items-center gap-2 mr-3">
+					<div class="flex items-center gap-2 mr-3">
 						<div class="self-center flex items-center">
 							<Checkbox
 								state={_actions[action].selected ? 'checked' : 'unchecked'}
@@ -46,7 +46,7 @@
 							/>
 						</div>
 
-						<div class=" py-0.5 text-sm w-full capitalize font-medium">
+						<div class="py-0.5 text-sm w-full capitalize font-medium">
 							<Tooltip content={_actions[action].meta.description}>
 								{_actions[action].name}
 							</Tooltip>

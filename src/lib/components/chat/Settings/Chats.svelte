@@ -98,7 +98,7 @@
 </script>
 
 <div class="flex flex-col h-full justify-between space-y-3 text-sm">
-	<div class=" space-y-2 overflow-y-scroll max-h-[28rem] lg:max-h-full">
+	<div class="space-y-2 overflow-y-scroll max-h-[28rem] lg:max-h-full">
 		<div class="flex flex-col">
 			<input
 				id="chat-import-input"
@@ -109,12 +109,12 @@
 				hidden
 			/>
 			<button
-				class=" flex rounded-md py-2 px-3.5 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+				class="flex rounded-md py-2 px-3.5 w-full hover:bg-gray-200 transition"
 				on:click={() => {
 					chatImportInputElement.click();
 				}}
 			>
-				<div class=" self-center mr-3">
+				<div class="self-center mr-3">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 16 16"
@@ -128,15 +128,15 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center text-sm font-medium">{$i18n.t('Import Chats')}</div>
+				<div class="self-center text-sm font-medium">{$i18n.t('Import Chats')}</div>
 			</button>
 			<button
-				class=" flex rounded-md py-2 px-3.5 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+				class="flex rounded-md py-2 px-3.5 w-full hover:bg-gray-200 transition"
 				on:click={() => {
 					exportChats();
 				}}
 			>
-				<div class=" self-center mr-3">
+				<div class="self-center mr-3">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 16 16"
@@ -150,11 +150,11 @@
 						/>
 					</svg>
 				</div>
-				<div class=" self-center text-sm font-medium">{$i18n.t('Export Chats')}</div>
+				<div class="self-center text-sm font-medium">{$i18n.t('Export Chats')}</div>
 			</button>
 		</div>
 
-		<hr class=" dark:border-gray-850" />
+		<hr class="" />
 
 		<div class="flex flex-col">
 			{#if showArchiveConfirm}
@@ -218,12 +218,12 @@
 				</div>
 			{:else}
 				<button
-					class=" flex rounded-md py-2 px-3.5 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+					class="flex rounded-md py-2 px-3.5 w-full hover:bg-gray-200 transition"
 					on:click={() => {
 						showArchiveConfirm = true;
 					}}
 				>
-					<div class=" self-center mr-3">
+					<div class="self-center mr-3">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 24 24"
@@ -240,7 +240,7 @@
 							/>
 						</svg>
 					</div>
-					<div class=" self-center text-sm font-medium">{$i18n.t('Archive All Chats')}</div>
+					<div class="self-center text-sm font-medium">{$i18n.t('Archive All Chats')}</div>
 				</button>
 			{/if}
 
@@ -305,12 +305,12 @@
 				</div>
 			{:else}
 				<button
-					class=" flex rounded-md py-2 px-3.5 w-full hover:bg-gray-200 dark:hover:bg-gray-800 transition"
+					class="flex rounded-md py-2 px-3.5 w-full hover:bg-gray-200 transition"
 					on:click={() => {
 						showDeleteConfirm = true;
 					}}
 				>
-					<div class=" self-center mr-3">
+					<div class="self-center mr-3">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							viewBox="0 0 16 16"
@@ -324,7 +324,7 @@
 							/>
 						</svg>
 					</div>
-					<div class=" self-center text-sm font-medium">{$i18n.t('Delete All Chats')}</div>
+					<div class="self-center text-sm font-medium">{$i18n.t('Delete All Chats')}</div>
 				</button>
 			{/if}
 		</div>

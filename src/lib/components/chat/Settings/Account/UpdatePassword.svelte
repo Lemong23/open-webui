@@ -43,9 +43,9 @@
 	}}
 >
 	<div class="flex justify-between items-center text-sm">
-		<div class="  font-medium">{$i18n.t('Change Password')}</div>
+		<div class="font-medium">{$i18n.t('Change Password')}</div>
 		<button
-			class=" text-xs font-medium text-gray-500"
+			class="text-xs font-medium text-gray-500"
 			type="button"
 			on:click={() => {
 				show = !show;
@@ -54,13 +54,13 @@
 	</div>
 
 	{#if show}
-		<div class=" py-2.5 space-y-1.5">
+		<div class="py-2.5 space-y-1.5">
 			<div class="flex flex-col w-full">
-				<div class=" mb-1 text-xs text-gray-500">{$i18n.t('Current Password')}</div>
+				<div class="mb-1 text-xs text-gray-500">{$i18n.t('Current Password')}</div>
 
 				<div class="flex-1">
 					<input
-						class="w-full bg-transparent dark:text-gray-300 outline-none placeholder:opacity-30"
+						class="w-full bg-transparent outline-none placeholder:opacity-30"
 						type="password"
 						bind:value={currentPassword}
 						placeholder={$i18n.t('Enter your current password')}
@@ -71,11 +71,11 @@
 			</div>
 
 			<div class="flex flex-col w-full">
-				<div class=" mb-1 text-xs text-gray-500">{$i18n.t('New Password')}</div>
+				<div class="mb-1 text-xs text-gray-500">{$i18n.t('New Password')}</div>
 
 				<div class="flex-1">
 					<input
-						class="w-full bg-transparent text-sm dark:text-gray-300 outline-none placeholder:opacity-30"
+						class="w-full bg-transparent text-sm outline-none placeholder:opacity-30"
 						type="password"
 						bind:value={newPassword}
 						placeholder={$i18n.t('Enter your new password')}
@@ -86,11 +86,11 @@
 			</div>
 
 			<div class="flex flex-col w-full">
-				<div class=" mb-1 text-xs text-gray-500">{$i18n.t('Confirm Password')}</div>
+				<div class="mb-1 text-xs text-gray-500">{$i18n.t('Confirm Password')}</div>
 
 				<div class="flex-1">
 					<input
-						class="w-full bg-transparent text-sm dark:text-gray-300 outline-none placeholder:opacity-30"
+						class="w-full bg-transparent text-sm outline-none placeholder:opacity-30"
 						type="password"
 						bind:value={newPasswordConfirm}
 						placeholder={$i18n.t('Confirm your new password')}
@@ -103,7 +103,7 @@
 
 		<div class="mt-3 flex justify-end">
 			<button
-				class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+				class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 			>
 				{$i18n.t('Update password')}
 			</button>

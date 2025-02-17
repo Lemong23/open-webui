@@ -228,14 +228,14 @@
 		saveHandler();
 	}}
 >
-	<div class=" space-y-3 overflow-y-scroll scrollbar-hidden pr-2">
+	<div class="space-y-3 overflow-y-scroll scrollbar-hidden pr-2">
 		{#if config && imageGenerationConfig}
 			<div>
-				<div class=" mb-1 text-sm font-medium">{$i18n.t('Image Settings')}</div>
+				<div class="mb-1 text-sm font-medium">{$i18n.t('Image Settings')}</div>
 
 				<div>
-					<div class=" py-1 flex w-full justify-between">
-						<div class=" self-center text-xs font-medium">
+					<div class="py-1 flex w-full justify-between">
+						<div class="self-center text-xs font-medium">
 							{$i18n.t('Image Generation (Experimental)')}
 						</div>
 
@@ -272,19 +272,19 @@
 				</div>
 
 				{#if config.enabled}
-					<div class=" py-1 flex w-full justify-between">
-						<div class=" self-center text-xs font-medium">{$i18n.t('Image Prompt Generation')}</div>
+					<div class="py-1 flex w-full justify-between">
+						<div class="self-center text-xs font-medium">{$i18n.t('Image Prompt Generation')}</div>
 						<div class="px-1">
 							<Switch bind:state={config.prompt_generation} />
 						</div>
 					</div>
 				{/if}
 
-				<div class=" py-1 flex w-full justify-between">
-					<div class=" self-center text-xs font-medium">{$i18n.t('Image Generation Engine')}</div>
+				<div class="py-1 flex w-full justify-between">
+					<div class="self-center text-xs font-medium">{$i18n.t('Image Generation Engine')}</div>
 					<div class="flex items-center relative">
 						<select
-							class=" dark:bg-gray-900 w-fit pr-8 cursor-pointer rounded px-2 p-1 text-xs bg-transparent outline-none text-right"
+							class="w-fit pr-8 cursor-pointer rounded px-2 p-1 text-xs bg-transparent outline-none text-right"
 							bind:value={config.engine}
 							placeholder={$i18n.t('Select Engine')}
 							on:change={async () => {
@@ -298,22 +298,22 @@
 					</div>
 				</div>
 			</div>
-			<hr class=" dark:border-gray-850" />
+			<hr class="" />
 
 			<div class="flex flex-col gap-2">
 				{#if (config?.engine ?? 'automatic1111') === 'automatic1111'}
 					<div>
-						<div class=" mb-2 text-sm font-medium">{$i18n.t('AUTOMATIC1111 Base URL')}</div>
+						<div class="mb-2 text-sm font-medium">{$i18n.t('AUTOMATIC1111 Base URL')}</div>
 						<div class="flex w-full">
 							<div class="flex-1 mr-2">
 								<input
-									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 									placeholder={$i18n.t('Enter URL (e.g. http://127.0.0.1:7860/)')}
 									bind:value={config.automatic1111.AUTOMATIC1111_BASE_URL}
 								/>
 							</div>
 							<button
-								class="px-2.5 bg-gray-50 hover:bg-gray-100 text-gray-800 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-gray-100 rounded-lg transition"
+								class="px-2.5 bg-gray-50 hover:bg-gray-100 text-gray-800 rounded-lg transition"
 								type="button"
 								on:click={async () => {
 									await updateConfigHandler();
@@ -342,10 +342,10 @@
 							</button>
 						</div>
 
-						<div class="mt-2 text-xs text-gray-400 dark:text-gray-500">
+						<div class="mt-2 text-xs text-gray-400">
 							{$i18n.t('Include `--api` flag when running stable-diffusion-webui')}
 							<a
-								class=" text-gray-300 font-medium"
+								class="text-gray-300 font-medium"
 								href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/3734"
 								target="_blank"
 							>
@@ -355,7 +355,7 @@
 					</div>
 
 					<div>
-						<div class=" mb-2 text-sm font-medium">
+						<div class="mb-2 text-sm font-medium">
 							{$i18n.t('AUTOMATIC1111 Api Auth String')}
 						</div>
 						<SensitiveInput
@@ -364,10 +364,10 @@
 							required={false}
 						/>
 
-						<div class="mt-2 text-xs text-gray-400 dark:text-gray-500">
+						<div class="mt-2 text-xs text-gray-400">
 							{$i18n.t('Include `--api-auth` flag when running stable-diffusion-webui')}
 							<a
-								class=" text-gray-300 font-medium"
+								class="text-gray-300 font-medium"
 								href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/discussions/13993"
 								target="_blank"
 							>
@@ -380,13 +380,13 @@
 
 					<!---Sampler-->
 					<div>
-						<div class=" mb-2.5 text-sm font-medium">{$i18n.t('Set Sampler')}</div>
+						<div class="mb-2.5 text-sm font-medium">{$i18n.t('Set Sampler')}</div>
 						<div class="flex w-full">
 							<div class="flex-1 mr-2">
 								<Tooltip content={$i18n.t('Enter Sampler (e.g. Euler a)')} placement="top-start">
 									<input
 										list="sampler-list"
-										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 										placeholder={$i18n.t('Enter Sampler (e.g. Euler a)')}
 										bind:value={config.automatic1111.AUTOMATIC1111_SAMPLER}
 									/>
@@ -402,13 +402,13 @@
 					</div>
 					<!---Scheduler-->
 					<div>
-						<div class=" mb-2.5 text-sm font-medium">{$i18n.t('Set Scheduler')}</div>
+						<div class="mb-2.5 text-sm font-medium">{$i18n.t('Set Scheduler')}</div>
 						<div class="flex w-full">
 							<div class="flex-1 mr-2">
 								<Tooltip content={$i18n.t('Enter Scheduler (e.g. Karras)')} placement="top-start">
 									<input
 										list="scheduler-list"
-										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 										placeholder={$i18n.t('Enter Scheduler (e.g. Karras)')}
 										bind:value={config.automatic1111.AUTOMATIC1111_SCHEDULER}
 									/>
@@ -424,12 +424,12 @@
 					</div>
 					<!---CFG scale-->
 					<div>
-						<div class=" mb-2.5 text-sm font-medium">{$i18n.t('Set CFG Scale')}</div>
+						<div class="mb-2.5 text-sm font-medium">{$i18n.t('Set CFG Scale')}</div>
 						<div class="flex w-full">
 							<div class="flex-1 mr-2">
 								<Tooltip content={$i18n.t('Enter CFG Scale (e.g. 7.0)')} placement="top-start">
 									<input
-										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+										class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 										placeholder={$i18n.t('Enter CFG Scale (e.g. 7.0)')}
 										bind:value={config.automatic1111.AUTOMATIC1111_CFG_SCALE}
 									/>
@@ -439,17 +439,17 @@
 					</div>
 				{:else if config?.engine === 'comfyui'}
 					<div class="">
-						<div class=" mb-2 text-sm font-medium">{$i18n.t('ComfyUI Base URL')}</div>
+						<div class="mb-2 text-sm font-medium">{$i18n.t('ComfyUI Base URL')}</div>
 						<div class="flex w-full">
 							<div class="flex-1 mr-2">
 								<input
-									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 									placeholder={$i18n.t('Enter URL (e.g. http://127.0.0.1:7860/)')}
 									bind:value={config.comfyui.COMFYUI_BASE_URL}
 								/>
 							</div>
 							<button
-								class="px-2.5 bg-gray-50 hover:bg-gray-100 text-gray-800 dark:bg-gray-850 dark:hover:bg-gray-800 dark:text-gray-100 rounded-lg transition"
+								class="px-2.5 bg-gray-50 hover:bg-gray-100 text-gray-800 rounded-lg transition"
 								type="button"
 								on:click={async () => {
 									await updateConfigHandler();
@@ -480,7 +480,7 @@
 					</div>
 
 					<div class="">
-						<div class=" mb-2 text-sm font-medium">{$i18n.t('ComfyUI API Key')}</div>
+						<div class="mb-2 text-sm font-medium">{$i18n.t('ComfyUI API Key')}</div>
 						<div class="flex w-full">
 							<div class="flex-1 mr-2">
 								<SensitiveInput
@@ -493,11 +493,11 @@
 					</div>
 
 					<div class="">
-						<div class=" mb-2 text-sm font-medium">{$i18n.t('ComfyUI Workflow')}</div>
+						<div class="mb-2 text-sm font-medium">{$i18n.t('ComfyUI Workflow')}</div>
 
 						{#if config.comfyui.COMFYUI_WORKFLOW}
 							<textarea
-								class="w-full rounded-lg mb-1 py-2 px-4 text-xs bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none disabled:text-gray-600 resize-none"
+								class="w-full rounded-lg mb-1 py-2 px-4 text-xs bg-gray-50 outline-none disabled:text-gray-600 resize-none"
 								rows="10"
 								bind:value={config.comfyui.COMFYUI_WORKFLOW}
 								required
@@ -525,7 +525,7 @@
 								/>
 
 								<button
-									class="w-full text-sm font-medium py-2 bg-transparent hover:bg-gray-100 border border-dashed dark:border-gray-800 dark:hover:bg-gray-850 text-center rounded-xl"
+									class="w-full text-sm font-medium py-2 bg-transparent hover:bg-gray-100 border border-dashed text-center rounded-xl"
 									type="button"
 									on:click={() => {
 										document.getElementById('upload-comfyui-workflow-input')?.click();
@@ -536,21 +536,21 @@
 							</div>
 						</div>
 
-						<div class="mt-2 text-xs text-gray-400 dark:text-gray-500">
+						<div class="mt-2 text-xs text-gray-400">
 							{$i18n.t('Make sure to export a workflow.json file as API format from ComfyUI.')}
 						</div>
 					</div>
 
 					{#if config.comfyui.COMFYUI_WORKFLOW}
 						<div class="">
-							<div class=" mb-2 text-sm font-medium">{$i18n.t('ComfyUI Workflow Nodes')}</div>
+							<div class="mb-2 text-sm font-medium">{$i18n.t('ComfyUI Workflow Nodes')}</div>
 
 							<div class="text-xs flex flex-col gap-1.5">
 								{#each requiredWorkflowNodes as node}
-									<div class="flex w-full items-center border dark:border-gray-850 rounded-lg">
+									<div class="flex w-full items-center border rounded-lg">
 										<div class="flex-shrink-0">
 											<div
-												class=" capitalize line-clamp-1 font-medium px-3 py-1 w-20 text-center rounded-l-lg bg-green-500/10 text-green-700 dark:text-green-200"
+												class="capitalize line-clamp-1 font-medium px-3 py-1 w-20 text-center rounded-l-lg bg-green-500/10 text-green-700"
 											>
 												{node.type}{node.type === 'prompt' ? '*' : ''}
 											</div>
@@ -558,7 +558,7 @@
 										<div class="">
 											<Tooltip content="Input Key (e.g. text, unet_name, steps)">
 												<input
-													class="py-1 px-3 w-24 text-xs text-center bg-transparent outline-none border-r dark:border-gray-850"
+													class="py-1 px-3 w-24 text-xs text-center bg-transparent outline-none border-r"
 													placeholder="Key"
 													bind:value={node.key}
 													required
@@ -582,14 +582,14 @@
 								{/each}
 							</div>
 
-							<div class="mt-2 text-xs text-right text-gray-400 dark:text-gray-500">
+							<div class="mt-2 text-xs text-right text-gray-400">
 								{$i18n.t('*Prompt node ID(s) are required for image generation')}
 							</div>
 						</div>
 					{/if}
 				{:else if config?.engine === 'openai'}
 					<div>
-						<div class=" mb-1.5 text-sm font-medium">{$i18n.t('OpenAI API Config')}</div>
+						<div class="mb-1.5 text-sm font-medium">{$i18n.t('OpenAI API Config')}</div>
 
 						<div class="flex gap-2 mb-1">
 							<input
@@ -609,10 +609,10 @@
 			</div>
 
 			{#if config?.enabled}
-				<hr class=" dark:border-gray-850" />
+				<hr class="" />
 
 				<div>
-					<div class=" mb-2.5 text-sm font-medium">{$i18n.t('Set Default Model')}</div>
+					<div class="mb-2.5 text-sm font-medium">{$i18n.t('Set Default Model')}</div>
 					<div class="flex w-full">
 						<div class="flex-1 mr-2">
 							<div class="flex w-full">
@@ -620,7 +620,7 @@
 									<Tooltip content={$i18n.t('Enter Model ID')} placement="top-start">
 										<input
 											list="model-list"
-											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+											class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 											bind:value={imageGenerationConfig.MODEL}
 											placeholder="Select a model"
 											required
@@ -639,12 +639,12 @@
 				</div>
 
 				<div>
-					<div class=" mb-2.5 text-sm font-medium">{$i18n.t('Set Image Size')}</div>
+					<div class="mb-2.5 text-sm font-medium">{$i18n.t('Set Image Size')}</div>
 					<div class="flex w-full">
 						<div class="flex-1 mr-2">
 							<Tooltip content={$i18n.t('Enter Image Size (e.g. 512x512)')} placement="top-start">
 								<input
-									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 									placeholder={$i18n.t('Enter Image Size (e.g. 512x512)')}
 									bind:value={imageGenerationConfig.IMAGE_SIZE}
 									required
@@ -655,12 +655,12 @@
 				</div>
 
 				<div>
-					<div class=" mb-2.5 text-sm font-medium">{$i18n.t('Set Steps')}</div>
+					<div class="mb-2.5 text-sm font-medium">{$i18n.t('Set Steps')}</div>
 					<div class="flex w-full">
 						<div class="flex-1 mr-2">
 							<Tooltip content={$i18n.t('Enter Number of Steps (e.g. 50)')} placement="top-start">
 								<input
-									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+									class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 									placeholder={$i18n.t('Enter Number of Steps (e.g. 50)')}
 									bind:value={imageGenerationConfig.IMAGE_STEPS}
 									required
@@ -675,7 +675,7 @@
 
 	<div class="flex justify-end pt-3 text-sm font-medium">
 		<button
-			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center {loading
+			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full flex flex-row space-x-1 items-center {loading
 				? ' cursor-not-allowed'
 				: ''}"
 			type="submit"
@@ -686,7 +686,7 @@
 			{#if loading}
 				<div class="ml-2 self-center">
 					<svg
-						class=" w-4 h-4"
+						class="w-4 h-4"
 						viewBox="0 0 24 24"
 						fill="currentColor"
 						xmlns="http://www.w3.org/2000/svg"

@@ -14,8 +14,8 @@
 
 <Modal size="sm" bind:show>
 	<div>
-		<div class=" flex justify-between dark:text-gray-300 px-5 pt-4 pb-2">
-			<div class=" text-lg font-medium self-center">{$i18n.t('Show your support!')}</div>
+		<div class="flex justify-between px-5 pt-4 pb-2">
+			<div class="text-lg font-medium self-center">{$i18n.t('Show your support!')}</div>
 			<button
 				class="self-center"
 				on:click={() => {
@@ -35,8 +35,8 @@
 			</button>
 		</div>
 
-		<div class="flex flex-col md:flex-row w-full px-5 pb-4 md:space-x-4 dark:text-gray-200">
-			<div class=" flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
+		<div class="flex flex-col md:flex-row w-full px-5 pb-4 md:space-x-4">
+			<div class="flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
 				<form
 					class="flex flex-col w-full"
 					on:submit|preventDefault={() => {
@@ -56,7 +56,7 @@
 							)}
 						</div>
 
-						<hr class="dark:border-gray-800 my-3" />
+						<hr class="my-3" />
 						<div class="my-2">
 							{$i18n.t('Support this plugin:')}
 							<a
@@ -69,7 +69,7 @@
 
 					<div class="flex justify-end pt-3 text-sm font-medium">
 						<button
-							class=" px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-lg flex flex-row space-x-1 items-center"
+							class="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-gray-100 transition rounded-lg flex flex-row space-x-1 items-center"
 							type="submit"
 						>
 							{$i18n.t('Done')}

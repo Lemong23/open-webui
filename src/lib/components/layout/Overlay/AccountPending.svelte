@@ -16,16 +16,16 @@
 
 <div class="fixed w-full h-full flex z-[999]">
 	<div
-		class="absolute w-full h-full backdrop-blur-lg bg-white/10 dark:bg-gray-900/50 flex justify-center"
+		class="absolute w-full h-full backdrop-blur-lg bg-white/10/50 flex justify-center"
 	>
 		<div class="m-auto pb-10 flex flex-col justify-center">
 			<div class="max-w-md">
-				<div class="text-center dark:text-white text-2xl font-medium z-50">
+				<div class="text-center text-2xl font-medium z-50">
 					{$i18n.t('Account Activation Pending')}<br />
 					{$i18n.t('Contact Admin for WebUI Access')}
 				</div>
 
-				<div class=" mt-4 text-center text-sm dark:text-gray-200 w-full">
+				<div class="mt-4 text-center text-sm w-full">
 					{$i18n.t('Your account status is currently pending activation.')}<br />
 					{$i18n.t(
 						'To access the WebUI, please reach out to the administrator. Admins can manage user statuses from the Admin Panel.'
@@ -38,9 +38,9 @@
 					</div>
 				{/if}
 
-				<div class=" mt-6 mx-auto relative group w-fit">
+				<div class="mt-6 mx-auto relative group w-fit">
 					<button
-						class="relative z-20 flex px-5 py-2 rounded-full bg-white border border-gray-100 dark:border-none hover:bg-gray-100 text-gray-700 transition font-medium text-sm"
+						class="relative z-20 flex px-5 py-2 rounded-full bg-white border border-gray-100 hover:bg-gray-100 text-gray-700 transition font-medium text-sm"
 						on:click={async () => {
 							location.href = '/';
 						}}

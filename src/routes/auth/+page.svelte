@@ -137,18 +137,18 @@
 />
 
 <div class="w-full h-screen max-h-[100dvh] text-white relative">
-	<div class="w-full h-full absolute top-0 left-0 bg-white dark:bg-black"></div>
+	<div class="w-full h-full absolute top-0 left-0 bg-white"></div>
 
 	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
 
 	{#if loaded}
 		<div class="fixed m-10 z-50">
 			<div class="flex space-x-2">
-				<div class=" self-center">
+				<div class="self-center">
 					<img
 						crossorigin="anonymous"
 						src="{WEBUI_BASE_URL}/static/splash.png"
-						class=" w-6 rounded-full dark:invert"
+						class="w-6 rounded-full"
 						alt="logo"
 					/>
 				</div>
@@ -156,13 +156,13 @@
 		</div>
 
 		<div
-			class="fixed bg-transparent min-h-screen w-full flex justify-center font-primary z-50 text-black dark:text-white"
+			class="fixed bg-transparent min-h-screen w-full flex justify-center font-primary z-50 text-black"
 		>
 			<div class="w-full sm:max-w-md px-10 min-h-screen flex flex-col text-center">
 				{#if ($config?.features.auth_trusted_header ?? false) || $config?.features.auth === false}
-					<div class=" my-auto pb-10 w-full">
+					<div class="my-auto pb-10 w-full">
 						<div
-							class="flex items-center justify-center gap-3 text-xl sm:text-2xl text-center font-semibold dark:text-gray-200"
+							class="flex items-center justify-center gap-3 text-xl sm:text-2xl text-center font-semibold"
 						>
 							<div>
 								{$i18n.t('Signing in to {{WEBUI_NAME}}', { WEBUI_NAME: $WEBUI_NAME })}
@@ -174,16 +174,16 @@
 						</div>
 					</div>
 				{:else}
-					<div class="  my-auto pb-10 w-full dark:text-gray-100">
+					<div class="my-auto pb-10 w-full">
 						<form
-							class=" flex flex-col justify-center"
+							class="flex flex-col justify-center"
 							on:submit={(e) => {
 								e.preventDefault();
 								submitHandler();
 							}}
 						>
 							<div class="mb-1">
-								<div class=" text-2xl font-medium">
+								<div class="text-2xl font-medium">
 									{#if $config?.onboarding ?? false}
 										{$i18n.t(`Get started with {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
 									{:else if mode === 'ldap'}
@@ -196,7 +196,7 @@
 								</div>
 
 								{#if $config?.onboarding ?? false}
-									<div class=" mt-1 text-xs font-medium text-gray-500">
+									<div class="mt-1 text-xs font-medium text-gray-500">
 										ⓘ {$WEBUI_NAME}
 										{$i18n.t(
 											'does not make any external connections, and your data stays securely on your locally hosted server.'
@@ -209,7 +209,7 @@
 								<div class="flex flex-col mt-4">
 									{#if mode === 'signup'}
 										<div class="mb-2">
-											<div class=" text-sm font-medium text-left mb-1">{$i18n.t('Name')}</div>
+											<div class="text-sm font-medium text-left mb-1">{$i18n.t('Name')}</div>
 											<input
 												bind:value={name}
 												type="text"
@@ -223,7 +223,7 @@
 
 									{#if mode === 'ldap'}
 										<div class="mb-2">
-											<div class=" text-sm font-medium text-left mb-1">{$i18n.t('Username')}</div>
+											<div class="text-sm font-medium text-left mb-1">{$i18n.t('Username')}</div>
 											<input
 												bind:value={ldapUsername}
 												type="text"
@@ -236,7 +236,7 @@
 										</div>
 									{:else}
 										<div class="mb-2">
-											<div class=" text-sm font-medium text-left mb-1">{$i18n.t('Email')}</div>
+											<div class="text-sm font-medium text-left mb-1">{$i18n.t('Email')}</div>
 											<input
 												bind:value={email}
 												type="email"
@@ -250,7 +250,7 @@
 									{/if}
 
 									<div>
-										<div class=" text-sm font-medium text-left mb-1">{$i18n.t('Password')}</div>
+										<div class="text-sm font-medium text-left mb-1">{$i18n.t('Password')}</div>
 
 										<input
 											bind:value={password}
@@ -268,14 +268,14 @@
 								{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
 									{#if mode === 'ldap'}
 										<button
-											class="bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+											class="bg-gray-700/5 hover:bg-gray-700/10 transition w-full rounded-full font-medium text-sm py-2.5"
 											type="submit"
 										>
 											{$i18n.t('Authenticate')}
 										</button>
 									{:else}
 										<button
-											class="bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+											class="bg-gray-700/5 hover:bg-gray-700/10 transition w-full rounded-full font-medium text-sm py-2.5"
 											type="submit"
 										>
 											{mode === 'signin'
@@ -286,13 +286,13 @@
 										</button>
 
 										{#if $config?.features.enable_signup && !($config?.onboarding ?? false)}
-											<div class=" mt-4 text-sm text-center">
+											<div class="mt-4 text-sm text-center">
 												{mode === 'signin'
 													? $i18n.t("Don't have an account?")
 													: $i18n.t('Already have an account?')}
 
 												<button
-													class=" font-medium underline"
+													class="font-medium underline"
 													type="button"
 													on:click={() => {
 														if (mode === 'signin') {
@@ -313,20 +313,20 @@
 
 						{#if Object.keys($config?.oauth?.providers ?? {}).length > 0}
 							<div class="inline-flex items-center justify-center w-full">
-								<hr class="w-32 h-px my-4 border-0 dark:bg-gray-100/10 bg-gray-700/10" />
+								<hr class="w-32 h-px my-4 border-0 bg-gray-700/10" />
 								{#if $config?.features.enable_login_form || $config?.features.enable_ldap}
 									<span
-										class="px-3 text-sm font-medium text-gray-900 dark:text-white bg-transparent"
+										class="px-3 text-sm font-medium text-gray-900 bg-transparent"
 										>{$i18n.t('or')}</span
 									>
 								{/if}
 
-								<hr class="w-32 h-px my-4 border-0 dark:bg-gray-100/10 bg-gray-700/10" />
+								<hr class="w-32 h-px my-4 border-0 bg-gray-700/10" />
 							</div>
 							<div class="flex flex-col space-y-2">
 								{#if $config?.oauth?.providers?.google}
 									<button
-										class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+										class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 transition w-full rounded-full font-medium text-sm py-2.5"
 										on:click={() => {
 											window.location.href = `${WEBUI_BASE_URL}/oauth/google/login`;
 										}}
@@ -351,7 +351,7 @@
 								{/if}
 								{#if $config?.oauth?.providers?.microsoft}
 									<button
-										class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+										class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 transition w-full rounded-full font-medium text-sm py-2.5"
 										on:click={() => {
 											window.location.href = `${WEBUI_BASE_URL}/oauth/microsoft/login`;
 										}}
@@ -376,7 +376,7 @@
 								{/if}
 								{#if $config?.oauth?.providers?.github}
 									<button
-										class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+										class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 transition w-full rounded-full font-medium text-sm py-2.5"
 										on:click={() => {
 											window.location.href = `${WEBUI_BASE_URL}/oauth/github/login`;
 										}}
@@ -392,7 +392,7 @@
 								{/if}
 								{#if $config?.oauth?.providers?.oidc}
 									<button
-										class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 dark:bg-gray-100/5 dark:hover:bg-gray-100/10 dark:text-gray-300 dark:hover:text-white transition w-full rounded-full font-medium text-sm py-2.5"
+										class="flex justify-center items-center bg-gray-700/5 hover:bg-gray-700/10 transition w-full rounded-full font-medium text-sm py-2.5"
 										on:click={() => {
 											window.location.href = `${WEBUI_BASE_URL}/oauth/oidc/login`;
 										}}

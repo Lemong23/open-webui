@@ -38,8 +38,8 @@
 
 <Modal size="sm" bind:show>
 	<div>
-		<div class=" flex justify-between dark:text-gray-100 px-5 pt-4">
-			<div class=" text-lg font-medium self-center font-primary">
+		<div class="flex justify-between px-5 pt-4">
+			<div class="text-lg font-medium self-center font-primary">
 				{$i18n.t('Manage Models')}
 			</div>
 			<button
@@ -61,23 +61,23 @@
 			</button>
 		</div>
 
-		<div class="flex flex-col md:flex-row w-full px-3 pb-4 md:space-x-4 dark:text-gray-200">
-			<div class=" flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
+		<div class="flex flex-col md:flex-row w-full px-3 pb-4 md:space-x-4">
+			<div class="flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
 				{#if selected === ''}
-					<div class=" py-5 text-gray-400 text-xs">
+					<div class="py-5 text-gray-400 text-xs">
 						<div>
 							{$i18n.t('No inference engine with management support found')}
 						</div>
 					</div>
 				{:else if selected !== null}
-					<div class=" flex w-full flex-col">
+					<div class="flex w-full flex-col">
 						<div
-							class="flex gap-1 scrollbar-none overflow-x-auto w-fit text-center text-sm font-medium rounded-full bg-transparent dark:text-gray-200"
+							class="flex gap-1 scrollbar-none overflow-x-auto w-fit text-center text-sm font-medium rounded-full bg-transparent"
 						>
 							<button
 								class="min-w-fit rounded-full p-1.5 {selected === 'ollama'
 									? ''
-									: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'} transition"
+									: 'text-gray-300 hover:text-gray-700'} transition"
 								on:click={() => {
 									selected = 'ollama';
 								}}>{$i18n.t('Ollama')}</button
@@ -86,21 +86,21 @@
 							<!-- <button
 								class="min-w-fit rounded-full p-1.5 {selected === 'llamacpp'
 									? ''
-									: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'} transition"
+									: 'text-gray-300 hover:text-gray-700'} transition"
 								on:click={() => {
 									selected = 'llamacpp';
 								}}>{$i18n.t('Llama.cpp')}</button
 							> -->
 						</div>
 
-						<div class=" px-1.5 py-1">
+						<div class="px-1.5 py-1">
 							{#if selected === 'ollama'}
 								<ManageMultipleOllama {ollamaConfig} />
 							{/if}
 						</div>
 					</div>
 				{:else}
-					<div class=" py-5">
+					<div class="py-5">
 						<Spinner />
 					</div>
 				{/if}

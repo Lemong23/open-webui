@@ -270,7 +270,7 @@
 				onBack();
 			}}
 		>
-			<div class=" self-center">
+			<div class="self-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 20 20"
@@ -284,7 +284,7 @@
 					/>
 				</svg>
 			</div>
-			<div class=" self-center text-sm font-medium">{'Back'}</div>
+			<div class="self-center text-sm font-medium">{'Back'}</div>
 		</button>
 	{/if}
 
@@ -386,14 +386,14 @@
 								<img
 									src="/static/favicon.png"
 									alt="model profile"
-									class=" rounded-xl size-72 md:size-60 object-cover shrink-0"
+									class="rounded-xl size-72 md:size-60 object-cover shrink-0"
 								/>
 							{/if}
 
 							<div class="absolute bottom-0 right-0 z-10">
 								<div class="m-1.5">
 									<div
-										class="shadow-xl p-1 rounded-full border-2 border-white bg-gray-800 text-white group-hover:bg-gray-600 transition dark:border-black dark:bg-white dark:group-hover:bg-gray-200 dark:text-black"
+										class="shadow-xl p-1 rounded-full border-2 border-white bg-gray-800 text-white group-hover:bg-gray-600 transition"
 									>
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
@@ -412,7 +412,7 @@
 							</div>
 
 							<div
-								class="absolute top-0 bottom-0 left-0 right-0 bg-white dark:bg-black rounded-lg opacity-0 group-hover:opacity-20 transition"
+								class="absolute top-0 bottom-0 left-0 right-0 bg-white rounded-lg opacity-0 group-hover:opacity-20 transition"
 							></div>
 						</button>
 
@@ -458,7 +458,7 @@
 
 					{#if preset}
 						<div class="my-1">
-							<div class=" text-sm font-semibold mb-1">{$i18n.t('Base Model (From)')}</div>
+							<div class="text-sm font-semibold mb-1">{$i18n.t('Base Model (From)')}</div>
 
 							<div>
 								<select
@@ -470,11 +470,11 @@
 									}}
 									required
 								>
-									<option value={null} class=" text-gray-900"
+									<option value={null} class="text-gray-900"
 										>{$i18n.t('Select a base model')}</option
 									>
 									{#each $models.filter((m) => (model ? m.id !== model.id : true) && !m?.preset && m?.owned_by !== 'arena') as model}
-										<option value={model.id} class=" text-gray-900">{model.name}</option>
+										<option value={model.id} class="text-gray-900">{model.name}</option>
 									{/each}
 								</select>
 							</div>
@@ -483,7 +483,7 @@
 
 					<div class="my-1">
 						<div class="mb-1 flex w-full justify-between items-center">
-							<div class=" self-center text-sm font-semibold">{$i18n.t('Description')}</div>
+							<div class="self-center text-sm font-semibold">{$i18n.t('Description')}</div>
 
 							<button
 								class="p-1 text-xs flex rounded transition"
@@ -509,7 +509,7 @@
 						{/if}
 					</div>
 
-					<div class=" mt-2 my-1">
+					<div class="mt-2 my-1">
 						<div class="">
 							<Tags
 								tags={info?.meta?.tags ?? []}
@@ -530,21 +530,21 @@
 					</div>
 
 					<div class="my-2">
-						<div class="px-3 py-2 bg-gray-50 dark:bg-gray-950 rounded-lg">
+						<div class="px-3 py-2 bg-gray-50 rounded-lg">
 							<AccessControl bind:accessControl />
 						</div>
 					</div>
 
-					<hr class=" border-gray-50 dark:border-gray-850 my-1.5" />
+					<hr class="border-gray-50 my-1.5" />
 
 					<div class="my-2">
 						<div class="flex w-full justify-between">
-							<div class=" self-center text-sm font-semibold">{$i18n.t('Model Params')}</div>
+							<div class="self-center text-sm font-semibold">{$i18n.t('Model Params')}</div>
 						</div>
 
 						<div class="mt-2">
 							<div class="my-1">
-								<div class=" text-xs font-semibold mb-2">{$i18n.t('System Prompt')}</div>
+								<div class="text-xs font-semibold mb-2">{$i18n.t('System Prompt')}</div>
 								<div>
 									<Textarea
 										className=" text-sm w-full bg-transparent outline-none resize-none overflow-y-hidden "
@@ -556,7 +556,7 @@
 							</div>
 
 							<div class="flex w-full justify-between">
-								<div class=" self-center text-xs font-semibold">
+								<div class="self-center text-xs font-semibold">
 									{$i18n.t('Advanced Params')}
 								</div>
 
@@ -589,12 +589,12 @@
 						</div>
 					</div>
 
-					<hr class=" border-gray-50 dark:border-gray-850 my-1" />
+					<hr class="border-gray-50 my-1" />
 
 					<div class="my-2">
 						<div class="flex w-full justify-between items-center">
 							<div class="flex w-full justify-between items-center">
-								<div class=" self-center text-sm font-semibold">
+								<div class="self-center text-sm font-semibold">
 									{$i18n.t('Prompt suggestions')}
 								</div>
 
@@ -651,9 +651,9 @@
 							<div class="flex flex-col space-y-1 mt-1 mb-3">
 								{#if info.meta.suggestion_prompts.length > 0}
 									{#each info.meta.suggestion_prompts as prompt, promptIdx}
-										<div class=" flex rounded-lg">
+										<div class="flex rounded-lg">
 											<input
-												class=" text-sm w-full bg-transparent outline-none border-r border-gray-50 dark:border-gray-850"
+												class="text-sm w-full bg-transparent outline-none border-r border-gray-50"
 												placeholder={$i18n.t('Write a prompt suggestion (e.g. Who are you?)')}
 												bind:value={prompt.content}
 											/>
@@ -686,7 +686,7 @@
 						{/if}
 					</div>
 
-					<hr class=" border-gray-50 dark:border-gray-850 my-1.5" />
+					<hr class="border-gray-50 my-1.5" />
 
 					<div class="my-2">
 						<Knowledge bind:selectedKnowledge={knowledge} collections={$knowledgeCollections} />
@@ -714,9 +714,9 @@
 						<Capabilities bind:capabilities />
 					</div>
 
-					<div class="my-2 text-gray-300 dark:text-gray-700">
+					<div class="my-2 text-gray-300">
 						<div class="flex w-full justify-between mb-2">
-							<div class=" self-center text-sm font-semibold">{$i18n.t('JSON Preview')}</div>
+							<div class="self-center text-sm font-semibold">{$i18n.t('JSON Preview')}</div>
 
 							<button
 								class="p-1 px-3 text-xs flex rounded transition"
@@ -748,13 +748,13 @@
 
 					<div class="my-2 flex justify-end pb-20">
 						<button
-							class=" text-sm px-3 py-2 transition rounded-lg {loading
-								? ' cursor-not-allowed bg-black hover:bg-gray-900 text-white dark:bg-white dark:hover:bg-gray-100 dark:text-black'
-								: 'bg-black hover:bg-gray-900 text-white dark:bg-white dark:hover:bg-gray-100 dark:text-black'} flex w-full justify-center"
+							class="text-sm px-3 py-2 transition rounded-lg {loading
+								? ' cursor-not-allowed bg-black hover:bg-gray-900 text-white'
+								: 'bg-black hover:bg-gray-900 text-white'} flex w-full justify-center"
 							type="submit"
 							disabled={loading}
 						>
-							<div class=" self-center font-medium">
+							<div class="self-center font-medium">
 								{#if edit}
 									{$i18n.t('Save & Update')}
 								{:else}
@@ -765,7 +765,7 @@
 							{#if loading}
 								<div class="ml-1.5 self-center">
 									<svg
-										class=" w-4 h-4"
+										class="w-4 h-4"
 										viewBox="0 0 24 24"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"

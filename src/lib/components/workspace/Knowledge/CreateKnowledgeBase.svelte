@@ -51,7 +51,7 @@
 			goto('/workspace/knowledge');
 		}}
 	>
-		<div class=" self-center">
+		<div class="self-center">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 20 20"
@@ -65,7 +65,7 @@
 				/>
 			</svg>
 		</div>
-		<div class=" self-center font-medium text-sm">{$i18n.t('Back')}</div>
+		<div class="self-center font-medium text-sm">{$i18n.t('Back')}</div>
 	</button>
 
 	<form
@@ -74,18 +74,18 @@
 			submitHandler();
 		}}
 	>
-		<div class=" w-full flex flex-col justify-center">
-			<div class=" text-2xl font-medium font-primary mb-2.5">
+		<div class="w-full flex flex-col justify-center">
+			<div class="text-2xl font-medium font-primary mb-2.5">
 				{$i18n.t('Create a knowledge base')}
 			</div>
 
 			<div class="w-full flex flex-col gap-2.5">
 				<div class="w-full">
-					<div class=" text-sm mb-2">{$i18n.t('What are you working on?')}</div>
+					<div class="text-sm mb-2">{$i18n.t('What are you working on?')}</div>
 
 					<div class="w-full mt-1">
 						<input
-							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 							type="text"
 							bind:value={name}
 							placeholder={$i18n.t('Name your knowledge base')}
@@ -97,9 +97,9 @@
 				<div>
 					<div class="text-sm mb-2">{$i18n.t('What are you trying to achieve?')}</div>
 
-					<div class=" w-full mt-1">
+					<div class="w-full mt-1">
 						<textarea
-							class="w-full resize-none rounded-lg py-2 px-4 text-sm bg-gray-50 dark:text-gray-300 dark:bg-gray-850 outline-none"
+							class="w-full resize-none rounded-lg py-2 px-4 text-sm bg-gray-50 outline-none"
 							rows="4"
 							bind:value={description}
 							placeholder={$i18n.t('Describe your knowledge base and objectives')}
@@ -111,7 +111,7 @@
 		</div>
 
 		<div class="mt-2">
-			<div class="px-3 py-2 bg-gray-50 dark:bg-gray-950 rounded-lg">
+			<div class="px-3 py-2 bg-gray-50 rounded-lg">
 				<AccessControl bind:accessControl />
 			</div>
 		</div>
@@ -119,18 +119,18 @@
 		<div class="flex justify-end mt-2">
 			<div>
 				<button
-					class=" text-sm px-4 py-2 transition rounded-lg {loading
-						? ' cursor-not-allowed bg-gray-100 dark:bg-gray-800'
-						: ' bg-gray-50 hover:bg-gray-100 dark:bg-gray-850 dark:hover:bg-gray-800'} flex"
+					class="text-sm px-4 py-2 transition rounded-lg {loading
+						? ' cursor-not-allowed bg-gray-100'
+						: ' bg-gray-50 hover:bg-gray-100'} flex"
 					type="submit"
 					disabled={loading}
 				>
-					<div class=" self-center font-medium">{$i18n.t('Create Knowledge')}</div>
+					<div class="self-center font-medium">{$i18n.t('Create Knowledge')}</div>
 
 					{#if loading}
 						<div class="ml-1.5 self-center">
 							<svg
-								class=" w-4 h-4"
+								class="w-4 h-4"
 								viewBox="0 0 24 24"
 								fill="currentColor"
 								xmlns="http://www.w3.org/2000/svg"

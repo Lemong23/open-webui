@@ -157,15 +157,15 @@
 </script>
 
 <div class="flex flex-col h-full justify-between text-sm">
-	<div class="  overflow-y-scroll max-h-[28rem] lg:max-h-full">
+	<div class="overflow-y-scroll max-h-[28rem] lg:max-h-full">
 		<div class="">
-			<div class=" mb-1 text-sm font-medium">{$i18n.t('WebUI Settings')}</div>
+			<div class="mb-1 text-sm font-medium">{$i18n.t('WebUI Settings')}</div>
 
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">{$i18n.t('Theme')}</div>
+				<div class="self-center text-xs font-medium">{$i18n.t('Theme')}</div>
 				<div class="flex items-center relative">
 					<select
-						class=" dark:bg-gray-900 w-fit pr-8 rounded py-2 px-2 text-xs bg-transparent outline-none text-right"
+						class="w-fit pr-8 rounded py-2 px-2 text-xs bg-transparent outline-none text-right"
 						bind:value={selectedTheme}
 						placeholder="Select a theme"
 						on:change={() => themeChangeHandler(selectedTheme)}
@@ -181,11 +181,11 @@
 				</div>
 			</div>
 
-			<div class=" flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">{$i18n.t('Language')}</div>
+			<div class="flex w-full justify-between">
+				<div class="self-center text-xs font-medium">{$i18n.t('Language')}</div>
 				<div class="flex items-center relative">
 					<select
-						class=" dark:bg-gray-900 w-fit pr-8 rounded py-2 px-2 text-xs bg-transparent outline-none text-right"
+						class="w-fit pr-8 rounded py-2 px-2 text-xs bg-transparent outline-none text-right"
 						bind:value={lang}
 						placeholder="Select a language"
 						on:change={(e) => {
@@ -199,10 +199,10 @@
 				</div>
 			</div>
 			{#if $i18n.language === 'en-US'}
-				<div class="mb-2 text-xs text-gray-400 dark:text-gray-500">
+				<div class="mb-2 text-xs text-gray-400">
 					Couldn't find your language?
 					<a
-						class=" text-gray-300 font-medium underline"
+						class="text-gray-300 font-medium underline"
 						href="https://github.com/open-webui/open-webui/blob/main/docs/CONTRIBUTING.md#-translations-and-internationalization"
 						target="_blank"
 					>
@@ -212,8 +212,8 @@
 			{/if}
 
 			<div>
-				<div class=" py-0.5 flex w-full justify-between">
-					<div class=" self-center text-xs font-medium">{$i18n.t('Notifications')}</div>
+				<div class="py-0.5 flex w-full justify-between">
+					<div class="self-center text-xs font-medium">{$i18n.t('Notifications')}</div>
 
 					<button
 						class="p-1 px-3 text-xs flex rounded transition"
@@ -233,22 +233,22 @@
 		</div>
 
 		{#if $user.role === 'admin' || $user?.permissions.chat?.controls}
-			<hr class=" dark:border-gray-850 my-3" />
+			<hr class="my-3" />
 
 			<div>
-				<div class=" my-2.5 text-sm font-medium">{$i18n.t('System Prompt')}</div>
+				<div class="my-2.5 text-sm font-medium">{$i18n.t('System Prompt')}</div>
 				<textarea
 					bind:value={system}
-					class="w-full rounded-lg p-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none resize-none"
+					class="w-full rounded-lg p-4 text-sm outline-none resize-none"
 					rows="4"
 				/>
 			</div>
 
 			<div class="mt-2 space-y-3 pr-1.5">
 				<div class="flex justify-between items-center text-sm">
-					<div class="  font-medium">{$i18n.t('Advanced Parameters')}</div>
+					<div class="font-medium">{$i18n.t('Advanced Parameters')}</div>
 					<button
-						class=" text-xs font-medium text-gray-500"
+						class="text-xs font-medium text-gray-500"
 						type="button"
 						on:click={() => {
 							showAdvanced = !showAdvanced;
@@ -258,11 +258,11 @@
 
 				{#if showAdvanced}
 					<AdvancedParams admin={$user?.role === 'admin'} bind:params />
-					<hr class=" dark:border-gray-850" />
+					<hr class="" />
 
-					<div class=" py-1 w-full justify-between">
+					<div class="py-1 w-full justify-between">
 						<div class="flex w-full justify-between">
-							<div class=" self-center text-xs font-medium">{$i18n.t('Keep Alive')}</div>
+							<div class="self-center text-xs font-medium">{$i18n.t('Keep Alive')}</div>
 
 							<button
 								class="p-1 px-3 text-xs flex rounded transition"
@@ -282,7 +282,7 @@
 						{#if keepAlive !== null}
 							<div class="flex mt-1 space-x-2">
 								<input
-									class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
+									class="w-full rounded-lg py-2 px-4 text-sm outline-none"
 									type="text"
 									placeholder={$i18n.t("e.g. '30s','10m'. Valid time units are 's', 'm', 'h'.")}
 									bind:value={keepAlive}
@@ -292,8 +292,8 @@
 					</div>
 
 					<div>
-						<div class=" py-1 flex w-full justify-between">
-							<div class=" self-center text-sm font-medium">{$i18n.t('Request Mode')}</div>
+						<div class="py-1 flex w-full justify-between">
+							<div class="self-center text-sm font-medium">{$i18n.t('Request Mode')}</div>
 
 							<button
 								class="p-1 px-3 text-xs flex rounded transition"
@@ -326,7 +326,7 @@
 
 	<div class="flex justify-end pt-3 text-sm font-medium">
 		<button
-			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 			on:click={() => {
 				saveSettings({
 					system: system !== '' ? system : undefined,

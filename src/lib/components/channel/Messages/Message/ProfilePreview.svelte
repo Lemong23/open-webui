@@ -29,29 +29,29 @@
 
 	<slot name="content">
 		<DropdownMenu.Content
-			class="max-w-full w-[240px] rounded-lg z-[9999] bg-white dark:bg-black dark:text-white shadow-lg"
+			class="max-w-full w-[240px] rounded-lg z-[9999] bg-white shadow-lg"
 			sideOffset={8}
 			{side}
 			{align}
 			transition={flyAndScale}
 		>
 			{#if user}
-				<div class=" flex flex-col gap-2 w-full rounded-lg">
+				<div class="flex flex-col gap-2 w-full rounded-lg">
 					<div class="py-8 relative bg-gray-900 rounded-t-lg">
 						<img
 							crossorigin="anonymous"
 							src={user?.profile_image_url ?? `${WEBUI_BASE_URL}/static/favicon.png`}
-							class=" absolute -bottom-5 left-3 size-12 ml-0.5 object-cover rounded-full -translate-y-[1px]"
+							class="absolute -bottom-5 left-3 size-12 ml-0.5 object-cover rounded-full -translate-y-[1px]"
 							alt="profile"
 						/>
 					</div>
 
-					<div class=" flex flex-col pt-4 pb-2.5 px-4">
-						<div class=" -mb-1">
+					<div class="flex flex-col pt-4 pb-2.5 px-4">
+						<div class="-mb-1">
 							<span class="font-medium text-sm line-clamp-1"> {user.name} </span>
 						</div>
 
-						<div class=" flex items-center gap-2">
+						<div class="flex items-center gap-2">
 							{#if $activeUserIds.includes(user.id)}
 								<div>
 									<span class="relative flex size-2">
@@ -62,7 +62,7 @@
 									</span>
 								</div>
 
-								<div class=" -translate-y-[1px]">
+								<div class="-translate-y-[1px]">
 									<span class="text-xs"> Active </span>
 								</div>
 							{:else}
@@ -72,7 +72,7 @@
 									</span>
 								</div>
 
-								<div class=" -translate-y-[1px]">
+								<div class="-translate-y-[1px]">
 									<span class="text-xs"> Away </span>
 								</div>
 							{/if}

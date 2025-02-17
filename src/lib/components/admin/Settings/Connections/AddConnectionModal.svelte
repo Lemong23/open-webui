@@ -122,8 +122,8 @@
 
 <Modal size="sm" bind:show>
 	<div>
-		<div class=" flex justify-between dark:text-gray-100 px-5 pt-4 pb-2">
-			<div class=" text-lg font-medium self-center font-primary">
+		<div class="flex justify-between px-5 pt-4 pb-2">
+			<div class="text-lg font-medium self-center font-primary">
 				{#if edit}
 					{$i18n.t('Edit Connection')}
 				{:else}
@@ -149,8 +149,8 @@
 			</button>
 		</div>
 
-		<div class="flex flex-col md:flex-row w-full px-4 pb-4 md:space-x-4 dark:text-gray-200">
-			<div class=" flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
+		<div class="flex flex-col md:flex-row w-full px-4 pb-4 md:space-x-4">
+			<div class="flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
 				<form
 					class="flex flex-col w-full"
 					on:submit={(e) => {
@@ -161,11 +161,11 @@
 					<div class="px-1">
 						<div class="flex gap-2">
 							<div class="flex flex-col w-full">
-								<div class=" mb-0.5 text-xs text-gray-500">{$i18n.t('URL')}</div>
+								<div class="mb-0.5 text-xs text-gray-500">{$i18n.t('URL')}</div>
 
 								<div class="flex-1">
 									<input
-										class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-none"
+										class="w-full text-sm bg-transparent placeholder:text-gray-300 outline-none"
 										type="text"
 										bind:value={url}
 										placeholder={$i18n.t('API Base URL')}
@@ -177,7 +177,7 @@
 
 							<Tooltip content="Verify Connection" className="self-end -mb-1">
 								<button
-									class="self-center p-1 bg-transparent hover:bg-gray-100 dark:bg-gray-900 dark:hover:bg-gray-850 rounded-lg transition"
+									class="self-center p-1 bg-transparent hover:bg-gray-100 rounded-lg transition"
 									on:click={() => {
 										verifyHandler();
 									}}
@@ -207,11 +207,11 @@
 
 						<div class="flex gap-2 mt-2">
 							<div class="flex flex-col w-full">
-								<div class=" mb-0.5 text-xs text-gray-500">{$i18n.t('Key')}</div>
+								<div class="mb-0.5 text-xs text-gray-500">{$i18n.t('Key')}</div>
 
 								<div class="flex-1">
 									<SensitiveInput
-										className="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-none"
+										className="w-full text-sm bg-transparent placeholder:text-gray-300 outline-none"
 										bind:value={key}
 										placeholder={$i18n.t('API Key')}
 										required={!ollama}
@@ -220,7 +220,7 @@
 							</div>
 
 							<div class="flex flex-col w-full">
-								<div class=" mb-1 text-xs text-gray-500">{$i18n.t('Prefix ID')}</div>
+								<div class="mb-1 text-xs text-gray-500">{$i18n.t('Prefix ID')}</div>
 
 								<div class="flex-1">
 									<Tooltip
@@ -229,7 +229,7 @@
 										)}
 									>
 										<input
-											class="w-full text-sm bg-transparent placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-none"
+											class="w-full text-sm bg-transparent placeholder:text-gray-300 outline-none"
 											type="text"
 											bind:value={prefixId}
 											placeholder={$i18n.t('Prefix ID')}
@@ -240,7 +240,7 @@
 							</div>
 						</div>
 
-						<hr class=" border-gray-100 dark:border-gray-700/10 my-2.5 w-full" />
+						<hr class="border-gray-100 my-2.5 w-full" />
 
 						<div class="flex flex-col w-full">
 							<div class="mb-1 flex justify-between">
@@ -250,8 +250,8 @@
 							{#if modelIds.length > 0}
 								<div class="flex flex-col">
 									{#each modelIds as modelId, modelIdx}
-										<div class=" flex gap-2 w-full justify-between items-center">
-											<div class=" text-sm flex-1 py-1 rounded-lg">
+										<div class="flex gap-2 w-full justify-between items-center">
+											<div class="text-sm flex-1 py-1 rounded-lg">
 												{modelId}
 											</div>
 											<div class="flex-shrink-0">
@@ -282,13 +282,13 @@
 							{/if}
 						</div>
 
-						<hr class=" border-gray-100 dark:border-gray-700/10 my-2.5 w-full" />
+						<hr class="border-gray-100 my-2.5 w-full" />
 
 						<div class="flex items-center">
 							<input
 								class="w-full py-1 text-sm rounded-lg bg-transparent {modelId
 									? ''
-									: 'text-gray-500'} placeholder:text-gray-300 dark:placeholder:text-gray-700 outline-none"
+									: 'text-gray-500'} placeholder:text-gray-300 outline-none"
 								bind:value={modelId}
 								placeholder={$i18n.t('Add a model ID')}
 							/>
@@ -309,7 +309,7 @@
 					<div class="flex justify-end pt-3 text-sm font-medium gap-1.5">
 						{#if edit}
 							<button
-								class="px-3.5 py-1.5 text-sm font-medium dark:bg-black dark:hover:bg-gray-900 dark:text-white bg-white text-black hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center"
+								class="px-3.5 py-1.5 text-sm font-medium bg-white text-black hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center"
 								type="button"
 								on:click={() => {
 									onDelete();
@@ -321,7 +321,7 @@
 						{/if}
 
 						<button
-							class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center {loading
+							class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full flex flex-row space-x-1 items-center {loading
 								? ' cursor-not-allowed'
 								: ''}"
 							type="submit"
@@ -332,7 +332,7 @@
 							{#if loading}
 								<div class="ml-2 self-center">
 									<svg
-										class=" w-4 h-4"
+										class="w-4 h-4"
 										viewBox="0 0 24 24"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"

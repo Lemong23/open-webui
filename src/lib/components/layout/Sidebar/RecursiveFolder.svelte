@@ -332,7 +332,7 @@
 		deleteHandler();
 	}}
 >
-	<div class=" text-sm text-gray-700 dark:text-gray-300 flex-1 line-clamp-3">
+	<div class="text-sm text-gray-700 flex-1 line-clamp-3">
 		{@html DOMPurify.sanitize(
 			$i18n.t('This will delete <strong>{{NAME}}</strong> and <strong>all its contents</strong>.', {
 				NAME: folders[folderId].name
@@ -343,10 +343,10 @@
 
 {#if dragged && x && y}
 	<DragGhost {x} {y}>
-		<div class=" bg-black/80 backdrop-blur-2xl px-2 py-1 rounded-lg w-fit max-w-40">
+		<div class="bg-black/80 backdrop-blur-2xl px-2 py-1 rounded-lg w-fit max-w-40">
 			<div class="flex items-center gap-1">
 				<FolderOpen className="size-3.5" strokeWidth="2" />
-				<div class=" text-xs text-white line-clamp-1">
+				<div class="text-xs text-white line-clamp-1">
 					{folders[folderId].name}
 				</div>
 			</div>
@@ -357,7 +357,7 @@
 <div bind:this={folderElement} class="relative {className}" draggable="true">
 	{#if draggedOver}
 		<div
-			class="absolute top-0 left-0 w-full h-full rounded-sm bg-gray-100/50 dark:bg-gray-700/20 bg-opacity-50 dark:bg-opacity-10 z-50 pointer-events-none touch-none"
+			class="absolute top-0 left-0 w-full h-full rounded-sm bg-gray-100/50/20 bg-opacity-50 z-50 pointer-events-none touch-none"
 		></div>
 	{/if}
 
@@ -375,12 +375,12 @@
 		<div class="w-full group">
 			<button
 				id="folder-{folderId}-button"
-				class="relative w-full py-1.5 px-2 rounded-md flex items-center gap-1.5 text-xs text-gray-500 dark:text-gray-500 font-medium hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+				class="relative w-full py-1.5 px-2 rounded-md flex items-center gap-1.5 text-xs text-gray-500 font-medium hover:bg-gray-100 transition"
 				on:dblclick={() => {
 					editHandler();
 				}}
 			>
-				<div class="text-gray-300 dark:text-gray-600">
+				<div class="text-gray-300">
 					{#if open}
 						<ChevronDown className=" size-3" strokeWidth="2.5" />
 					{:else}
@@ -412,7 +412,7 @@
 									edit = false;
 								}
 							}}
-							class="w-full h-full bg-transparent text-gray-500 dark:text-gray-500 outline-none"
+							class="w-full h-full bg-transparent text-gray-500 outline-none"
 						/>
 					{:else}
 						{folders[folderId].name}
@@ -420,7 +420,7 @@
 				</div>
 
 				<button
-					class="absolute z-10 right-2 invisible group-hover:visible self-center flex items-center dark:text-gray-300"
+					class="absolute z-10 right-2 invisible group-hover:visible self-center flex items-center"
 					on:pointerup={(e) => {
 						e.stopPropagation();
 					}}
@@ -436,7 +436,7 @@
 							exportHandler();
 						}}
 					>
-						<button class="p-0.5 dark:hover:bg-gray-850 rounded-lg touch-auto" on:click={(e) => {}}>
+						<button class="p-0.5 rounded-lg touch-auto" on:click={(e) => {}}>
 							<EllipsisHorizontal className="size-4" strokeWidth="2.5" />
 						</button>
 					</FolderMenu>
@@ -447,7 +447,7 @@
 		<div slot="content" class="w-full">
 			{#if (folders[folderId]?.childrenIds ?? []).length > 0 || (folders[folderId].items?.chats ?? []).length > 0}
 				<div
-					class="ml-3 pl-1 mt-[1px] flex flex-col overflow-y-auto scrollbar-hidden border-s border-gray-100 dark:border-gray-900"
+					class="ml-3 pl-1 mt-[1px] flex flex-col overflow-y-auto scrollbar-hidden border-s border-gray-100"
 				>
 					{#if folders[folderId]?.childrenIds}
 						{@const children = folders[folderId]?.childrenIds

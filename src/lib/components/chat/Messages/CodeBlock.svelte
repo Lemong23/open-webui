@@ -306,7 +306,7 @@ __builtins__.input = input`);
 		{#if lang === 'mermaid'}
 			{#if mermaidHtml}
 				<SvgPanZoom
-					className=" border border-gray-50 dark:border-gray-850 rounded-lg max-h-fit overflow-hidden"
+					className=" border border-gray-50 rounded-lg max-h-fit overflow-hidden"
 					svg={mermaidHtml}
 					content={_token.text}
 				/>
@@ -314,12 +314,12 @@ __builtins__.input = input`);
 				<pre class="mermaid">{code}</pre>
 			{/if}
 		{:else}
-			<div class="text-text-300 absolute pl-4 py-1.5 text-xs font-medium dark:text-white">
+			<div class="text-text-300 absolute pl-4 py-1.5 text-xs font-medium">
 				{lang}
 			</div>
 
 			<div
-				class="sticky {stickyButtonsClassName} mb-1 py-1 pr-2.5 flex items-center justify-end z-10 text-xs text-black dark:text-white"
+				class="sticky {stickyButtonsClassName} mb-1 py-1 pr-2.5 flex items-center justify-end z-10 text-xs text-black"
 			>
 				<div class="flex items-center gap-0.5 translate-y-[1px]">
 					{#if lang.toLowerCase() === 'python' || lang.toLowerCase() === 'py' || (lang === '' && checkPythonCode(code))}
@@ -327,7 +327,7 @@ __builtins__.input = input`);
 							<div class="run-code-button bg-none border-none p-1 cursor-not-allowed">Running</div>
 						{:else if run}
 							<button
-								class="run-code-button bg-none border-none bg-gray-50 hover:bg-gray-100 dark:bg-gray-850 dark:hover:bg-gray-800 transition rounded-md px-1.5 py-0.5"
+								class="run-code-button bg-none border-none bg-gray-50 hover:bg-gray-100 transition rounded-md px-1.5 py-0.5"
 								on:click={async () => {
 									code = _code;
 									await tick();
@@ -339,7 +339,7 @@ __builtins__.input = input`);
 
 					{#if save}
 						<button
-							class="save-code-button bg-none border-none bg-gray-50 hover:bg-gray-100 dark:bg-gray-850 dark:hover:bg-gray-800 transition rounded-md px-1.5 py-0.5"
+							class="save-code-button bg-none border-none bg-gray-50 hover:bg-gray-100 transition rounded-md px-1.5 py-0.5"
 							on:click={saveCode}
 						>
 							{saved ? $i18n.t('Saved') : $i18n.t('Save')}
@@ -347,7 +347,7 @@ __builtins__.input = input`);
 					{/if}
 
 					<button
-						class="copy-code-button bg-none border-none bg-gray-50 hover:bg-gray-100 dark:bg-gray-850 dark:hover:bg-gray-800 transition rounded-md px-1.5 py-0.5"
+						class="copy-code-button bg-none border-none bg-gray-50 hover:bg-gray-100 transition rounded-md px-1.5 py-0.5"
 						on:click={copyCode}>{copied ? $i18n.t('Copied') : $i18n.t('Copy')}</button
 					>
 				</div>
@@ -360,7 +360,7 @@ __builtins__.input = input`);
 						? ''
 						: 'rounded-b-lg'} overflow-hidden"
 			>
-				<div class=" pt-7 bg-gray-50 dark:bg-gray-850"></div>
+				<div class="pt-7 bg-gray-50"></div>
 				<CodeEditor
 					value={code}
 					{id}
@@ -381,12 +381,12 @@ __builtins__.input = input`);
 
 			{#if executing}
 				<div class="bg-[#202123] text-white px-4 py-4 rounded-b-lg">
-					<div class=" text-gray-500 text-xs mb-1">STDOUT/STDERR</div>
+					<div class="text-gray-500 text-xs mb-1">STDOUT/STDERR</div>
 					<div class="text-sm">Running...</div>
 				</div>
 			{:else if stdout || stderr || result}
 				<div class="bg-[#202123] text-white px-4 py-4 rounded-b-lg">
-					<div class=" text-gray-500 text-xs mb-1">STDOUT/STDERR</div>
+					<div class="text-gray-500 text-xs mb-1">STDOUT/STDERR</div>
 					<div class="text-sm">{stdout || stderr || result}</div>
 				</div>
 			{/if}

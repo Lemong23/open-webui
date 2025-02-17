@@ -44,7 +44,7 @@
 	}
 </script>
 
-<div class=" space-y-1 text-xs pb-safe-bottom">
+<div class="space-y-1 text-xs pb-safe-bottom">
 	<div>
 		<Tooltip
 			content={$i18n.t(
@@ -53,8 +53,8 @@
 			placement="top-start"
 			className="inline-tooltip"
 		>
-			<div class=" py-0.5 flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+			<div class="py-0.5 flex w-full justify-between">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Stream Chat Response')}
 				</div>
 				<button
@@ -81,7 +81,7 @@
 		</Tooltip>
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Sets the random number seed to use for generation. Setting this to a specific number will make the model generate the same text for the same prompt. (Default: random)'
@@ -90,7 +90,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Seed')}
 				</div>
 
@@ -112,9 +112,9 @@
 
 		{#if (params?.seed ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
-						class="w-full rounded-lg py-2 px-4 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
+						class="w-full rounded-lg py-2 px-4 text-sm outline-none"
 						type="number"
 						placeholder={$i18n.t('Enter Seed')}
 						bind:value={params.seed}
@@ -126,7 +126,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Sets the stop sequences to use. When this pattern is encountered, the LLM will stop generating text and return. Multiple stop patterns may be set by specifying multiple separate stop parameters in a modelfile.'
@@ -135,7 +135,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Stop Sequence')}
 				</div>
 
@@ -157,9 +157,9 @@
 
 		{#if (params?.stop ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
-						class="w-full rounded-lg py-2 px-1 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
+						class="w-full rounded-lg py-2 px-1 text-sm outline-none"
 						type="text"
 						placeholder={$i18n.t('Enter stop sequence')}
 						bind:value={params.stop}
@@ -170,7 +170,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'The temperature of the model. Increasing the temperature will make the model answer more creatively. (Default: 0.8)'
@@ -179,7 +179,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Temperature')}
 				</div>
 				<button
@@ -200,7 +200,7 @@
 
 		{#if (params?.temperature ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -208,14 +208,14 @@
 						max="1"
 						step="0.05"
 						bind:value={params.temperature}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.temperature}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="0"
 						max="1"
 						step="any"
@@ -225,7 +225,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Constrains effort on reasoning for reasoning models. Only applicable to reasoning models from specific providers that support reasoning effort. (Default: medium)'
@@ -234,7 +234,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Reasoning Effort')}
 				</div>
 				<button
@@ -255,9 +255,9 @@
 
 		{#if (params?.reasoning_effort ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
-						class="w-full rounded-lg py-2 px-1 text-sm dark:text-gray-300 dark:bg-gray-850 outline-none"
+						class="w-full rounded-lg py-2 px-1 text-sm outline-none"
 						type="text"
 						placeholder={$i18n.t('Enter reasoning effort')}
 						bind:value={params.reasoning_effort}
@@ -268,7 +268,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Enable Mirostat sampling for controlling perplexity. (Default: 0, 0 = Disabled, 1 = Mirostat, 2 = Mirostat 2.0)'
@@ -277,7 +277,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Mirostat')}
 				</div>
 				<button
@@ -298,7 +298,7 @@
 
 		{#if (params?.mirostat ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -306,14 +306,14 @@
 						max="2"
 						step="1"
 						bind:value={params.mirostat}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.mirostat}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="0"
 						max="2"
 						step="1"
@@ -323,7 +323,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Influences how quickly the algorithm responds to feedback from the generated text. A lower learning rate will result in slower adjustments, while a higher learning rate will make the algorithm more responsive. (Default: 0.1)'
@@ -332,7 +332,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Mirostat Eta')}
 				</div>
 				<button
@@ -353,7 +353,7 @@
 
 		{#if (params?.mirostat_eta ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -361,14 +361,14 @@
 						max="1"
 						step="0.05"
 						bind:value={params.mirostat_eta}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.mirostat_eta}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="0"
 						max="1"
 						step="any"
@@ -378,7 +378,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Controls the balance between coherence and diversity of the output. A lower value will result in more focused and coherent text. (Default: 5.0)'
@@ -387,7 +387,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Mirostat Tau')}
 				</div>
 
@@ -409,7 +409,7 @@
 
 		{#if (params?.mirostat_tau ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -417,14 +417,14 @@
 						max="10"
 						step="0.5"
 						bind:value={params.mirostat_tau}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.mirostat_tau}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="0"
 						max="10"
 						step="any"
@@ -434,7 +434,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Reduces the probability of generating nonsense. A higher value (e.g. 100) will give more diverse answers, while a lower value (e.g. 10) will be more conservative. (Default: 40)'
@@ -443,7 +443,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Top K')}
 				</div>
 				<button
@@ -464,7 +464,7 @@
 
 		{#if (params?.top_k ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -472,14 +472,14 @@
 						max="100"
 						step="0.5"
 						bind:value={params.top_k}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.top_k}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="0"
 						max="100"
 						step="any"
@@ -489,7 +489,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Works together with top-k. A higher value (e.g., 0.95) will lead to more diverse text, while a lower value (e.g., 0.5) will generate more focused and conservative text. (Default: 0.9)'
@@ -498,7 +498,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Top P')}
 				</div>
 
@@ -520,7 +520,7 @@
 
 		{#if (params?.top_p ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -528,14 +528,14 @@
 						max="1"
 						step="0.05"
 						bind:value={params.top_p}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.top_p}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="0"
 						max="1"
 						step="any"
@@ -545,7 +545,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Alternative to the top_p, and aims to ensure a balance of quality and variety. The parameter p represents the minimum probability for a token to be considered, relative to the probability of the most likely token. For example, with p=0.05 and the most likely token having a probability of 0.9, logits with a value less than 0.045 are filtered out. (Default: 0.0)'
@@ -554,7 +554,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Min P')}
 				</div>
 				<button
@@ -575,7 +575,7 @@
 
 		{#if (params?.min_p ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -583,14 +583,14 @@
 						max="1"
 						step="0.05"
 						bind:value={params.min_p}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.min_p}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="0"
 						max="1"
 						step="any"
@@ -600,7 +600,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Sets how strongly to penalize repetitions. A higher value (e.g., 1.5) will penalize repetitions more strongly, while a lower value (e.g., 0.9) will be more lenient. (Default: 1.1)'
@@ -609,7 +609,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Frequency Penalty')}
 				</div>
 
@@ -631,7 +631,7 @@
 
 		{#if (params?.frequency_penalty ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -639,14 +639,14 @@
 						max="2"
 						step="0.05"
 						bind:value={params.frequency_penalty}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.frequency_penalty}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="0"
 						max="2"
 						step="any"
@@ -656,7 +656,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Sets how far back for the model to look back to prevent repetition. (Default: 64, 0 = disabled, -1 = num_ctx)'
@@ -665,7 +665,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Repeat Last N')}
 				</div>
 
@@ -687,7 +687,7 @@
 
 		{#if (params?.repeat_last_n ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -695,14 +695,14 @@
 						max="128"
 						step="1"
 						bind:value={params.repeat_last_n}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.repeat_last_n}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="-1"
 						max="128"
 						step="1"
@@ -712,7 +712,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Tail free sampling is used to reduce the impact of less probable tokens from the output. A higher value (e.g., 2.0) will reduce the impact more, while a value of 1.0 disables this setting. (default: 1)'
@@ -721,7 +721,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Tfs Z')}
 				</div>
 
@@ -743,7 +743,7 @@
 
 		{#if (params?.tfs_z ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -751,14 +751,14 @@
 						max="2"
 						step="0.05"
 						bind:value={params.tfs_z}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.tfs_z}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="0"
 						max="2"
 						step="any"
@@ -768,7 +768,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'Sets the size of the context window used to generate the next token. (Default: 2048)'
@@ -777,7 +777,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Context Length')}
 				</div>
 
@@ -799,7 +799,7 @@
 
 		{#if (params?.num_ctx ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -807,14 +807,14 @@
 						max="10240000"
 						step="1"
 						bind:value={params.num_ctx}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div class="">
 					<input
 						bind:value={params.num_ctx}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="-1"
 						step="1"
 					/>
@@ -823,7 +823,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'The batch size determines how many text requests are processed together at once. A higher batch size can increase the performance and speed of the model, but it also requires more memory.  (Default: 512)'
@@ -832,7 +832,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Batch Size (num_batch)')}
 				</div>
 
@@ -854,7 +854,7 @@
 
 		{#if (params?.num_batch ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -862,14 +862,14 @@
 						max="8192"
 						step="256"
 						bind:value={params.num_batch}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.num_batch}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="256"
 						step="256"
 					/>
@@ -878,7 +878,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'This option controls how many tokens are preserved when refreshing the context. For example, if set to 2, the last 2 tokens of the conversation context will be retained. Preserving context can help maintain the continuity of a conversation, but it may reduce the ability to respond to new topics. (Default: 24)'
@@ -887,7 +887,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Tokens To Keep On Context Refresh (num_keep)')}
 				</div>
 
@@ -909,7 +909,7 @@
 
 		{#if (params?.num_keep ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -917,14 +917,14 @@
 						max="10240000"
 						step="1"
 						bind:value={params.num_keep}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div class="">
 					<input
 						bind:value={params.num_keep}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="-1"
 						step="1"
 					/>
@@ -933,7 +933,7 @@
 		{/if}
 	</div>
 
-	<div class=" py-0.5 w-full justify-between">
+	<div class="py-0.5 w-full justify-between">
 		<Tooltip
 			content={$i18n.t(
 				'This option sets the maximum number of tokens the model can generate in its response. Increasing this limit allows the model to provide longer answers, but it may also increase the likelihood of unhelpful or irrelevant content being generated.  (Default: 128)'
@@ -942,7 +942,7 @@
 			className="inline-tooltip"
 		>
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">
+				<div class="self-center text-xs font-medium">
 					{$i18n.t('Max Tokens (num_predict)')}
 				</div>
 
@@ -964,7 +964,7 @@
 
 		{#if (params?.max_tokens ?? null) !== null}
 			<div class="flex mt-0.5 space-x-2">
-				<div class=" flex-1">
+				<div class="flex-1">
 					<input
 						id="steps-range"
 						type="range"
@@ -972,14 +972,14 @@
 						max="131072"
 						step="1"
 						bind:value={params.max_tokens}
-						class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+						class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 					/>
 				</div>
 				<div>
 					<input
 						bind:value={params.max_tokens}
 						type="number"
-						class=" bg-transparent text-center w-14"
+						class="bg-transparent text-center w-14"
 						min="-2"
 						step="1"
 					/>
@@ -989,7 +989,7 @@
 	</div>
 
 	{#if admin}
-		<div class=" py-0.5 w-full justify-between">
+		<div class="py-0.5 w-full justify-between">
 			<Tooltip
 				content={$i18n.t(
 					'Enable Memory Mapping (mmap) to load model data. This option allows the system to use disk storage as an extension of RAM by treating disk files as if they were in RAM. This can improve model performance by allowing for faster data access. However, it may not work correctly with all systems and can consume a significant amount of disk space.'
@@ -998,7 +998,7 @@
 				className="inline-tooltip"
 			>
 				<div class="flex w-full justify-between">
-					<div class=" self-center text-xs font-medium">
+					<div class="self-center text-xs font-medium">
 						{$i18n.t('use_mmap (Ollama)')}
 					</div>
 					<button
@@ -1022,14 +1022,14 @@
 					<div class="text-xs text-gray-500">
 						{params.use_mmap ? 'Enabled' : 'Disabled'}
 					</div>
-					<div class=" pr-2">
+					<div class="pr-2">
 						<Switch bind:state={params.use_mmap} />
 					</div>
 				</div>
 			{/if}
 		</div>
 
-		<div class=" py-0.5 w-full justify-between">
+		<div class="py-0.5 w-full justify-between">
 			<Tooltip
 				content={$i18n.t(
 					"Enable Memory Locking (mlock) to prevent model data from being swapped out of RAM. This option locks the model's working set of pages into RAM, ensuring that they will not be swapped out to disk. This can help maintain performance by avoiding page faults and ensuring fast data access."
@@ -1038,7 +1038,7 @@
 				className="inline-tooltip"
 			>
 				<div class="flex w-full justify-between">
-					<div class=" self-center text-xs font-medium">
+					<div class="self-center text-xs font-medium">
 						{$i18n.t('use_mlock (Ollama)')}
 					</div>
 
@@ -1064,14 +1064,14 @@
 						{params.use_mlock ? 'Enabled' : 'Disabled'}
 					</div>
 
-					<div class=" pr-2">
+					<div class="pr-2">
 						<Switch bind:state={params.use_mlock} />
 					</div>
 				</div>
 			{/if}
 		</div>
 
-		<div class=" py-0.5 w-full justify-between">
+		<div class="py-0.5 w-full justify-between">
 			<Tooltip
 				content={$i18n.t(
 					'Set the number of worker threads used for computation. This option controls how many threads are used to process incoming requests concurrently. Increasing this value can improve performance under high concurrency workloads but may also consume more CPU resources.'
@@ -1080,7 +1080,7 @@
 				className="inline-tooltip"
 			>
 				<div class="flex w-full justify-between">
-					<div class=" self-center text-xs font-medium">
+					<div class="self-center text-xs font-medium">
 						{$i18n.t('num_thread (Ollama)')}
 					</div>
 
@@ -1102,7 +1102,7 @@
 
 			{#if (params?.num_thread ?? null) !== null}
 				<div class="flex mt-0.5 space-x-2">
-					<div class=" flex-1">
+					<div class="flex-1">
 						<input
 							id="steps-range"
 							type="range"
@@ -1110,14 +1110,14 @@
 							max="256"
 							step="1"
 							bind:value={params.num_thread}
-							class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+							class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 						/>
 					</div>
 					<div class="">
 						<input
 							bind:value={params.num_thread}
 							type="number"
-							class=" bg-transparent text-center w-14"
+							class="bg-transparent text-center w-14"
 							min="1"
 							max="256"
 							step="1"
@@ -1127,7 +1127,7 @@
 			{/if}
 		</div>
 
-		<div class=" py-0.5 w-full justify-between">
+		<div class="py-0.5 w-full justify-between">
 			<Tooltip
 				content={$i18n.t(
 					'Set the number of layers, which will be off-loaded to GPU. Increasing this value can significantly improve performance for models that are optimized for GPU acceleration but may also consume more power and GPU resources.'
@@ -1136,7 +1136,7 @@
 				className="inline-tooltip"
 			>
 				<div class="flex w-full justify-between">
-					<div class=" self-center text-xs font-medium">
+					<div class="self-center text-xs font-medium">
 						{$i18n.t('num_gpu (Ollama)')}
 					</div>
 
@@ -1158,7 +1158,7 @@
 
 			{#if (params?.num_gpu ?? null) !== null}
 				<div class="flex mt-0.5 space-x-2">
-					<div class=" flex-1">
+					<div class="flex-1">
 						<input
 							id="steps-range"
 							type="range"
@@ -1166,14 +1166,14 @@
 							max="256"
 							step="1"
 							bind:value={params.num_gpu}
-							class="w-full h-2 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+							class="w-full h-2 rounded-lg appearance-none cursor-pointer"
 						/>
 					</div>
 					<div class="">
 						<input
 							bind:value={params.num_gpu}
 							type="number"
-							class=" bg-transparent text-center w-14"
+							class="bg-transparent text-center w-14"
 							min="0"
 							max="256"
 							step="1"
@@ -1183,9 +1183,9 @@
 			{/if}
 		</div>
 
-		<!-- <div class=" py-0.5 w-full justify-between">
+		<!-- <div class="py-0.5 w-full justify-between">
 			<div class="flex w-full justify-between">
-				<div class=" self-center text-xs font-medium">{$i18n.t('Template')}</div>
+				<div class="self-center text-xs font-medium">{$i18n.t('Template')}</div>
 
 				<button
 					class="p-1 px-3 text-xs flex rounded transition flex-shrink-0 outline-none"
@@ -1204,9 +1204,9 @@
 
 			{#if (params?.template ?? null) !== null}
 				<div class="flex mt-0.5 space-x-2">
-					<div class=" flex-1">
+					<div class="flex-1">
 						<textarea
-							class="px-3 py-1.5 text-sm w-full bg-transparent border dark:border-gray-600 outline-none rounded-lg -mb-1"
+							class="px-3 py-1.5 text-sm w-full bg-transparent border outline-none rounded-lg -mb-1"
 							placeholder={$i18n.t('Write your model template content here')}
 							rows="4"
 							bind:value={params.template}

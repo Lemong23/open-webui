@@ -107,7 +107,7 @@
 					source: parentId,
 					target: pos.id,
 					selectable: false,
-					class: ' dark:fill-gray-300 fill-gray-300',
+					class: ' fill-gray-300',
 					type: 'smoothstep',
 					animated: history.currentId === id || recurseCheckChild(id, history.currentId)
 				});
@@ -160,7 +160,7 @@
 </script>
 
 <div class="w-full h-full relative">
-	<div class=" absolute z-50 w-full flex justify-between dark:text-gray-100 px-4 py-3.5">
+	<div class="absolute z-50 w-full flex justify-between px-4 py-3.5">
 		<div class="flex items-center gap-2.5">
 			<button
 				class="self-center p-0.5"
@@ -170,7 +170,7 @@
 			>
 				<ArrowLeft className="size-3.5" />
 			</button>
-			<div class=" text-lg font-medium self-center font-primary">{$i18n.t('Chat Overview')}</div>
+			<div class="text-lg font-medium self-center font-primary">{$i18n.t('Chat Overview')}</div>
 		</div>
 		<button
 			class="self-center p-0.5"

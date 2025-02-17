@@ -110,13 +110,13 @@
 {/if}
 
 <div
-	class=" my-2.5 rounded-xl px-4 py-3 border border-gray-50 dark:border-gray-850"
+	class="my-2.5 rounded-xl px-4 py-3 border border-gray-50"
 	id="message-feedback-{message.id}"
 >
 	<div class="flex justify-between items-center">
 		<div class="text-sm font-medium">{$i18n.t('How would you rate this response?')}</div>
 
-		<!-- <div class=" text-sm">{$i18n.t('Tell us more:')}</div> -->
+		<!-- <div class="text-sm">{$i18n.t('Tell us more:')}</div> -->
 
 		<button
 			on:click={() => {
@@ -137,15 +137,15 @@
 	</div>
 
 	<div class="w-full flex justify-center">
-		<div class=" relative w-fit">
+		<div class="relative w-fit">
 			<div class="mt-1.5 w-fit flex gap-1 pb-5">
 				<!-- 1-10 scale -->
 				{#each Array.from({ length: 10 }).map((_, i) => i + 1) as rating}
 					<button
-						class="size-7 text-sm border border-gray-50 dark:border-gray-850 hover:bg-gray-50 dark:hover:bg-gray-850 {detailedRating ===
+						class="size-7 text-sm border border-gray-50 hover:bg-gray-50 {detailedRating ===
 						rating
-							? 'bg-gray-100 dark:bg-gray-800'
-							: ''} transition rounded-full disabled:cursor-not-allowed disabled:text-gray-500 disabled:bg-white disabled:dark:bg-gray-900"
+							? 'bg-gray-100'
+							: ''} transition rounded-full disabled:cursor-not-allowed disabled:text-gray-500 disabled:bg-white"
 						on:click={() => {
 							detailedRating = rating;
 						}}
@@ -175,9 +175,9 @@
 			<div class="flex flex-wrap gap-1.5 text-sm mt-1.5">
 				{#each reasons as reason}
 					<button
-						class="px-3 py-0.5 border border-gray-50 dark:border-gray-850 hover:bg-gray-50 dark:hover:bg-gray-850 {selectedReason ===
+						class="px-3 py-0.5 border border-gray-50 hover:bg-gray-50 {selectedReason ===
 						reason
-							? 'bg-gray-100 dark:bg-gray-800'
+							? 'bg-gray-100'
 							: ''} transition rounded-xl"
 						on:click={() => {
 							selectedReason = reason;
@@ -247,7 +247,7 @@
 		</div>
 
 		<button
-			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full"
+			class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full"
 			on:click={() => {
 				saveHandler();
 			}}

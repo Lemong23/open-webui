@@ -59,7 +59,7 @@
 			>
 				<div class="w-full flex justify-center py-1 text-xs animate-pulse items-center gap-2">
 					<Spinner className=" size-4" />
-					<div class=" ">Loading...</div>
+					<div class="">Loading...</div>
 				</div>
 			</Loader>
 		{:else if !thread}
@@ -72,7 +72,7 @@
 					<div class="flex flex-col gap-1.5 pb-5 pt-10">
 						<div class="text-2xl font-medium capitalize">{channel.name}</div>
 
-						<div class=" text-gray-500">
+						<div class="text-gray-500">
 							This channel was created on {dayjs(channel.created_at / 1000000).format(
 								'MMMM D, YYYY'
 							)}. This is the very beginning of the {channel.name}
@@ -81,12 +81,12 @@
 					</div>
 				{:else}
 					<div class="flex justify-center text-xs items-center gap-2 py-5">
-						<div class=" ">Start of the channel</div>
+						<div class="">Start of the channel</div>
 					</div>
 				{/if}
 
 				{#if messageList.length > 0}
-					<hr class=" border-gray-50 dark:border-gray-700/20 py-2.5 w-full" />
+					<hr class="border-gray-50/20 py-2.5 w-full" />
 				{/if}
 			</div>
 		{/if}

@@ -320,8 +320,8 @@
 <div
 	bind:clientWidth={containerWidth}
 	class="{loading
-		? ' bg-gray-100/50 dark:bg-gray-850/50'
-		: 'bg-indigo-300/10 dark:bg-indigo-500/10 '} rounded-full flex justify-between {className}"
+		? ' bg-gray-100/50/50'
+		: 'bg-indigo-300/10'} rounded-full flex justify-between {className}"
 >
 	<div class="flex items-center mr-1">
 		<button
@@ -329,8 +329,8 @@
 			class="p-1.5
 
             {loading
-				? ' bg-gray-200 dark:bg-gray-700/50'
-				: 'bg-indigo-400/20 text-indigo-600 dark:text-indigo-300 '} 
+				? ' bg-gray-200/50'
+				: 'bg-indigo-400/20 text-indigo-600'} 
 
 
              rounded-full"
@@ -365,8 +365,8 @@
 						class="w-[2px] flex-shrink-0
                     
                     {loading
-							? ' bg-gray-500 dark:bg-gray-400   '
-							: 'bg-indigo-500 dark:bg-indigo-400  '} 
+							? ' bg-gray-500'
+							: 'bg-indigo-500'} 
                     
                     inline-block h-full"
 						style="height: {Math.min(100, Math.max(14, rms * 100))}%;"
@@ -377,12 +377,12 @@
 	</div>
 
 	<div class="flex">
-		<div class="  mx-1.5 pr-1 flex justify-center items-center">
+		<div class="mx-1.5 pr-1 flex justify-center items-center">
 			<div
 				class="text-sm
         
         
-        {loading ? ' text-gray-500  dark:text-gray-400  ' : ' text-indigo-400 '} 
+        {loading ? ' text-gray-500   ' : ' text-indigo-400 '} 
        font-medium flex-1 mx-auto text-center"
 			>
 				{formatSeconds(durationSeconds)}
@@ -391,7 +391,7 @@
 
 		<div class="flex items-center">
 			{#if loading}
-				<div class=" text-gray-500 rounded-full cursor-not-allowed">
+				<div class="text-gray-500 rounded-full cursor-not-allowed">
 					<svg
 						width="24"
 						height="24"
@@ -484,7 +484,7 @@
 			{:else}
 				<button
 					type="button"
-					class="p-1.5 bg-indigo-500 text-white dark:bg-indigo-500 dark:text-blue-950 rounded-full"
+					class="p-1.5 bg-indigo-500 text-white rounded-full"
 					on:click={async () => {
 						await confirmRecording();
 					}}

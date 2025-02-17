@@ -183,38 +183,38 @@
 	onMount(() => {});
 </script>
 
-<div class=" w-full h-full relative flex flex-col bg-gray-50 dark:bg-gray-850">
+<div class="w-full h-full relative flex flex-col bg-gray-50">
 	<div class="w-full h-full flex-1 relative">
 		{#if overlay}
-			<div class=" absolute top-0 left-0 right-0 bottom-0 z-10"></div>
+			<div class="absolute top-0 left-0 right-0 bottom-0 z-10"></div>
 		{/if}
 
 		<div class="absolute pointer-events-none z-50 w-full flex items-center justify-start p-4">
 			<button
-				class="self-center pointer-events-auto p-1 rounded-full bg-white dark:bg-gray-850"
+				class="self-center pointer-events-auto p-1 rounded-full bg-white"
 				on:click={() => {
 					showArtifacts.set(false);
 				}}
 			>
-				<ArrowLeft className="size-3.5  text-gray-900 dark:text-white" />
+				<ArrowLeft className="size-3.5  text-gray-900" />
 			</button>
 		</div>
 
-		<div class=" absolute pointer-events-none z-50 w-full flex items-center justify-end p-4">
+		<div class="absolute pointer-events-none z-50 w-full flex items-center justify-end p-4">
 			<button
-				class="self-center pointer-events-auto p-1 rounded-full bg-white dark:bg-gray-850"
+				class="self-center pointer-events-auto p-1 rounded-full bg-white"
 				on:click={() => {
 					dispatch('close');
 					showControls.set(false);
 					showArtifacts.set(false);
 				}}
 			>
-				<XMark className="size-3.5 text-gray-900 dark:text-white" />
+				<XMark className="size-3.5 text-gray-900" />
 			</button>
 		</div>
 
 		<div class="flex-1 w-full h-full">
-			<div class=" h-full flex flex-col">
+			<div class="h-full flex flex-col">
 				{#if contents.length > 0}
 					<div class="max-w-full w-full h-full">
 						{#if contents[selectedContentIdx].type === 'iframe'}
@@ -234,7 +234,7 @@
 						{/if}
 					</div>
 				{:else}
-					<div class="m-auto font-medium text-xs text-gray-900 dark:text-white">
+					<div class="m-auto font-medium text-xs text-gray-900">
 						{$i18n.t('No HTML, CSS, or JavaScript content found.')}
 					</div>
 				{/if}
@@ -243,11 +243,11 @@
 	</div>
 
 	{#if contents.length > 0}
-		<div class="flex justify-between items-center p-2.5 font-primar text-gray-900 dark:text-white">
+		<div class="flex justify-between items-center p-2.5 font-primar text-gray-900">
 			<div class="flex items-center space-x-2">
 				<div class="flex items-center gap-0.5 self-center min-w-fit" dir="ltr">
 					<button
-						class="self-center p-1 hover:bg-black/5 dark:hover:bg-white/5 dark:hover:text-white hover:text-black rounded-md transition disabled:cursor-not-allowed"
+						class="self-center p-1 hover:bg-black/5 hover:text-black rounded-md transition disabled:cursor-not-allowed"
 						on:click={() => navigateContent('prev')}
 						disabled={contents.length <= 1}
 					>
@@ -267,7 +267,7 @@
 						</svg>
 					</button>
 
-					<div class="text-xs self-center dark:text-gray-100 min-w-fit">
+					<div class="text-xs self-center min-w-fit">
 						{$i18n.t('Version {{selectedVersion}} of {{totalVersions}}', {
 							selectedVersion: selectedContentIdx + 1,
 							totalVersions: contents.length
@@ -275,7 +275,7 @@
 					</div>
 
 					<button
-						class="self-center p-1 hover:bg-black/5 dark:hover:bg-white/5 dark:hover:text-white hover:text-black rounded-md transition disabled:cursor-not-allowed"
+						class="self-center p-1 hover:bg-black/5 hover:text-black rounded-md transition disabled:cursor-not-allowed"
 						on:click={() => navigateContent('next')}
 						disabled={contents.length <= 1}
 					>
@@ -295,7 +295,7 @@
 
 			<div class="flex items-center gap-1">
 				<button
-					class="copy-code-button bg-none border-none text-xs bg-gray-50 hover:bg-gray-100 dark:bg-gray-850 dark:hover:bg-gray-800 transition rounded-md px-1.5 py-0.5"
+					class="copy-code-button bg-none border-none text-xs bg-gray-50 hover:bg-gray-100 transition rounded-md px-1.5 py-0.5"
 					on:click={() => {
 						copyToClipboard(contents[selectedContentIdx].content);
 						copied = true;
@@ -309,7 +309,7 @@
 				{#if contents[selectedContentIdx].type === 'iframe'}
 					<Tooltip content={$i18n.t('Open in full screen')}>
 						<button
-							class=" bg-none border-none text-xs bg-gray-50 hover:bg-gray-100 dark:bg-gray-850 dark:hover:bg-gray-800 transition rounded-md p-0.5"
+							class="bg-none border-none text-xs bg-gray-50 hover:bg-gray-100 transition rounded-md p-0.5"
 							on:click={showFullScreen}
 						>
 							<ArrowsPointingOut className="size-3.5" />

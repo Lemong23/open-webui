@@ -89,8 +89,8 @@
 
 <Modal size="md" bind:show>
 	<div>
-		<div class=" flex justify-between dark:text-gray-100 px-5 pt-4 mb-1.5">
-			<div class=" text-lg font-medium self-center font-primary">
+		<div class="flex justify-between px-5 pt-4 mb-1.5">
+			<div class="text-lg font-medium self-center font-primary">
 				{#if custom}
 					{#if edit}
 						{$i18n.t('Edit User Group')}
@@ -120,8 +120,8 @@
 			</button>
 		</div>
 
-		<div class="flex flex-col md:flex-row w-full px-4 pb-4 md:space-x-4 dark:text-gray-200">
-			<div class=" flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
+		<div class="flex flex-col md:flex-row w-full px-4 pb-4 md:space-x-4">
+			<div class="flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
 				<form
 					class="flex flex-col w-full"
 					on:submit={(e) => {
@@ -132,20 +132,20 @@
 					<div class="flex flex-col lg:flex-row w-full h-full pb-2 lg:space-x-4">
 						<div
 							id="admin-settings-tabs-container"
-							class="tabs flex flex-row overflow-x-auto gap-2.5 max-w-full lg:gap-1 lg:flex-col lg:flex-none lg:w-40 dark:text-gray-200 text-sm font-medium text-left scrollbar-none"
+							class="tabs flex flex-row overflow-x-auto gap-2.5 max-w-full lg:gap-1 lg:flex-col lg:flex-none lg:w-40 text-sm font-medium text-left scrollbar-none"
 						>
 							{#if tabs.includes('general')}
 								<button
 									class="px-0.5 py-1 max-w-fit w-fit rounded-lg flex-1 lg:flex-none flex text-right transition {selectedTab ===
 									'general'
 										? ''
-										: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+										: ' text-gray-300 hover:text-gray-700'}"
 									on:click={() => {
 										selectedTab = 'general';
 									}}
 									type="button"
 								>
-									<div class=" self-center mr-2">
+									<div class="self-center mr-2">
 										<svg
 											xmlns="http://www.w3.org/2000/svg"
 											viewBox="0 0 16 16"
@@ -159,7 +159,7 @@
 											/>
 										</svg>
 									</div>
-									<div class=" self-center">{$i18n.t('General')}</div>
+									<div class="self-center">{$i18n.t('General')}</div>
 								</button>
 							{/if}
 
@@ -168,16 +168,16 @@
 									class="px-0.5 py-1 max-w-fit w-fit rounded-lg flex-1 lg:flex-none flex text-right transition {selectedTab ===
 									'permissions'
 										? ''
-										: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+										: ' text-gray-300 hover:text-gray-700'}"
 									on:click={() => {
 										selectedTab = 'permissions';
 									}}
 									type="button"
 								>
-									<div class=" self-center mr-2">
+									<div class="self-center mr-2">
 										<WrenchSolid />
 									</div>
-									<div class=" self-center">{$i18n.t('Permissions')}</div>
+									<div class="self-center">{$i18n.t('Permissions')}</div>
 								</button>
 							{/if}
 
@@ -186,16 +186,16 @@
 									class="px-0.5 py-1 max-w-fit w-fit rounded-lg flex-1 lg:flex-none flex text-right transition {selectedTab ===
 									'users'
 										? ''
-										: ' text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+										: ' text-gray-300 hover:text-gray-700'}"
 									on:click={() => {
 										selectedTab = 'users';
 									}}
 									type="button"
 								>
-									<div class=" self-center mr-2">
+									<div class="self-center mr-2">
 										<UserPlusSolid />
 									</div>
-									<div class=" self-center">{$i18n.t('Users')} ({userIds.length})</div>
+									<div class="self-center">{$i18n.t('Users')} ({userIds.length})</div>
 								</button>
 							{/if}
 						</div>
@@ -214,14 +214,14 @@
 					</div>
 
 					<!-- <div
-						class=" tabs flex flex-row overflow-x-auto gap-2.5 text-sm font-medium border-b border-b-gray-800 scrollbar-hidden"
+						class="tabs flex flex-row overflow-x-auto gap-2.5 text-sm font-medium border-b border-b-gray-800 scrollbar-hidden"
 					>
 						{#if tabs.includes('display')}
 							<button
 								class="px-0.5 pb-1.5 min-w-fit flex text-right transition border-b-2 {selectedTab ===
 								'display'
-									? ' dark:border-white'
-									: 'border-transparent text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									? ''
+									: 'border-transparent text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'display';
 								}}
@@ -235,8 +235,8 @@
 							<button
 								class="px-0.5 pb-1.5 min-w-fit flex text-right transition border-b-2 {selectedTab ===
 								'permissions'
-									? '  dark:border-white'
-									: 'border-transparent text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									? ' '
+									: 'border-transparent text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'permissions';
 								}}
@@ -250,8 +250,8 @@
 							<button
 								class="px-0.5 pb-1.5 min-w-fit flex text-right transition border-b-2 {selectedTab ===
 								'users'
-									? ' dark:border-white'
-									: ' border-transparent text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'}"
+									? ''
+									: ' border-transparent text-gray-300 hover:text-gray-700'}"
 								on:click={() => {
 									selectedTab = 'users';
 								}}
@@ -265,7 +265,7 @@
 					<div class="flex justify-end pt-3 text-sm font-medium gap-1.5">
 						{#if edit}
 							<button
-								class="px-3.5 py-1.5 text-sm font-medium dark:bg-black dark:hover:bg-gray-900 dark:text-white bg-white text-black hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center"
+								class="px-3.5 py-1.5 text-sm font-medium bg-white text-black hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center"
 								type="button"
 								on:click={() => {
 									onDelete();
@@ -277,7 +277,7 @@
 						{/if}
 
 						<button
-							class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center {loading
+							class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full flex flex-row space-x-1 items-center {loading
 								? ' cursor-not-allowed'
 								: ''}"
 							type="submit"
@@ -288,7 +288,7 @@
 							{#if loading}
 								<div class="ml-2 self-center">
 									<svg
-										class=" w-4 h-4"
+										class="w-4 h-4"
 										viewBox="0 0 24 24"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"

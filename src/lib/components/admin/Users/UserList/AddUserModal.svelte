@@ -121,8 +121,8 @@
 
 <Modal size="sm" bind:show>
 	<div>
-		<div class=" flex justify-between dark:text-gray-300 px-5 pt-4 pb-2">
-			<div class=" text-lg font-medium self-center">{$i18n.t('Add User')}</div>
+		<div class="flex justify-between px-5 pt-4 pb-2">
+			<div class="text-lg font-medium self-center">{$i18n.t('Add User')}</div>
 			<button
 				class="self-center"
 				on:click={() => {
@@ -142,8 +142,8 @@
 			</button>
 		</div>
 
-		<div class="flex flex-col md:flex-row w-full px-4 pb-3 md:space-x-4 dark:text-gray-200">
-			<div class=" flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
+		<div class="flex flex-col md:flex-row w-full px-4 pb-3 md:space-x-4">
+			<div class="flex flex-col w-full sm:flex-row sm:justify-center sm:space-x-6">
 				<form
 					class="flex flex-col w-full"
 					on:submit|preventDefault={() => {
@@ -151,12 +151,12 @@
 					}}
 				>
 					<div
-						class="flex -mt-2 mb-1.5 gap-1 scrollbar-none overflow-x-auto w-fit text-center text-sm font-medium rounded-full bg-transparent dark:text-gray-200"
+						class="flex -mt-2 mb-1.5 gap-1 scrollbar-none overflow-x-auto w-fit text-center text-sm font-medium rounded-full bg-transparent"
 					>
 						<button
 							class="min-w-fit rounded-full p-1.5 {tab === ''
 								? ''
-								: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'} transition"
+								: 'text-gray-300 hover:text-gray-700'} transition"
 							type="button"
 							on:click={() => {
 								tab = '';
@@ -166,7 +166,7 @@
 						<button
 							class="min-w-fit rounded-full p-1.5 {tab === 'import'
 								? ''
-								: 'text-gray-300 dark:text-gray-600 hover:text-gray-700 dark:hover:text-white'} transition"
+								: 'text-gray-300 hover:text-gray-700'} transition"
 							type="button"
 							on:click={() => {
 								tab = 'import';
@@ -177,11 +177,11 @@
 					<div class="px-1">
 						{#if tab === ''}
 							<div class="flex flex-col w-full mb-3">
-								<div class=" mb-1 text-xs text-gray-500">{$i18n.t('Role')}</div>
+								<div class="mb-1 text-xs text-gray-500">{$i18n.t('Role')}</div>
 
 								<div class="flex-1">
 									<select
-										class="w-full capitalize rounded-lg text-sm bg-transparent dark:disabled:text-gray-500 outline-none"
+										class="w-full capitalize rounded-lg text-sm bg-transparent outline-none"
 										bind:value={_user.role}
 										placeholder={$i18n.t('Enter Your Role')}
 										required
@@ -194,11 +194,11 @@
 							</div>
 
 							<div class="flex flex-col w-full mt-1">
-								<div class=" mb-1 text-xs text-gray-500">{$i18n.t('Name')}</div>
+								<div class="mb-1 text-xs text-gray-500">{$i18n.t('Name')}</div>
 
 								<div class="flex-1">
 									<input
-										class="w-full text-sm bg-transparent disabled:text-gray-500 dark:disabled:text-gray-500 outline-none"
+										class="w-full text-sm bg-transparent disabled:text-gray-500 outline-none"
 										type="text"
 										bind:value={_user.name}
 										placeholder={$i18n.t('Enter Your Full Name')}
@@ -208,14 +208,14 @@
 								</div>
 							</div>
 
-							<hr class=" border-gray-50 dark:border-gray-850 my-2.5 w-full" />
+							<hr class="border-gray-50 my-2.5 w-full" />
 
 							<div class="flex flex-col w-full">
-								<div class=" mb-1 text-xs text-gray-500">{$i18n.t('Email')}</div>
+								<div class="mb-1 text-xs text-gray-500">{$i18n.t('Email')}</div>
 
 								<div class="flex-1">
 									<input
-										class="w-full text-sm bg-transparent disabled:text-gray-500 dark:disabled:text-gray-500 outline-none"
+										class="w-full text-sm bg-transparent disabled:text-gray-500 outline-none"
 										type="email"
 										bind:value={_user.email}
 										placeholder={$i18n.t('Enter Your Email')}
@@ -225,11 +225,11 @@
 							</div>
 
 							<div class="flex flex-col w-full mt-1">
-								<div class=" mb-1 text-xs text-gray-500">{$i18n.t('Password')}</div>
+								<div class="mb-1 text-xs text-gray-500">{$i18n.t('Password')}</div>
 
 								<div class="flex-1">
 									<input
-										class="w-full text-sm bg-transparent disabled:text-gray-500 dark:disabled:text-gray-500 outline-none"
+										class="w-full text-sm bg-transparent disabled:text-gray-500 outline-none"
 										type="password"
 										bind:value={_user.password}
 										placeholder={$i18n.t('Enter Your Password')}
@@ -249,7 +249,7 @@
 									/>
 
 									<button
-										class="w-full text-sm font-medium py-3 bg-transparent hover:bg-gray-100 border border-dashed dark:border-gray-800 dark:hover:bg-gray-850 text-center rounded-xl"
+										class="w-full text-sm font-medium py-3 bg-transparent hover:bg-gray-100 border border-dashed text-center rounded-xl"
 										type="button"
 										on:click={() => {
 											document.getElementById('upload-user-csv-input')?.click();
@@ -263,12 +263,12 @@
 									</button>
 								</div>
 
-								<div class=" text-xs text-gray-500">
+								<div class="text-xs text-gray-500">
 									ⓘ {$i18n.t(
 										'Ensure your CSV file includes 4 columns in this order: Name, Email, Password, Role.'
 									)}
 									<a
-										class="underline dark:text-gray-200"
+										class="underline"
 										href="{WEBUI_BASE_URL}/static/user-import.csv"
 									>
 										{$i18n.t('Click here to download user import template file.')}
@@ -280,7 +280,7 @@
 
 					<div class="flex justify-end pt-3 text-sm font-medium">
 						<button
-							class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white dark:bg-white dark:text-black dark:hover:bg-gray-100 transition rounded-full flex flex-row space-x-1 items-center {loading
+							class="px-3.5 py-1.5 text-sm font-medium bg-black hover:bg-gray-900 text-white transition rounded-full flex flex-row space-x-1 items-center {loading
 								? ' cursor-not-allowed'
 								: ''}"
 							type="submit"
@@ -291,7 +291,7 @@
 							{#if loading}
 								<div class="ml-2 self-center">
 									<svg
-										class=" w-4 h-4"
+										class="w-4 h-4"
 										viewBox="0 0 24 24"
 										fill="currentColor"
 										xmlns="http://www.w3.org/2000/svg"

@@ -11,7 +11,7 @@
 </script>
 
 <div
-	class="px-4 py-3 shadow-md rounded-xl dark:bg-black bg-white border dark:border-gray-900 w-60 h-20 group"
+	class="px-4 py-3 shadow-md rounded-xl bg-white border w-60 h-20 group"
 >
 	<Tooltip
 		content={data?.message?.error ? data.message.error.content : data.message.content}
@@ -25,8 +25,8 @@
 					className={'size-5 -translate-y-[1px]'}
 				/>
 				<div class="ml-2">
-					<div class=" flex justify-between items-center">
-						<div class="text-xs text-black dark:text-white font-medium line-clamp-1">
+					<div class="flex justify-between items-center">
+						<div class="text-xs text-black font-medium line-clamp-1">
 							{data?.user?.name ?? 'User'}
 						</div>
 					</div>
@@ -46,8 +46,8 @@
 				/>
 
 				<div class="ml-2">
-					<div class=" flex justify-between items-center">
-						<div class="text-xs text-black dark:text-white font-medium line-clamp-1">
+					<div class="flex justify-between items-center">
+						<div class="text-xs text-black font-medium line-clamp-1">
 							{data?.model?.name ?? data?.message?.model ?? 'Assistant'}
 						</div>
 
@@ -77,6 +77,6 @@
 			</div>
 		{/if}
 	</Tooltip>
-	<Handle type="target" position={Position.Top} class="w-2 rounded-full dark:bg-gray-900" />
-	<Handle type="source" position={Position.Bottom} class="w-2 rounded-full dark:bg-gray-900" />
+	<Handle type="target" position={Position.Top} class="w-2 rounded-full" />
+	<Handle type="source" position={Position.Bottom} class="w-2 rounded-full" />
 </div>
