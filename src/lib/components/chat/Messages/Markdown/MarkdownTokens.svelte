@@ -23,8 +23,11 @@
 	export let id: string;
 	export let tokens: Token[];
 	export let top = true;
+	export let attributes = {};
 
 	export let save = false;
+
+	export let onTaskClick: Function = () => {};
 	export let onSourceClick: Function = () => {};
 
 	const headerComponent = (depth: number) => {
@@ -83,6 +86,7 @@
 				{token}
 				lang={token?.lang ?? ''}
 				code={token?.text ?? ''}
+				{attributes}
 				{save}
 				on:code={(e) => {
 					dispatch('code', e.detail);
@@ -166,17 +170,37 @@
 		</div>
 	{:else if token.type === 'blockquote'}
 		<blockquote>
-			<svelte:self id={`${id}-${tokenIdx}`} tokens={token.tokens} />
+			<svelte:self id={`${id}-${tokenIdx}`} tokens={token.tokens} {onTaskClick} {onSourceClick} />
 		</blockquote>
 	{:else if token.type === 'list'}
 		{#if token.ordered}
 			<ol start={token.start || 1}>
 				{#each token.items as item, itemIdx}
 					<li>
+						{#if item?.task}
+							<input
+								class=" translate-y-[1px] -translate-x-1"
+								type="checkbox"
+								checked={item.checked}
+								on:change={(e) => {
+									onTaskClick({
+										id: id,
+										token: token,
+										tokenIdx: tokenIdx,
+										item: item,
+										itemIdx: itemIdx,
+										checked: e.target.checked
+									});
+								}}
+							/>
+						{/if}
+
 						<svelte:self
 							id={`${id}-${tokenIdx}-${itemIdx}`}
 							tokens={item.tokens}
 							top={token.loose}
+							{onTaskClick}
+							{onSourceClick}
 						/>
 					</li>
 				{/each}
@@ -185,19 +209,45 @@
 			<ul>
 				{#each token.items as item, itemIdx}
 					<li>
+						{#if item?.task}
+							<input
+								class=" translate-y-[1px] -translate-x-1"
+								type="checkbox"
+								checked={item.checked}
+								on:change={(e) => {
+									onTaskClick({
+										id: id,
+										token: token,
+										tokenIdx: tokenIdx,
+										item: item,
+										itemIdx: itemIdx,
+										checked: e.target.checked
+									});
+								}}
+							/>
+						{/if}
+
 						<svelte:self
 							id={`${id}-${tokenIdx}-${itemIdx}`}
 							tokens={item.tokens}
 							top={token.loose}
+							{onTaskClick}
+							{onSourceClick}
 						/>
 					</li>
 				{/each}
 			</ul>
 		{/if}
 	{:else if token.type === 'details'}
-		<Collapsible title={token.summary} attributes={token?.attributes} className="w-fit space-y-1">
+		<Collapsible title={token.summary} attributes={token?.attributes} className="w-full space-y-1">
 			<div class=" mb-1.5" slot="content">
-				<svelte:self id={`${id}-${tokenIdx}-d`} tokens={marked.lexer(token.text)} />
+				<svelte:self
+					id={`${id}-${tokenIdx}-d`}
+					tokens={marked.lexer(token.text)}
+					attributes={token?.attributes}
+					{onTaskClick}
+					{onSourceClick}
+				/>
 			</div>
 		</Collapsible>
 	{:else if token.type === 'html'}
