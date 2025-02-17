@@ -108,8 +108,6 @@ log.setLevel(SRC_LOG_LEVELS["CONFIG"])
 
 
 WEBUI_NAME = os.environ.get("WEBUI_NAME", "배움몽")
-if WEBUI_NAME != "배움몽":
-    WEBUI_NAME += ""
 
 WEBUI_FAVICON_URL = "https://openwebui.com/favicon.png"
 
