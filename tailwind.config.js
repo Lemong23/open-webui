@@ -3,7 +3,7 @@ import containerQuries from '@tailwindcss/container-queries';
 
 /** @type {import('tailwindcss').Config} */
 export default {
-	darkMode: 'class',
+	darkMode: false,
 	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {

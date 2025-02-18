@@ -850,31 +850,28 @@ DEFAULT_PROMPT_SUGGESTIONS = PersistentConfig(
     "ui.prompt_suggestions",
     [
         {
-            "title": ["Help me study", "vocabulary for a college entrance exam"],
-            "content": "Help me study vocabulary: write a sentence for me to fill in the blank, and I'll try to pick the correct option.",
+            "title": ["공부를 도와줘", "대학 입시 어휘"],
+            "content": "어휘 공부를 도와줘: 빈칸 채우기 문제를 만들어주면 내가 정답을 맞혀볼게.",
         },
         {
-            "title": ["Give me ideas", "for what to do with my kids' art"],
-            "content": "What are 5 creative things I could do with my kids' art? I don't want to throw them away, but it's also so much clutter.",
+            "title": ["아이들 그림으로 할 수 있는 것", "아이디어 주세요"],
+            "content": "아이들 그림을 버리고 싶진 않지만, 너무 많이 쌓여서 고민이야. 창의적으로 활용할 수 있는 5가지 방법을 알려줘.",
         },
         {
-            "title": ["Tell me a fun fact", "about the Roman Empire"],
-            "content": "Tell me a random fun fact about the Roman Empire",
+            "title": ["재미있는 사실 알려줘", "로마 제국에 대한"],
+            "content": "로마 제국에 대한 랜덤한 재미있는 사실을 알려줘.",
         },
         {
-            "title": ["Show me a code snippet", "of a website's sticky header"],
-            "content": "Show me a code snippet of a website's sticky header in CSS and JavaScript.",
+            "title": ["코드 예제 보여줘", "웹사이트 고정 헤더"],
+            "content": "CSS와 JavaScript로 웹사이트의 고정 헤더(sticky header) 코드 예제를 보여줘.",
         },
         {
-            "title": [
-                "Explain options trading",
-                "if I'm familiar with buying and selling stocks",
-            ],
-            "content": "Explain options trading in simple terms if I'm familiar with buying and selling stocks.",
+            "title": ["옵션 거래 설명해줘", "주식 매매를 알고 있어"],
+            "content": "주식 매매에 익숙한 상태에서 옵션 거래가 무엇인지 쉽게 설명해줘.",
         },
         {
-            "title": ["Overcome procrastination", "give me tips"],
-            "content": "Could you start by asking me about instances when I procrastinate the most and then give me some suggestions to overcome it?",
+            "title": ["미루는 습관 극복하기", "팁을 알려줘"],
+            "content": "내가 가장 자주 미루는 상황이 무엇인지 물어본 다음, 극복할 수 있는 방법을 알려줄 수 있어?",
         },
     ],
 )
