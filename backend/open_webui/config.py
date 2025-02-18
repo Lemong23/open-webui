@@ -108,46 +108,46 @@ DEFAULT_CONFIG = {
         "prompt_suggestions": [
             {
                 "title": [
-                    "Help me study",
-                    "vocabulary for a college entrance exam",
+                    "저를 공부 도와주세요",
+                    "대학 입학 시험을 위한 어휘",
                 ],
-                "content": "Help me study vocabulary: write a sentence for me to fill in the blank, and I'll try to pick the correct option.",
+                "content": "어휘 공부를 도와주세요: 빈칸을 채울 수 있도록 문장을 작성해 주시면, 제가 올바른 선택지를 고르도록 하겠습니다.",
             },
             {
                 "title": [
-                    "Give me ideas",
-                    "for what to do with my kids' art",
+                    "아이들의 작품으로",
+                    "무엇을 할 수 있을지 아이디어를 주세요",
                 ],
-                "content": "What are 5 creative things I could do with my kids' art? I don't want to throw them away, but it's also so much clutter.",
+                "content": "아이들의 작품으로 할 수 있는 창의적인 5가지 아이디어가 무엇인지 알려주세요. 버리고 싶지는 않지만, 너무 많은 잡동사니가 되어가고 있습니다.",
             },
             {
-                "title": ["Tell me a fun fact", "about the Roman Empire"],
-                "content": "Tell me a random fun fact about the Roman Empire",
+                "title": ["로마 제국에 대한", "재미있는 사실을 말해줘"],
+                "content": "로마 제국에 대한 무작위로 재미있는 사실을 알려 주세요.",
             },
             {
                 "title": [
-                    "Show me a code snippet",
-                    "of a website's sticky header",
+                    "웹사이트의 sticky header",
+                    "코드 스니펫 보여줘",
                 ],
-                "content": "Show me a code snippet of a website's sticky header in CSS and JavaScript.",
+                "content": "CSS와 JavaScript를 이용한 웹사이트의 sticky header 코드 스니펫을 보여주세요.",
             },
             {
                 "title": [
-                    "Explain options trading",
-                    "if I'm familiar with buying and selling stocks",
+                    "옵션 거래를 설명해줘",
+                    "주식 매매에 익숙한 경우",
                 ],
-                "content": "Explain options trading in simple terms if I'm familiar with buying and selling stocks.",
+                "content": "주식 매매에 익숙하다면 간단한 용어로 옵션 거래를 설명해 주세요.",
             },
             {
-                "title": ["Overcome procrastination", "give me tips"],
-                "content": "Could you start by asking me about instances when I procrastinate the most and then give me some suggestions to overcome it?",
+                "title": [" procrastination 극복하기", "팁을 주세요"],
+                "content": "제가 가장 많이 미루는 경우에 대해 먼저 물어보시고, 그런 점을 극복하기 위한 몇 가지 제안 해주세요.",
             },
             {
                 "title": [
-                    "Grammar check",
-                    "rewrite it for better readability ",
+                    "문법 체크",
+                    "더 나은 가독성을 위해 다시 작성하기",
                 ],
-                "content": 'Check the following sentence for grammar and clarity: "[sentence]". Rewrite it for better readability while maintaining its original meaning.',
+                "content": '다음 문장의 문법과 명확성을 확인하세요: "[문장]". 원래 의미를 유지하면서 더 나은 가독성을 위해 다시 작성하세요.',
             },
         ],
     },

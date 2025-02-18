@@ -360,7 +360,7 @@
 			<div
 				class="flex flex-col px-3 {($settings?.widescreenMode ?? null)
 					? 'max-w-full'
-					: 'max-w-6xl'} w-full"
+					: 'max-w-[907px]'} w-full"
 			>
 				<div class="relative">
 					{#if autoScroll === false && history?.currentId}
@@ -530,11 +530,11 @@
 			</div>
 		</div>
 
-		<div class="{transparentBackground ? 'bg-transparent' : 'bg-white dark:bg-gray-900'} ">
+		<div class="{transparentBackground ? 'bg-transparent' : 'dark:bg-gray-900'} ">
 			<div
 				class="{($settings?.widescreenMode ?? null)
 					? 'max-w-full'
-					: 'max-w-6xl'} px-2.5 mx-auto inset-x-0"
+					: 'max-w-[907px]'} px-2.5 mx-auto inset-x-0"
 			>
 				<div class="">
 					<input
@@ -587,7 +587,7 @@
 							}}
 						>
 							<div
-								class="flex-1 flex flex-col relative w-full rounded-3xl px-1 bg-gray-600/5 dark:bg-gray-400/5 dark:text-gray-100"
+								class="flex-1 flex flex-col relative w-full rounded-3xl px-1 bg-white dark:bg-gray-400/5 dark:text-gray-100"
 								dir={$settings?.chatDirection ?? 'LTR'}
 							>
 								{#if files.length > 0}
@@ -1194,7 +1194,7 @@
 									</div>
 
 									<div class="self-end flex space-x-1 mr-1 flex-shrink-0">
-										{#if !history?.currentId || history.messages[history.currentId]?.done == true}
+										{#if (!history?.currentId || history.messages[history.currentId]?.done == true) && $_user?.role === 'admin'}
 											<Tooltip content={$i18n.t('Record voice')}>
 												<button
 													id="voice-input-button"
@@ -1242,9 +1242,9 @@
 												</button>
 											</Tooltip>
 										{/if}
-
+										
 										{#if !history.currentId || history.messages[history.currentId]?.done == true}
-											{#if prompt === '' && files.length === 0}
+											{#if prompt === '' && files.length === 0 && $_user?.role === 'admin'}
 												<div class=" flex items-center">
 													<Tooltip content={$i18n.t('Call')}>
 														<button
@@ -1314,24 +1314,13 @@
 														<button
 															id="send-message-button"
 															class="{!(prompt === '' && files.length === 0)
-																? webSearchEnabled || ($settings?.webSearch ?? false) === 'always'
-																	? 'bg-blue-500 text-white hover:bg-blue-400 '
-																	: 'bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100 '
-																: 'text-white bg-gray-200 dark:text-gray-900 dark:bg-gray-700 disabled'} transition rounded-full p-1.5 self-center"
+																? 'bg-primary-600 text-white hover:bg-primary-600/80 dark:bg-white dark:text-black dark:hover:bg-gray-100 '
+																: 'text-white bg-gray-200 dark:text-gray-900 dark:bg-gray-700 disabled'} transition rounded-[14px] p-3 self-center"
 															type="submit"
 															disabled={prompt === '' && files.length === 0}
 														>
-															<svg
-																xmlns="http://www.w3.org/2000/svg"
-																viewBox="0 0 16 16"
-																fill="currentColor"
-																class="size-5"
-															>
-																<path
-																	fill-rule="evenodd"
-																	d="M8 14a.75.75 0 0 1-.75-.75V4.56L4.03 7.78a.75.75 0 0 1-1.06-1.06l4.5-4.5a.75.75 0 0 1 1.06 0l4.5 4.5a.75.75 0 0 1-1.06 1.06L8.75 4.56v8.69A.75.75 0 0 1 8 14Z"
-																	clip-rule="evenodd"
-																/>
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<path d="M19.8216 4.18152C19.6024 3.96332 19.3274 3.80992 19.0269 3.73819C18.7264 3.66646 18.412 3.67917 18.1182 3.77493L1.16465 9.44401C0.850223 9.54388 0.572378 9.73493 0.366203 9.99302C0.160028 10.2511 0.0347703 10.5647 0.00625089 10.8941C-0.0222686 11.2235 0.0472292 11.554 0.205967 11.8438C0.364704 12.1336 0.605561 12.3698 0.898116 12.5225L7.93215 16.0076L11.4086 23.0823C11.5483 23.3592 11.7622 23.5917 12.0262 23.7538C12.2902 23.9159 12.5939 24.0012 12.9035 24.0001H13.0194C13.3509 23.9756 13.6674 23.8517 13.9278 23.6445C14.1882 23.4374 14.3804 23.1565 14.4795 22.8384L20.2156 5.88922C20.3181 5.59639 20.3354 5.28042 20.2657 4.97809C20.1959 4.67577 20.0419 4.39952 19.8216 4.18152ZM1.88311 11.0471L16.6812 6.09832L8.46521 14.3347L1.88311 11.0471ZM12.9846 22.1646L9.69356 15.5661L17.9096 7.32972L12.9846 22.1646Z" fill="white"/>
 															</svg>
 														</button>
 													</Tooltip>

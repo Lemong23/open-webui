@@ -34,6 +34,8 @@
 	export let isFirstMessage: boolean;
 	export let readOnly: boolean;
 
+	const _chatBubble = true;
+
 	let edit = false;
 	let editedContent = '';
 	let messageEditTextAreaElement: HTMLTextAreaElement;
@@ -86,7 +88,7 @@
 </script>
 
 <div class=" flex w-full user-message" dir={$settings.chatDirection} id="message-{message.id}">
-	{#if !($settings?.chatBubble ?? true)}
+	{#if !(_chatBubble ?? true)}
 		<div class={`flex-shrink-0 ${($settings?.chatDirection ?? 'LTR') === 'LTR' ? 'mr-3' : 'ml-3'}`}>
 			<ProfileImage
 				src={message.user
@@ -98,7 +100,7 @@
 		</div>
 	{/if}
 	<div class="flex-auto w-0 max-w-full pl-1">
-		{#if !($settings?.chatBubble ?? true)}
+		{#if !(_chatBubble ?? true)}
 			<div>
 				<Name>
 					{#if message.user}
@@ -125,9 +127,9 @@
 
 		<div class="chat-{message.role} w-full min-w-full markdown-prose">
 			{#if message.files}
-				<div class="mt-2.5 mb-1 w-full flex flex-col justify-end overflow-x-auto gap-1 flex-wrap">
+				<div class="mt-2.5 mb-1 w-full flex flex-col justify-end overflow-x-auto gap-1 flex-wrap bg-white">
 					{#each message.files as file}
-						<div class={($settings?.chatBubble ?? true) ? 'self-end' : ''}>
+						<div class={(_chatBubble ?? true) ? 'self-end' : ''}>
 							{#if file.type === 'image'}
 								<Image src={file.url} imageClassName=" max-h-96 rounded-lg" />
 							{:else}
@@ -211,10 +213,10 @@
 					</div>
 				{:else}
 					<div class="w-full">
-						<div class="flex {($settings?.chatBubble ?? true) ? 'justify-end pb-1' : 'w-full'}">
+						<div class="flex {(_chatBubble ?? true) ? 'justify-end pb-1' : 'w-full'}">
 							<div
-								class="rounded-3xl {($settings?.chatBubble ?? true)
-									? `max-w-[90%] px-5 py-2  bg-gray-50 dark:bg-gray-850 ${
+								class="rounded-3xl {(_chatBubble ?? true)
+									? `max-w-[90%] px-4 py-2  bg-primary-600 text-white dark:bg-gray-850 ${
 											message.files ? 'rounded-tr-lg' : ''
 										}`
 									: ' w-full'}"
@@ -226,11 +228,11 @@
 						</div>
 
 						<div
-							class=" flex {($settings?.chatBubble ?? true)
+							class=" flex {(_chatBubble ?? true)
 								? 'justify-end'
 								: ''}  text-gray-600 dark:text-gray-500"
 						>
-							{#if !($settings?.chatBubble ?? true)}
+							{#if !(_chatBubble ?? true)}
 								{#if siblings.length > 1}
 									<div class="flex self-center" dir="ltr">
 										<button
@@ -361,7 +363,7 @@
 								</Tooltip>
 							{/if}
 
-							{#if $settings?.chatBubble ?? true}
+							{#if _chatBubble ?? true}
 								{#if siblings.length > 1}
 									<div class="flex self-center" dir="ltr">
 										<button

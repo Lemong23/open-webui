@@ -319,7 +319,7 @@
 	<div
 		class="{($settings?.widescreenMode ?? null)
 			? 'max-w-full'
-			: 'max-w-6xl'} px-2.5 mx-auto inset-x-0 relative"
+			: 'max-w-[907px]'} px-2.5 mx-auto inset-x-0 relative"
 	>
 		<div class="absolute top-0 left-0 right-0 mx-auto inset-x-0 bg-transparent flex justify-center">
 			<div class="flex flex-col px-3 w-full">
@@ -584,7 +584,7 @@
 											<button
 												id="send-message-button"
 												class="{content !== '' || files.length !== 0
-													? 'bg-black text-white hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-100 '
+													? 'bg-primary-600 text-white hover:bg-primary-700 dark:bg-white dark:text-black dark:hover:bg-gray-100 '
 													: 'text-white bg-gray-200 dark:text-gray-900 dark:bg-gray-700 disabled'} transition rounded-full p-1.5 self-center"
 												type="submit"
 												disabled={content === '' && files.length === 0}

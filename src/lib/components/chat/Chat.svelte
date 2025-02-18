@@ -1882,7 +1882,7 @@
 
 <div
 	class="h-screen max-h-[100dvh] transition-width duration-200 ease-in-out {$showSidebar
-		? '  md:max-w-[calc(100%-260px)]'
+		? '  md:max-w-[calc(100%-386px)]'
 		: ' '} w-full max-w-full flex flex-col"
 	id="chat-container"
 >
@@ -1890,7 +1890,7 @@
 		{#if $settings?.backgroundImageUrl ?? null}
 			<div
 				class="absolute {$showSidebar
-					? 'md:max-w-[calc(100%-260px)] md:translate-x-[260px]'
+					? 'md:max-w-[calc(100%-386px)] md:translate-x-[386px]'
 					: ''} top-0 left-0 w-full h-full bg-cover bg-center bg-no-repeat"
 				style="background-image: url({$settings.backgroundImageUrl})  "
 			/>
@@ -1947,7 +1947,7 @@
 				{/if}
 
 				<div class="flex flex-col flex-auto z-10 w-full @container">
-					{#if $settings?.landingPageMode === 'chat' || createMessagesList(history, history.currentId).length > 0}
+					<!-- {#if $settings?.landingPageMode === 'chat' || createMessagesList(history, history.currentId).length > 0} -->
 						<div
 							class=" pb-2.5 flex flex-col justify-between w-full flex-auto overflow-auto h-0 max-w-full z-10 scrollbar-hidden"
 							id="messages-container"
@@ -1978,7 +1978,7 @@
 							</div>
 						</div>
 
-						<div class=" pb-[1rem]">
+						<div class="pb-[20px]">
 							<MessageInput
 								{history}
 								{selectedModels}
@@ -2029,7 +2029,7 @@
 								<!-- {$i18n.t('LLMs can make mistakes. Verify important information.')} -->
 							</div>
 						</div>
-					{:else}
+					<!-- {:else}
 						<div class="overflow-auto w-full h-full flex items-center">
 							<Placeholder
 								{history}
@@ -2066,7 +2066,7 @@
 								}}
 							/>
 						</div>
-					{/if}
+					{/if} -->
 				</div>
 			</Pane>
 

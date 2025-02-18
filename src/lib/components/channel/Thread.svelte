@@ -196,7 +196,7 @@
 				}}
 			/>
 
-			<div class=" pb-[1rem]">
+			<div class="pb-[20px]">
 				<MessageInput id={threadId} {typingUsers} {onChange} onSubmit={submitHandler} />
 			</div>
 		</div>
