@@ -477,16 +477,16 @@
 	bind:this={navElement}
 	id="sidebar"
 	class="h-screen max-h-[100dvh] min-h-screen select-none {$showSidebar
-		? 'md:relative w-[386px] max-w-[386px]'
+		? 'md:relative w-[346px] max-w-[346px] md:w-[386px] md:max-w-[386px]'
 		: '-translate-x-[386px] w-[0px]'} {$isApp
 		? `ml-[4.5rem] md:ml-0 `
 		: 'transition-width duration-200 ease-in-out'}  flex-shrink-0 text-gray-900 dark:bg-gray-950 dark:text-gray-200 text-sm fixed z-50 top-0 left-0 overflow-x-hidden
         "
 	data-state={$showSidebar}
 >
-	<div class="m-5 max-h-[calc(100vh-40px)] bg-white rounded-[20px]">
+	<div class="m-0 max-h-screen md:m-5 md:max-h-[calc(100vh-40px)] bg-white md:rounded-[20px]">
 		<div
-			class="py-[18px] my-auto flex flex-col justify-between h-[calc(100vh-40px)] max-h-[calc(100vh-40px)] w-[346px] overflow-x-hidden z-50 {$showSidebar
+			class="py-[18px] my-auto flex flex-col justify-between h-screen max-h-screen md:h-[calc(100vh-40px)] md:max-h-[calc(100vh-40px)] w-[346px] overflow-x-hidden z-50 {$showSidebar
 				? ''
 				: 'invisible'}"
 		>
@@ -601,6 +601,7 @@
 						</div>
 					</a>
 				</div>
+				<hr>
 			{/if}
 
 
@@ -871,7 +872,7 @@
 			</div>
 			<hr>
 
-			<div class="pl-7 pr-[25px] pt-7">
+			<div class="pl-7 pr-[25px]">
 				<div class="flex flex-col font-primary">
 					{#if $user !== undefined}
 						<UserMenu
