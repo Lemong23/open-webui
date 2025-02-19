@@ -18,3 +18,53 @@ Ollama 까지 PC에 설치시 docker-compose 가 편할수 있습니다. (아래
 ```zsh
   sh ./run.sh
 ```
+
+
+## HOW TO USE DEV
+
+[dev mode](https://docs.openwebui.com/getting-started/advanced-topics/development/)
+
+DEV 모드 사용전 설치 필요 사항
+
+- [anaconda](https://www.anaconda.com/download)
+- [nodejs](https://nodejs.org/ko/download)
+
+
+Backend Setup
+
+```
+cd backend
+```
+
+최초 conda 활용시 등록
+
+```
+conda create --name open-webui python=3.11 
+```
+
+```
+conda activate open-webui
+```
+
+```
+pip install -r requirements.txt -U
+```
+
+```
+sh dev.sh
+```
+
+
+Frontend Setup
+
+```
+cp -RPp .env.example .env
+```
+
+```
+npm install
+```
+
+```
+npm run dev
+```

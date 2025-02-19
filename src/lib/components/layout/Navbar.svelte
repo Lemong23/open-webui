@@ -44,7 +44,7 @@
 
 <ShareChatModal bind:show={showShareChatModal} chatId={$chatId} />
 
-<div class="sticky top-0 z-30 w-full px-1.5 py-1.5 -mb-8 flex items-center">
+<div class="sticky top-0 z-30 w-full px-5 py-5 -mb-8 flex items-center">
 	<div
 		class=" bg-gradient-to-b via-50% from-white via-white to-transparent dark:from-gray-900 dark:via-gray-900 dark:to-transparent pointer-events-none absolute inset-0 -bottom-7 z-[-1] blur"
 	></div>
@@ -116,37 +116,39 @@
 						</button>
 					</Menu>
 				{:else if $mobile}
-					<Tooltip content={$i18n.t('Controls')}>
-						<button
-							class=" flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-850 transition"
-							on:click={async () => {
-								await showControls.set(!$showControls);
-							}}
-							aria-label="Controls"
-						>
-							<div class=" m-auto self-center">
-								<AdjustmentsHorizontal className=" size-5" strokeWidth="0.5" />
-							</div>
-						</button>
-					</Tooltip>
+					{#if $user.role === 'admin'}
+						<Tooltip content={$i18n.t('Controls')}>
+							<button
+								class=" flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+								on:click={async () => {
+									await showControls.set(!$showControls);
+								}}
+								aria-label="Controls"
+							>
+								<div class=" m-auto self-center">
+									<AdjustmentsHorizontal className=" size-5" strokeWidth="0.5" />
+								</div>
+							</button>
+						</Tooltip>
+					{/if}
 				{/if}
-
-				{#if !$mobile}
-					<Tooltip content={$i18n.t('Controls')}>
-						<button
-							class=" flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-850 transition"
-							on:click={async () => {
-								await showControls.set(!$showControls);
-							}}
-							aria-label="Controls"
-						>
-							<div class=" m-auto self-center">
-								<AdjustmentsHorizontal className=" size-5" strokeWidth="0.5" />
-							</div>
-						</button>
-					</Tooltip>
+				{#if $user.role === 'admin'}
+					{#if !$mobile}
+						<Tooltip content={$i18n.t('Controls')}>
+							<button
+								class=" flex cursor-pointer px-2 py-2 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-850 transition"
+								on:click={async () => {
+									await showControls.set(!$showControls);
+								}}
+								aria-label="Controls"
+							>
+								<div class=" m-auto self-center">
+									<AdjustmentsHorizontal className=" size-5" strokeWidth="0.5" />
+								</div>
+							</button>
+						</Tooltip>
+					{/if}
 				{/if}
-
 				<Tooltip content={$i18n.t('New Chat')}>
 					<button
 						id="new-chat-button"

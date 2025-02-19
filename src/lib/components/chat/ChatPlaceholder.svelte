@@ -11,6 +11,7 @@
 	import { sanitizeResponseContent } from '$lib/utils';
 	import Tooltip from '$lib/components/common/Tooltip.svelte';
 	import EyeSlash from '$lib/components/icons/EyeSlash.svelte';
+	import { attachSubjectParticle } from '$lib/utils/ko/getSubjectionParticle';
 
 	const i18n = getContext('i18n');
 
@@ -34,8 +35,8 @@
 </script>
 
 {#key mounted}
-	<div class="m-auto w-full max-w-6xl px-8 lg:px-20">
-		<div class="flex justify-start">
+	<div class="m-auto w-full max-w-[907px] px-8 lg:px-20">
+		<!-- <div class="flex justify-start">
 			<div class="flex -space-x-4 mb-0.5" in:fade={{ duration: 200 }}>
 				{#each models as model, modelIdx}
 					<button
@@ -52,10 +53,8 @@
 							<img
 								crossorigin="anonymous"
 								src={model?.info?.meta?.profile_image_url ??
-									($i18n.language === 'dg-DG'
-										? `/doge.png`
-										: `${WEBUI_BASE_URL}/static/favicon.png`)}
-								class=" size-[2.7rem] rounded-full border-[1px] border-gray-200 dark:border-none"
+									`${WEBUI_BASE_URL}/static/favicon.png`}
+								class="size-[2.7rem] rounded-full border-[1px] border-gray-200 dark:border-none"
 								alt="logo"
 								draggable="false"
 							/>
@@ -63,9 +62,9 @@
 					</button>
 				{/each}
 			</div>
-		</div>
+		</div> -->
 
-		{#if $temporaryChatEnabled}
+		<!-- {#if $temporaryChatEnabled}
 			<Tooltip
 				content="This chat won't appear in history and your messages will not be saved."
 				className="w-fit"
@@ -75,17 +74,17 @@
 					<EyeSlash strokeWidth="2.5" className="size-5" /> Temporary Chat
 				</div>
 			</Tooltip>
-		{/if}
+		{/if} -->
 
 		<div
-			class=" mt-2 mb-4 text-3xl text-gray-800 dark:text-gray-100 font-medium text-left flex items-center gap-4 font-primary"
+			class=" mt-2 mb-4 text-3xl leading-[1.5] text-center text-black dark:text-gray-100 font-medium flex items-center gap-4 font-primary justify-center"
 		>
 			<div>
 				<div class=" capitalize line-clamp-1" in:fade={{ duration: 200 }}>
-					{#if models[selectedModelIdx]?.name}
-						{models[selectedModelIdx]?.name}
-					{:else}
+					{#if $user.name}
 						{$i18n.t('Hello, {{name}}', { name: $user.name })}
+					{:else}
+						{$i18n.t('Hello')}
 					{/if}
 				</div>
 
@@ -115,8 +114,9 @@
 							</div>
 						{/if}
 					{:else}
-						<div class=" font-medium text-gray-400 dark:text-gray-500 line-clamp-1 font-p">
-							{$i18n.t('How can I help you today?')}
+						<div class="font-mediumline-clamp-1">
+							{!!models[selectedModelIdx]?.name ? attachSubjectParticle(models[selectedModelIdx]?.name || '') : '배움몽이'}
+							{$i18n.t('will help you with anything')}
 						</div>
 					{/if}
 				</div>

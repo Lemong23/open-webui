@@ -63,27 +63,20 @@
 	}
 </script>
 
-<div class="mb-1 flex gap-1 text-xs font-medium items-center text-gray-400 dark:text-gray-600">
-	{#if filteredPrompts.length > 0}
-		<Bolt />
-		{$i18n.t('Suggested')}
-	{:else}
-		<!-- Keine Vorschläge -->
 
-		<div
-			class="flex w-full text-center items-center justify-center self-start text-gray-400 dark:text-gray-600"
-		>
-			{$WEBUI_NAME} ‧ v{WEBUI_VERSION}
-		</div>
-	{/if}
-</div>
 
-<div class="h-40 overflow-auto scrollbar-none {className} items-start">
+
+<hr class="mt-12">
+<h4 class="mt-[26px] mb-6 text-center text-[18px] font-bold">
+	수강하면서 어려웠던 점이나 이해가 필요한 부분이 있나요?
+</h4>
+
+<div class="h-[315px] grid grid-cols-2 gap-4 overflow-auto scrollbar-none {className} items-start">
 	{#if filteredPrompts.length > 0}
 		{#each filteredPrompts as prompt, idx (prompt.id || prompt.content)}
 			<button
 				class="waterfall flex flex-col flex-1 shrink-0 w-full justify-between
-				       px-3 py-2 rounded-xl bg-transparent hover:bg-black/5
+				       px-[22px] py-5 rounded-[20px] bg-white  hover:bg-black/5
 				       dark:hover:bg-white/5 transition group"
 				style="animation-delay: {idx * 60}ms"
 				on:click={() => dispatch('select', prompt.content)}
