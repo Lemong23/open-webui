@@ -477,8 +477,8 @@
 	bind:this={navElement}
 	id="sidebar"
 	class="h-screen max-h-[100dvh] min-h-screen select-none {$showSidebar
-		? 'md:relative w-[346px] max-w-[346px] md:w-[386px] md:max-w-[386px]'
-		: '-translate-x-[386px] w-[0px]'} {$isApp
+		? 'md:relative w-[280px] max-w-[280px] md:w-[320px] md:max-w-[320px]'
+		: '-translate-x-[320px] w-[0px]'} {$isApp
 		? `ml-[4.5rem] md:ml-0 `
 		: 'transition-width duration-200 ease-in-out'}  flex-shrink-0 text-gray-900 dark:bg-gray-950 dark:text-gray-200 text-sm fixed z-50 top-0 left-0 overflow-x-hidden
         "
@@ -486,17 +486,37 @@
 >
 	<div class="m-0 max-h-screen md:m-5 md:max-h-[calc(100vh-40px)] bg-white md:rounded-[20px]">
 		<div
-			class="py-[18px] my-auto flex flex-col justify-between h-screen max-h-screen md:h-[calc(100vh-40px)] md:max-h-[calc(100vh-40px)] w-[346px] overflow-x-hidden z-50 {$showSidebar
+			class="pt-[18px] pb-2 my-auto flex flex-col justify-between h-screen max-h-screen md:h-[calc(100vh-40px)] md:max-h-[calc(100vh-40px)] w-[280px] overflow-x-hidden z-50 {$showSidebar
 				? ''
 				: 'invisible'}"
 		>
 			<div class="pl-7 pr-[25px] flex items-center justify-between space-x-1 text-black dark:text-gray-400">
-				<h2 class="text-xl font-bold leading-[1.5]">배움몽</h2>
-				<button class="flex-1 flex justify-end">
-					<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-						<path d="M18.4167 18.4167L22.75 22.75M3.25 11.9167C3.25 14.2152 4.16309 16.4196 5.78841 18.0449C7.41372 19.6702 9.61812 20.5833 11.9167 20.5833C14.2152 20.5833 16.4196 19.6702 18.0449 18.0449C19.6702 16.4196 20.5833 14.2152 20.5833 11.9167C20.5833 9.61812 19.6702 7.41372 18.0449 5.78841C16.4196 4.16309 14.2152 3.25 11.9167 3.25C9.61812 3.25 7.41372 4.16309 5.78841 5.78841C4.16309 7.41372 3.25 9.61812 3.25 11.9167Z" stroke="black" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</button>
+				<h2 class="text-lg font-bold leading-[1.5]">배움몽</h2>
+				<div class="flex justify-end">
+					<button
+						class=" cursor-pointer p-[7px] flex rounded-xl hover:bg-gray-100 dark:hover:bg-gray-900 transition"
+						on:click={() => {
+							showSidebar.set(!$showSidebar);
+						}}
+					>
+						<div class=" m-auto self-center">
+							<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="2"
+							stroke="currentColor"
+							class="size-5"
+							>
+								<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+								/>
+							</svg>
+						</div>
+					</button>
+				</div>
 			</div>
 
 			<!-- <div class="relative {$temporaryChatEnabled ? 'opacity-20' : ''}">
@@ -512,10 +532,10 @@
 			</div> -->
 
 
-			<div class="pl-7 pr-[25px] my-4">
+			<div class="px-5 my-4">
 				<a
 					id="sidebar-new-chat-button"
-					class="bg-primary-600 w-full rounded-[14px] py-3 justify-center text-white flex transition no-drag-region text-lg font-normal"
+					class="bg-primary-600 w-full rounded-[14px] py-3 justify-center text-white flex transition no-drag-region font-normal"
 					href="/"
 					draggable="false"
 					on:click={async () => {
@@ -614,10 +634,10 @@
 			>
 
 				<div class="flex justify-between pl-7 pr-[25px] pt-5 items-center">
-					<h4 class="text-xl font-bold">
+					<h4 class="text-md font-bold">
 						내 Q&A 히스토리
 					</h4>
-					<button class="text-[#A2A2A2] font-bold text-sm"
+					<button class="text-[#A2A2A2] font-bold text-xs"
 						on:click={() => {
 							deleteAllChatsHandler();
 						}}
@@ -627,9 +647,9 @@
 
 				</div>
 
-				{#if $config?.features?.enable_channels && ($user.role === 'admin' || $channels.length > 0) && !search}
+				<!-- {#if $config?.features?.enable_channels && ($user.role === 'admin' || $channels.length > 0) && !search}
 					<Folder
-						className="pl-7 pr-[25px] py-5"
+						className="px-5 py-5"
 						name={$i18n.t('Channels')}
 						dragAndDrop={false}
 						onAdd={async () => {
@@ -652,11 +672,11 @@
 							/>
 						{/each}
 					</Folder>
-				{/if}
+				{/if} -->
 
-				<Folder
+				<!-- <Folder
 					collapsible={!search}
-					className="pl-7 pr-[25px] py-5"
+					className="px-5 py-5"
 					name={$i18n.t('Chats')}
 					onAdd={() => {
 						createFolder();
@@ -710,8 +730,8 @@
 							}
 						}
 					}}
-				>
-					{#if $temporaryChatEnabled}
+				> -->
+					<!-- {#if $temporaryChatEnabled}
 						<div class="absolute z-40 w-full h-full flex justify-center"></div>
 					{/if}
 
@@ -789,9 +809,9 @@
 								</div>
 							</Folder>
 						</div>
-					{/if}
+					{/if} -->
 
-					{#if !search && folders}
+					<!-- {#if !search && folders}
 						<Folders
 							{folders}
 							on:import={(e) => {
@@ -805,9 +825,9 @@
 								initChatList();
 							}}
 						/>
-					{/if}
+					{/if} -->
 
-					<div class=" flex-1 flex flex-col overflow-y-auto scrollbar-hidden">
+					<div class=" flex-1 flex flex-col overflow-y-auto scrollbar-hidden px-5 mt-4">
 						<div class="pt-1.5">
 							{#if $chats}
 								{#each $chats as chat, idx}
@@ -868,11 +888,11 @@
 							{/if}
 						</div>
 					</div>
-				</Folder>
+				<!-- </Folder> -->
 			</div>
 			<hr>
 
-			<div class="pl-7 pr-[25px]">
+			<div class="px-5 mt-2">
 				<div class="flex flex-col font-primary">
 					{#if $user !== undefined}
 						<UserMenu

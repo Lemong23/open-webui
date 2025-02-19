@@ -175,6 +175,33 @@
 				className="w-full"
 			>
 				<DropdownMenu.Item
+					class="flex gap-2 items-center px-3 py-2 text-sm  font-medium cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800  rounded-xl {!fileUploadEnabled
+						? 'opacity-50'
+						: ''}"
+					on:click={() => {
+						if (fileUploadEnabled) {
+							if (!detectMobile()) {
+								screenCaptureHandler();
+							} else {
+								const cameraInputElement = document.getElementById('camera-input');
+
+								if (cameraInputElement) {
+									cameraInputElement.click();
+								}
+							}
+						}
+					}}
+				>
+					<CameraSolid />
+					<div class=" line-clamp-1">{$i18n.t('Capture')}</div>
+				</DropdownMenu.Item>
+			</Tooltip>
+
+			<Tooltip
+				content={!fileUploadEnabled ? $i18n.t('You do not have permission to upload files') : ''}
+				className="w-full"
+			>
+				<DropdownMenu.Item
 					class="flex gap-2 items-center px-3 py-2 text-sm font-medium cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-xl {!fileUploadEnabled
 						? 'opacity-50'
 						: ''}"

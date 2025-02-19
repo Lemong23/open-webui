@@ -200,7 +200,7 @@
 
 <div
 	class="h-screen max-h-[100dvh] transition-width duration-200 ease-in-out {$showSidebar
-		? 'md:max-w-[calc(100%-386px)]'
+		? 'md:max-w-[calc(100%-320px)]'
 		: ''} w-full max-w-full flex flex-col"
 	id="channel-container"
 >
