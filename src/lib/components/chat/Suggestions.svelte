@@ -67,7 +67,7 @@
 
 
 <hr class="mt-12">
-<h4 class="mt-[26px] mb-6 text-center text-[18px] font-bold">
+<h4 class="mt-[26px] mb-6 text-center text-lg font-bold">
 	수강하면서 어려웠던 점이나 이해가 필요한 부분이 있나요?
 </h4>
 

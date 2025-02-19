@@ -491,7 +491,7 @@
 				: 'invisible'}"
 		>
 			<div class="pl-7 pr-[25px] flex items-center justify-between space-x-1 text-black dark:text-gray-400">
-				<h2 class="text-[20px] font-bold leading-[1.5]">배움몽</h2>
+				<h2 class="text-xl font-bold leading-[1.5]">배움몽</h2>
 				<button class="flex-1 flex justify-end">
 					<svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
 						<path d="M18.4167 18.4167L22.75 22.75M3.25 11.9167C3.25 14.2152 4.16309 16.4196 5.78841 18.0449C7.41372 19.6702 9.61812 20.5833 11.9167 20.5833C14.2152 20.5833 16.4196 19.6702 18.0449 18.0449C19.6702 16.4196 20.5833 14.2152 20.5833 11.9167C20.5833 9.61812 19.6702 7.41372 18.0449 5.78841C16.4196 4.16309 14.2152 3.25 11.9167 3.25C9.61812 3.25 7.41372 4.16309 5.78841 5.78841C4.16309 7.41372 3.25 9.61812 3.25 11.9167Z" stroke="black" stroke-width="1.625" stroke-linecap="round" stroke-linejoin="round"/>
@@ -515,7 +515,7 @@
 			<div class="pl-7 pr-[25px] my-4">
 				<a
 					id="sidebar-new-chat-button"
-					class="bg-primary-600 w-full rounded-[14px] py-3 justify-center text-white flex transition no-drag-region text-[18px] leading-[1.5] font-normal"
+					class="bg-primary-600 w-full rounded-[14px] py-3 justify-center text-white flex transition no-drag-region text-lg font-normal"
 					href="/"
 					draggable="false"
 					on:click={async () => {
@@ -614,10 +614,10 @@
 			>
 
 				<div class="flex justify-between pl-7 pr-[25px] pt-5 items-center">
-					<h4 class="text-[20px] font-bold">
+					<h4 class="text-xl font-bold">
 						내 Q&A 히스토리
 					</h4>
-					<button class="text-[#A2A2A2] font-bold text-[14px]"
+					<button class="text-[#A2A2A2] font-bold text-sm"
 						on:click={() => {
 							deleteAllChatsHandler();
 						}}
