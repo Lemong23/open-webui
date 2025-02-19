@@ -73,31 +73,31 @@
 
 <div class="h-[315px] grid grid-cols-2 gap-4 overflow-auto scrollbar-none {className} items-start">
 	{#if filteredPrompts.length > 0}
-		{#each filteredPrompts as prompt, idx (prompt.id || prompt.content)}
+		{#each filteredPrompts.slice(0,4) as prompt, idx (prompt.id || prompt.content)}
 			<button
 				class="waterfall flex flex-col flex-1 shrink-0 w-full justify-between
-				       px-[22px] py-5 rounded-[20px] bg-white  hover:bg-black/5
-				       dark:hover:bg-white/5 transition group"
+				       px-[22px] py-6 rounded-[20px] bg-white  hover:bg-primary-500/5
+				       dark:hover:bg-white/5 transition group shadow-sm"
 				style="animation-delay: {idx * 60}ms"
 				on:click={() => dispatch('select', prompt.content)}
 			>
-				<div class="flex flex-col text-left">
+				<div class="flex flex-col text-left h-20">
 					{#if prompt.title && prompt.title[0] !== ''}
 						<div
 							class="font-medium dark:text-gray-300 dark:group-hover:text-gray-200 transition line-clamp-1"
 						>
 							{prompt.title[0]}
 						</div>
-						<div class="text-xs text-gray-500 font-normal line-clamp-1">
+						<div class="text-xs text-gray-500 font-normal line-clamp-3 mt-2">
 							{prompt.title[1]}
 						</div>
 					{:else}
 						<div
-							class="font-medium dark:text-gray-300 dark:group-hover:text-gray-200 transition line-clamp-1"
+							class="font-medium dark:text-gray-300 dark:group-hover:text-gray-200 transition line-clamp-2"
 						>
 							{prompt.content}
 						</div>
-						<div class="text-xs text-gray-500 font-normal line-clamp-1">{$i18n.t('Prompt')}</div>
+						<div class="text-xs text-gray-500 font-normal line-clamp-1 mt-2">{$i18n.t('Prompt')}</div>
 					{/if}
 				</div>
 			</button>

@@ -531,7 +531,7 @@
 		</div>
 
 		<div class="flex-auto w-0 pl-1">
-			<!-- <Name>
+			<Name>
 				<Tooltip content={model?.name ?? message.model} placement="top-start">
 					<span class="line-clamp-1">
 						{model?.name ?? message.model}
@@ -547,7 +547,7 @@
 						</Tooltip>
 					</div>
 				{/if}
-			</Name> -->
+			</Name>
 
 			<div>
 				{#if message?.files && message.files?.filter((f) => f.type === 'image').length > 0}

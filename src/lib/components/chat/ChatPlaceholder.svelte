@@ -77,7 +77,7 @@
 		{/if} -->
 
 		<div
-			class=" mt-2 mb-4 text-3xl leading-[1.5] text-center text-black dark:text-gray-100 font-medium flex items-center gap-4 font-primary justify-center"
+			class="mt-12 mb-4 text-3xl leading-[1.5] text-center text-black dark:text-gray-100 font-medium flex items-center gap-4 font-primary justify-center"
 		>
 			<div>
 				<div class=" capitalize line-clamp-1" in:fade={{ duration: 200 }}>
