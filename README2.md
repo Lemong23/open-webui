@@ -5,15 +5,18 @@ Ollama 까지 PC에 설치시 docker-compose 가 편할수 있습니다. (아래
 
 설치 전 필수 사항 도커 실행 
 
-1. Pull web-ui Image & alias
+1. .env.sample 를 참조해서, .env 작성 (최소 OPENAI 설정 필요)
+
+2. Act run shell script
 
 ```zsh
-  docker pull ghcr.io/open-webui/open-webui:main && docker tag ghcr.io/open-webui/open-webui:main open-webui:latest
+  sh ./run.sh
 ```
 
-2. .env.sample 를 참조해서, .env 작성 (최소 OPENAI 설정 필요)
 
-3. Act run shell script
+## HOW TO REINSTALL
+
+Act Just shell script
 
 ```zsh
   sh ./run.sh
