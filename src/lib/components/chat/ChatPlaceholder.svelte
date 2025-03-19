@@ -119,12 +119,12 @@
 								{!!models[selectedModelIdx]?.name ? attachSubjectParticle(models[selectedModelIdx]?.name || '') : '배움몽이'}
 								{$i18n.t('will help you with anything')}
 							</div>
-							<p class="mt-4 text-base text-balance break-keep text-blue-500">
-								본 서비스는 베타 테스트 중이며, 일부 정보 제공에 오류가 있을 수 있습니다.
-								더 나은 서비스를 제공하기 위해 지속적으로 모니터링 후 개선해 나가고 있으니 이점 양해부탁드리겠습니다.
-							</p>
 						</div>
 					{/if}
+					<p class="mt-4 text-base text-balance break-keep text-blue-500">
+						본 서비스는 베타 테스트 중이며, 일부 정보 제공에 오류가 있을 수 있습니다.
+						더 나은 서비스를 제공하기 위해 지속적으로 모니터링 후 개선해 나가고 있으니 이점 양해부탁드리겠습니다.
+					</p>
 				</div>
 			</div>
 		</div>
